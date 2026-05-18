@@ -1,0 +1,16 @@
+/* Hiệu ứng chuyển động mượt mà khi đổi màu hoặc click */
+.category-btn {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Tùy chỉnh thanh cuộn cho tinh tế */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
