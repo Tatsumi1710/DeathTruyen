@@ -3,6 +3,20 @@
 // ==========================================
     const mangaData = [
     {
+         title: "Is This a Zombie?",
+        othertitle: "Kore wa Zonbi desu ka?",
+        image: "img/Zombie.jpg",
+        author:"Shinichi Kimura",
+        year:"2010",
+        genre:["Comedy"],
+        status: "Hoàn thành",
+        rating: 8,
+        intro:"",
+        review: "",
+        link: "",
+        linkDoc: ""
+    },
+    {
         title: "A Bridge to the Starry Skies",
         othertitle:"Hoshizora E kakuru",
         image: "img/hoshizora.jpg",
