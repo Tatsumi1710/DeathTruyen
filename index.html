@@ -57,8 +57,26 @@
 </header>
 
 <main class="w-[85%] mx-auto px-4 py-8">
+  <!-- Thêm mới chỗ này--> 
+    <!-- POPULAR CAROUSEL -->
+<div id="popular-carousel" class="relative w-full overflow-hidden" style="height: 380px;">
+    <div id="carousel-track" class="flex h-full transition-transform duration-700 ease-in-out"></div>
+    
+    <!-- Nút prev/next -->
+    <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg transition-all">❮</button>
+    <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg transition-all">❯</button>
+    
+    <!-- Dots -->
+    <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20"></div>
+
+    <!-- Label -->
+    <div class="absolute top-4 left-6 z-20">
+        <span class="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full tracking-wider"> Popular Titles</span>
+    </div>
+</div>
         
         <div id="main-page" class="space-y-6">
+            <h2 class="text-xl font-bold text-gray-800 border-b border-gray-100 pb-2 mt-12">Latest Updates</h2>
             <div id="demo-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
             </div>
             
@@ -98,7 +116,7 @@
 </main>
 
     <footer class="border-t border-gray-200 text-center py-6 text-xs text-gray-700 bg-white mt-10">
-       © Manga Review by Tatsumi
+       © DeathTruyen by Tatsumi
     </footer>
 
     <script src="script.js"></script>
