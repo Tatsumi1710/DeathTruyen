@@ -182,7 +182,7 @@
     },
     {
         title: "Grand Blue",
-        othertitle: "",
+        othertitle: "Guranburu",
         image: "img/grandblue.jpg",
         author: "Kenji Inoue",
         year: "2014",
@@ -526,6 +526,7 @@ function goToMangaDetail(manga) {
                 if (mainPage) mainPage.classList.remove("hidden");
                 if (viewAllBtn) viewAllBtn.classList.remove("hidden");
                 console.log("Đã kích hoạt hiển thị lại main-page");
+                document.getElementById("popular-carousel").classList.remove("hidden"); // Thêm dòng này: chỉ hiện carousel khi quay về trang chủ
             }
             
            window.scrollTo(0, 0);
@@ -536,6 +537,7 @@ function goToMangaDetail(manga) {
     mainPage.classList.add("hidden");
     document.getElementById("all-manga-page").classList.add("hidden");
     detailPage.classList.remove("hidden");
+    document.getElementById("popular-carousel").classList.add("hidden");
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -631,21 +633,36 @@ function renderDemoMangas(mangas) {
                 <div class="w-32 h-44 flex-shrink-0 overflow-hidden rounded-xl border border-gray-100 shadow-sm">
                     <img src="${manga.image || ''}" alt="${manga.title || ''}" class="w-full h-full object-cover">
                 </div>
-                <div class="flex-grow min-w-0 text-sm space-y-2">
-                    <h3 class="text-base font-bold text-gray-900 truncate">${manga.title || 'Chưa rõ tên'}</h3>
-                    <ul class="space-y-1 text-gray-700 font-normal">
-                        <li><span class="text-gray-700 font-medium">📝 Tên khác:</span> Đang cập nhật...</li>
-                        <li><span class="text-gray-700 font-medium">🔹 Tác giả:</span> ${manga.author || 'Đang cập nhật'}</li>
-                        <li><span class="text-gray-700 font-medium">📅 Xuất bản:</span> Năm ${manga.year || '...'}</li>
-                        <li><span class="text-gray-700 font-medium">📌 Tình trạng:</span> <span class="text-amber-600 font-medium">${manga.status || 'Đang cập nhật'}</span></li>
-                        <li>
-                            <span class="text-gray-700 font-medium">🏷️ Thể loại:</span>
-                            <span class="inline-flex flex-wrap gap-1">
-                                ${(manga.genre || []).map(g => `<span class="bg-gray-100 text-gray-600 px-2 py-0.5 rounded text-xs font-medium">${g}</span>`).join('')}
-                            </span>
-                        </li>
-                    </ul>
+
+                <div class="flex-grow space-y-1.5 text-sm w-full">
+                <div class="flex justify-between items-start gap-4 mb-1">
+                    <h2 class="text-xl font-black tracking-tight text-gray-950">${manga.title}</h2>
+                    <div class="flex-shrink-0 bg-amber-50 border border-amber-200 px-3 py-1 rounded-xl text-center min-w-[80px]">
+                        <div class="flex items-center justify-center font-black text-amber-600 text-base">
+                            <span>${manga.rating}</span>
+                            <span class="text-amber-500/80 font-bold ml-0.5">/10</span>
+                        </div>
+                        <span class="text-[9px] text-amber-400 block font-bold tracking-wider -mt-0.5">⭐ RATE</span>
+                    </div>
                 </div>
+                
+                
+                
+                <ul class="space-y-1 text-gray-700 font-normal">
+                    <li><span class ="text-gray-700 font-medium">✏️ Tên khác:</span> ${manga.othertitle}</li>
+                    <li><span class="text-gray-700 font-medium">🔹 Tác giả:</span> ${manga.author}</li>
+                    <li><span class="text-gray-700 font-medium">📅 Xuất bản:</span> ${manga.year}</li>
+                    <li><span class="text-gray-700 font-medium">📌 Tình trạng:</span> ${manga.status}</li>
+                </ul>
+                <ul class="space-y-1 text-gray-700 font-normal">
+                    <li>
+                        <span class="text-gray-700 font-medium">🏷️ Thể loại:</span>
+                        <span class="inline-flex flex-wrap gap-1">
+                            ${manga.genre.map(g => `<span class="bg-gray-200 text-amber-600 px-2 py-0.5 rounded text-xs font-medium">${g}</span>`).join('')}
+                        </span>
+                    </li>
+                </ul>
+            </div>
             `;
             demoContainer.appendChild(card);
         });
@@ -672,6 +689,8 @@ function setupNavigationEvents() {
                 detailPage.classList.add("hidden");
                 allMangaPage.classList.remove("hidden");
                 viewAllBtn.classList.add("hidden"); 
+
+                document.getElementById("popular-carousel").classList.add("hidden");
                 
                 currentPage = 1; 
                 renderReviews(mangaData);
@@ -689,18 +708,107 @@ function setupNavigationEvents() {
                 detailPage.classList.add("hidden");
                 mainPage.classList.remove("hidden");
                 if (viewAllBtn) viewAllBtn.classList.remove("hidden"); 
+                document.getElementById("popular-carousel").classList.remove("hidden");
             };
         }
     } catch (error) {
         console.error(error);
     }
 }
+function setupCarousel() {
+    // Lấy các bộ rating >= 9, sắp xếp theo rating giảm dần
+    const popularMangas = [...mangaData]
+        .filter(m => parseFloat(m.rating) >= 9)
+        .sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
+
+    const track = document.getElementById("carousel-track");
+    const dotsContainer = document.getElementById("carousel-dots");
+    if (!track || popularMangas.length === 0) return;
+
+    let currentSlide = 0;
+
+    // Tạo các slide
+    popularMangas.forEach((manga, index) => {
+        const slide = document.createElement("div");
+        slide.className = "relative flex-shrink-0 w-full h-full";
+        slide.style.width = "100%";
+        slide.style.cursor = "pointer";
+        slide.addEventListener("click", () => {  
+    currentView = "home";
+    goToMangaDetail(manga);
+});
+
+        slide.innerHTML = `
+            <!-- Ảnh nền -->
+            <div class="absolute inset-0">
+                <img src="${manga.image}" alt="${manga.title}" 
+                     class="w-full h-full object-cover object-top">
+                <!-- Lớp tối đè lên -->
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+            </div>
+
+            <!-- Chữ đè lên -->
+            <div class="absolute inset-0 flex flex-col justify-center px-10 max-w-2xl">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-amber-400 font-black text-lg">⭐ ${manga.rating}/10</span>
+                    <span class="text-white/50 text-xs">${manga.genre.join(", ")}</span>
+                </div>
+                <h2 class="text-white font-black text-2xl sm:text-3xl leading-tight mb-3 drop-shadow-lg">${manga.title}</h2>
+                <p class="text-white/80 text-sm leading-relaxed line-clamp-3 drop-shadow">${manga.intro}</p>
+                <div class="mt-4 flex items-center gap-2 text-xs text-white/60">
+                    <span>✏️ ${manga.author}</span>
+                    <span>•</span>
+                    <span class="text-amber-400 font-semibold">${manga.status}</span>
+                </div>
+            </div>
+        `;
+        track.appendChild(slide);
+
+        // Dot
+        const dot = document.createElement("button");
+        dot.className = index === 0
+            ? "w-6 h-2 bg-amber-400 rounded-full transition-all"
+            : "w-2 h-2 bg-white/50 rounded-full transition-all hover:bg-white";
+        dot.addEventListener("click", () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    function goToSlide(index) {
+        currentSlide = index;
+        track.style.transform = `translateX(-${index * 100}%)`;
+
+        // Cập nhật dots
+        const dots = dotsContainer.querySelectorAll("button");
+        dots.forEach((d, i) => {
+            d.className = i === index
+                ? "w-6 h-2 bg-amber-400 rounded-full transition-all"
+                : "w-2 h-2 bg-white/50 rounded-full transition-all hover:bg-white";
+        });
+    }
+
+    // Nút prev/next
+    document.getElementById("carousel-prev").addEventListener("click", () => {
+        goToSlide((currentSlide - 1 + popularMangas.length) % popularMangas.length);
+    });
+    document.getElementById("carousel-next").addEventListener("click", () => {
+        goToSlide((currentSlide + 1) % popularMangas.length);
+    });
+
+    // Tự động chạy mỗi 4 giây
+    setInterval(() => {
+        goToSlide((currentSlide + 1) % popularMangas.length);
+    }, 4000);
+}
+
+
 // ==========================================
 // KHỞI CHẠY ỨNG DỤNG LẦN ĐẦU KHI LOAD TRANG
 // ==========================================
 renderDemoMangas(mangaData);   // Hiển thị danh sách truyện ban đầu
 setupSearchEvent();        // Kích hoạt tính năng gõ chữ tìm kiếm
-setupNavigationEvents();   // Kích hoạt tính năng click chuyển đổi cho nút "Xem tất cả"
+setupNavigationEvents(); // Kích hoạt tính năng click chuyển đổi cho nút "Xem tất cả"
+setupDropdownEvents();
+setupCarousel();
 // --- HÀM BỔ SUNG: Lắng nghe sự kiện click từ bảng thể loại thả xuống (Dropdown) ---
 function setupDropdownEvents() {
     const dropdownButtons = document.querySelectorAll(".menu-genre-btn");
