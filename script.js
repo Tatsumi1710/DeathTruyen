@@ -3,6 +3,21 @@
 // ==========================================
     const mangaData = [
     {
+        title: "Hyouka",
+        othertitle: "Kem Đá",
+        image:"img/hyouka.jpg",
+        author: "Honobu Yonezawa",
+        year: "2012",
+        genre: ["Slice of life"],
+        status: "Đang tiến hành",
+        rating: 8.7,
+        intro: "",
+        review: "",
+        link: "",
+        linkDoc: ""
+
+    },
+    {
          title: "Is This a Zombie?",
         othertitle: "Kore wa Zonbi desu ka?",
         image: "img/Zombie.jpg",
