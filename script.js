@@ -55,7 +55,8 @@
         genre: ["Dark Fantasy", "Action"],
         status: "Hoàn thành",
         rating: "9.25",
-        intro:"",
+        intro:`Tatsumi, một chàng trai trẻ từ vùng quê nghèo, gia nhập tổ chức ám sát bí mật Night Raid với mong muốn thay đổi đế chế thối nát. 
+               Hành trình của cậu là những trận chiến đẫm máu, những mất mát đau lòng và câu hỏi liệu cái ác có thể bị tiêu diệt bằng cái ác hay không.`,
         review: ["Đây là bộ anime đầu tiên mình xem",
                 "Cái tên Tatsumi mình lấy từ nhân vật chính của bộ truyện này:v",
         ],
@@ -110,7 +111,8 @@
         genre: ["Comedy"],
         status: "Đang tiến hành",
         rating: 9,
-        intro: "",
+        intro: `Amane, một nam sinh bình thường, tình cờ giúp đỡ Mahiru — cô gái được cả trường gọi là "thiên thần" — trong một đêm mưa. 
+                Từ đó, cô hàng xóm hoàn hảo bỗng dưng xuất hiện mỗi ngày để nấu ăn và chăm sóc cậu...`,
         review:[],
         link: "https://www.youtube.com/playlist?list=PLxSscENEp7JiAoaxImun4H_FRDkFI9k3Q"
 
@@ -140,7 +142,8 @@
         genre:["Comedy"],
         status: "Hoàn thành",
         rating: 9.1,
-        intro:"",
+        intro:`Tsuneo, sinh viên đại học đam mê lặn biển, tình cờ gặp Josee — cô gái ngồi xe lăn với tính cách gai góc nhưng tâm hồn đầy màu sắc. 
+                Hai người dần kéo nhau ra khỏi vỏ bọc của chính mình và cùng nhau theo đuổi những ước mơ tưởng chừng không thể.`,
         review:[],
         link: ""
     },
@@ -170,7 +173,8 @@
         genre: ["Shonen"],
         status: "Đang tiến hành",
         rating: 9,
-        intro: "hành trình trở thành vua hải tặc của Luffy..",
+        intro: `Monkey D. Luffy, chàng trai mang trong mình sức mạnh của Trái Ác Quỷ, lên đường chinh phục Grand Line với giấc mơ trở thành Vua Hải Tặc.
+                Cùng với đội thuyền ngày càng đông đảo, mỗi hòn đảo là một cuộc phiêu lưu mới, một kẻ thù mạnh hơn và một bí ẩn lớn hơn đang chờ đợi.`,
         review:["lan man, dài quá"],
         link:""
 
