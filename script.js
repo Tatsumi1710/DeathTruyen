@@ -3,8 +3,27 @@
 // ==========================================
     const mangaData = [
     {
-        title: "Hyouka",
-        othertitle: "Kem Đá",
+        title: "Seraph of the End: Vampire Reign",
+        othertitle: "Owari no seraph",
+        image: "img/owari.jpg",
+        author: "Kagami Takaya",
+        year: "2012",
+        genre: ["Action"],
+        status: "Đang tiến hành",
+        rating: 8.5,
+        intro: `Một loại Virus xuất hiện trên Trái đất và giết hết tất cả những người bị nhiễm có tuổi trên 13. 
+                Cùng lúc đó, ma cà rồng xuất hiện từ lòng đất sâu thẳm và biến loài người thành nô lệ. Nhân vật chính Hyakuya Yuuichirou là một trẻ mồ côi, bị ma cà rồng xem như loài vật cho chúng hút máu. 
+                Dù bị giam cầm, nhưng cậu có hoài bão lớn, khao khát có ngày giết hết toàn bộ ma cà rồng.`,
+        review: "",
+        link: "",
+        linkDoc: "",
+
+
+    },    
+    
+    {
+        title: "Kem Đá",
+        othertitle: "Hyouka",
         image:"img/hyouka.jpg",
         author: "Honobu Yonezawa",
         year: "2012",
@@ -751,7 +770,7 @@ function setupCarousel() {
             <div class="absolute inset-0 flex flex-col justify-center px-10 max-w-2xl">
                 <div class="flex items-center gap-2 mb-2">
                     <span class="text-amber-400 font-black text-lg">⭐ ${manga.rating}/10</span>
-                    <span class="text-white/50 text-xs">${manga.genre.join(", ")}</span>
+                    
                 </div>
                 <h2 class="text-white font-black text-2xl sm:text-3xl leading-tight mb-3 drop-shadow-lg">${manga.title}</h2>
                 <p class="text-white/80 text-sm leading-relaxed line-clamp-3 drop-shadow">${manga.intro}</p>
