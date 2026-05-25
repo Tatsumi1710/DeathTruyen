@@ -1,256 +1,3 @@
-// ==========================================
-// ĐOẠN DỮ LIỆU GỐC (DATABASE MÔ PHỎNG)
-// ==========================================
-    const mangaData = [
-    {
-         title: "The Day I Became a God",
-        othertitle: "Kamisama ni Natta Hi",
-        image: "img/kami.jpg",
-        author: "Maeda Jun",
-        year: "2020",
-        genre: ["Slice of life"],
-        status: "Hoàn thành",
-        rating: 8.3,
-        intro: `Narukami Youta, một nam sinh chuẩn bị thi đại học, bất ngờ gặp được một cô bé tự do là thần linh toàn tri tên Hina — 
-                người tuyên bố thế giới sẽ diệt vong trong 30 ngày. vui vẻ bên nhau.`,
-        review: "",
-        link: "",
-        linkDoc: ""
-
-    },
-    {
-        title: "Seraph of the End: Vampire Reign",
-        othertitle: "Owari no seraph",
-        image: "img/owari.jpg",
-        author: "Kagami Takaya",
-        year: "2012",
-        genre: ["Action"],
-        status: "Đang tiến hành",
-        rating: 8.5,
-        intro: `Một loại Virus xuất hiện trên Trái đất và giết hết tất cả những người bị nhiễm có tuổi trên 13. 
-                Cùng lúc đó, ma cà rồng xuất hiện từ lòng đất sâu thẳm và biến loài người thành nô lệ. Nhân vật chính Hyakuya Yuuichirou là một trẻ mồ côi, bị ma cà rồng xem như loài vật cho chúng hút máu. 
-                Dù bị giam cầm, nhưng cậu có hoài bão lớn, khao khát có ngày giết hết toàn bộ ma cà rồng.`,
-        review: "",
-        link: "",
-        linkDoc: "",
-
-
-    },    
-    
-    {
-        title: "Kem Đá",
-        othertitle: "Hyouka",
-        image:"img/hyouka.jpg",
-        author: "Honobu Yonezawa",
-        year: "2012",
-        genre: ["Slice of life"],
-        status: "Đang tiến hành",
-        rating: 8.7,
-        intro: "",
-        review: "",
-        link: "",
-        linkDoc: ""
-
-    },
-    {
-         title: "Is This a Zombie?",
-        othertitle: "Kore wa Zonbi desu ka?",
-        image: "img/Zombie.jpg",
-        author:"Shinichi Kimura",
-        year:"2010",
-        genre:["Comedy"],
-        status: "Hoàn thành",
-        rating: 8,
-        intro:"",
-        review: "",
-        link: "",
-        linkDoc: ""
-    },
-    {
-        title: "A Bridge to the Starry Skies",
-        othertitle:"Hoshizora E kakuru",
-        image: "img/hoshizora.jpg",
-        author:" Feng",
-        year: "2010",
-        genre: ["Comedy"],
-        status: "Hoàn thành",
-        rating: 7.5,
-        intro:"",
-        review:"",
-        link: "",
-        link:""
-
-    },
-    {
-        title: "Akame ga Kill",
-        othertitle: "Akame ga Kiru",
-        image: "img/Akamegakill.jpg",
-        author: "Takahiro",
-        year: "20/3/2010",
-        genre: ["Dark Fantasy", "Action"],
-        status: "Hoàn thành",
-        rating: "9.25",
-        intro:`Tatsumi, một chàng trai trẻ từ vùng quê nghèo, gia nhập tổ chức ám sát bí mật Night Raid với mong muốn thay đổi đế chế thối nát. 
-               Hành trình của cậu là những trận chiến đẫm máu, những mất mát đau lòng và câu hỏi liệu cái ác có thể bị tiêu diệt bằng cái ác hay không.`,
-        review: ["Đây là bộ anime đầu tiên mình xem",
-                "Cái tên Tatsumi mình lấy từ nhân vật chính của bộ truyện này:v",
-        ],
-        link: ""
-    },
-    {
-        title: "Date a Live",
-        othertitle: "Dēto A Raibu",
-        image: "img/datealive.jpg",
-        author: "Tachibana Kōshi",
-        year: "2011",
-        genre: ["Harem","Comedy","Fantasy"],
-        status: "Hoàn thành",
-        rating: 8.2,
-        intro: "",
-        review: [],
-        link: ""
-    },
-    {
-        title:"Song Tinh Diệt Quỷ Sư",
-        othertitle: "Sōsei no Onmyōji",
-        image: "img/onmyoji.jpg",
-        author: "Yoshiaki Sukeno",
-        year: "2013",
-        genre: ["Adventure","Comedy","Supernatural"],
-        status: "Hoàn thành",
-        rating: 8.8,
-        intro: "",
-        review:[],
-        link: ""
-    },
-    {
-        title: "Fly Me to The Moon",
-        othertitle: "Tonikaku Kawaii",
-        image: "img/tonikaku.jpg",
-        author: "Hata Kenjiro",
-        year:"14/2/2018,",
-        genre:["Comedy"],
-        status:"Đang tiến hành",
-        rating: 8.4,
-        intro: "",
-        review:[],
-        link: ""
-
-    },
-    {
-        title:"The Angel Next Door Spoils Me Rotten",
-        othertitle: "Otonari no Tenshi-sama ni Itsu no Ma ni ka Dame Ningen ni Sareteita Ken",
-        image:"img/tenshi.jpg",
-        author:"Saekisan",
-        year:"2018",
-        genre: ["Comedy"],
-        status: "Đang tiến hành",
-        rating: 9,
-        intro: `Amane, một nam sinh bình thường, tình cờ giúp đỡ Mahiru — cô gái được cả trường gọi là "thiên thần" — trong một đêm mưa. 
-                Từ đó, cô hàng xóm hoàn hảo bỗng dưng xuất hiện mỗi ngày để nấu ăn và chăm sóc cậu...`,
-        review:[],
-        link: "https://www.youtube.com/playlist?list=PLxSscENEp7JiAoaxImun4H_FRDkFI9k3Q"
-
-
-
-    },
-    {
-        title: "The Tunnal to Summer, the Exit of Goodbye",
-        othertitle: "Natsu e no Tonneru, Sayonara no Deguchi",
-        image: "img/theTunnal.jpg",
-        author: "Hachimoku Mei",
-        year: "2022",
-        genre:["Comedy"],
-        status: "Hoàn thành",
-        rating: 8.5,
-        intro: "",
-        review: [],
-        link: ""
-
-    },
-    {
-        title: "Josee, the Tiger and the Fish",
-        othertitle:"Joze to Tora to Sakana-tachi",
-        image: "img/josee.jpg",
-        author: "Seiko Tanabe",
-        year: "2020",
-        genre:["Comedy"],
-        status: "Hoàn thành",
-        rating: 9.1,
-        intro:`Tsuneo, sinh viên đại học đam mê lặn biển, tình cờ gặp Josee — cô gái ngồi xe lăn với tính cách gai góc nhưng tâm hồn đầy màu sắc. 
-                Hai người dần kéo nhau ra khỏi vỏ bọc của chính mình và cùng nhau theo đuổi những ước mơ tưởng chừng không thể.`,
-        review:[],
-        link: ""
-    },
-
-    {
-        title: "Shikimori's Not Just a Cutie",
-        othertitle:"Kawaii dake ja Nai Shikimori-san",
-        image: "img/shikimori.jpg",
-        author: "Maki Keigo",
-        year: "2019",
-        genre: ["Comedy"],
-        status: "Hoàn thành",
-        rating: 8.87,
-        intro:  `Izumi là một nam sinh trung học bị xui xẻo bẩm sinh.Bạn gái của cậu là một cô bạn cùng lớp tên Shikimori.
-        Shikimori rất xinh đẹp, dễ thương và tràn đầy tình yêu, tuy nhiên mỗi khi Izumi gặp rắc rối, cô lại trở thành người bạn gái ngầu nhất trên đời!
-        Cuộc sống thường ngày dễ thương và đầy những pha kỳ thú của Shikimori, Izumi và những người bạn sẽ bắt đầu tại đây.`,
-        review:[],
-        link: "https://www.youtube.com/playlist?list=PLdM751AKK4aPXPNBecZyWlru3Qe45ggrU"
-    },
-    
-    {
-        title: "One Piece",
-        othertitle:"One Piece",
-        image: "img/onepiece.jpg",
-        author:"Oda Eiichiro",
-        year: "1997",
-        genre: ["Shonen"],
-        status: "Đang tiến hành",
-        rating: 9,
-        intro: `Monkey D. Luffy, chàng trai mang trong mình sức mạnh của Trái Ác Quỷ, lên đường chinh phục Grand Line với giấc mơ trở thành Vua Hải Tặc.
-                Cùng với đội thuyền ngày càng đông đảo, mỗi hòn đảo là một cuộc phiêu lưu mới, một kẻ thù mạnh hơn và một bí ẩn lớn hơn đang chờ đợi.`,
-        review:["lan man, dài quá"],
-        link:""
-
-
-    },
-    {
-        title: "Grand Blue",
-        othertitle: "Guranburu",
-        image: "img/grandblue.jpg",
-        author: "Kenji Inoue",
-        year: "2014",
-        genre: ["Comedy"],
-        status: "Đang tiến hành",
-        rating: 8.75,
-        intro: "",
-        review: ["bộ này bựa vl"],
-                    
-         link: ""
-
-    },
-
-    {
-        title: "KonoSuba: Gods Blessing on this Wonderful World!",
-        othertitle:"Kono subarashii sekai ni shukufuku o!",
-        image: "img/konosuba.jpg",
-        author: "Natsume Akatsuki",
-        year: "2013",
-        genre: ["Adventure", "Action", "Comedy"],
-        status: "Đang tiến hành",
-        rating: 9.37,
-        intro: "Satou Kazuma, một hikikomori đam mê trò chơi, Nhưng cuộc sống ngắn ngủi của anh kết thúc vì tai nạn giao thông lãng xẹt ... Nhưng khi anh ta tỉnh dậy, một cô gái xinh đẹp, người tự gọi mình là một nữ thần đã ở phía trước đôi mắt anh ấy và đưa anh ấy đến một thế giới khác, Khi sang thế giới mới, cậu gặp ngày càng nhiều mấy cô nàng không điên thì cũng tâm thần, riết rồi cậu muốn quay trở về thế giới cũ càng nhanh càng tốt...",
-        review: ["peak isekai, mấy con gà biết gì:))"],
-        chapters: [
-            {number: 1, title: "May I Go to a New World with this Self-Proclaimed Goddess!", date: "26/05/2026", link: "https://mangadex.org/chapter/9d5246d2-f7e1-4149-8576-202bf8ba0584"},
-        ],
-        link: "https://www.youtube.com/playlist?list=PLOVZwvNm10lXlKl2VHXGmpqqygCG6XbPw",
-        linkDoc:">>>"
-    }
-    
-    
-];
 
 // --- CẤU HÌNH PHÂN TRANG ---
 let currentView = "home";
@@ -479,7 +226,7 @@ function goToMangaDetail(manga) {
        <div class="pt-6 space-y-6">
             <div class="space-y-2">
                 <h4 class="text-base font-black text-gray-800 flex items-center gap-2">
-                    <span class="w-1.5 h-4 bg-amber-500 rounded-full"></span> Giới thiệu
+                    <span class="w-1.5 h-4 bg-amber-500 rounded-full"></span> Summary
                 </h4>
                 <div class="bg-gray-100 p-5 rounded-xl border border-gray-100">
                     ${
@@ -583,7 +330,6 @@ function setupSearchEvent() {
     searchInput.addEventListener("input", filterData);
 }
 
-// --- HÀM 5: Reset toàn bộ bộ lọc quay về trạng thái ban đầu khi bấm vào Logo ---
 // --- HÀM 5: Reset toàn bộ bộ lọc quay về trạng thái ban đầu khi bấm vào chữ Trang Chủ ---
 function resetToAll() {
     // 1. Xóa chữ trong ô tìm kiếm và đặt lại thể loại về tất cả
@@ -602,6 +348,9 @@ function resetToAll() {
     const viewAllBtn = document.getElementById("view-all-btn");
     if (mainPage) mainPage.classList.remove("hidden");
     if (viewAllBtn) viewAllBtn.classList.remove("hidden");
+
+    const carousel = document.getElementById("popular-carousel");
+    if (carousel) carousel.classList.remove("hidden");
 
     // 4. ĐẶT BIẾN TRẠNG THÁI VỀ HOME ĐỂ NÚT QUAY LẠI HOẠT ĐỘNG ĐÚNG
     currentView = "home"; 
