@@ -242,6 +242,9 @@
         rating: 9.37,
         intro: "Satou Kazuma, một hikikomori đam mê trò chơi, Nhưng cuộc sống ngắn ngủi của anh kết thúc vì tai nạn giao thông lãng xẹt ... Nhưng khi anh ta tỉnh dậy, một cô gái xinh đẹp, người tự gọi mình là một nữ thần đã ở phía trước đôi mắt anh ấy và đưa anh ấy đến một thế giới khác, Khi sang thế giới mới, cậu gặp ngày càng nhiều mấy cô nàng không điên thì cũng tâm thần, riết rồi cậu muốn quay trở về thế giới cũ càng nhanh càng tốt...",
         review: ["peak isekai, mấy con gà biết gì:))"],
+        chapters: [
+            {number: 1, title: "May I Go to a New World with this Self-Proclaimed Goddess!", date: "26/05/2026", link: "https://mangadex.org/chapter/9d5246d2-f7e1-4149-8576-202bf8ba0584"},
+        ],
         link: "https://www.youtube.com/playlist?list=PLOVZwvNm10lXlKl2VHXGmpqqygCG6XbPw",
         linkDoc:">>>"
     }
@@ -445,29 +448,6 @@ function goToMangaDetail(manga) {
         `;
     }
 
-    //  Kiểm tra Link đọc truyện
-    let linkDocHTML = "";
-    if (manga.linkDoc && manga.linkDoc.trim() !== "") {
-        linkDocHTML = `
-            <div class="space-y-2 pt-2 border-t border-gray-100 mt-2">
-                <p class="text-sm font-semibold text-gray-800">
-                    📖 Link đọc: 
-                    <a href="${manga.linkDoc}" target="_blank" class="text-amber-600 font-bold hover:text-amber-700 transition-colors cursor-pointer ml-1">
-                        Tại đây ➔
-                    </a>
-                </p>
-            </div>
-        `;
-    } else {
-        linkDocHTML = `
-            <div class="space-y-2 pt-2 border-t border-gray-100 mt-2">
-                <p class="text-sm font-semibold text-gray-800">
-                    📖 Link đọc: 
-                    <span class="text-gray-400 font-semibold italic ml-1">Update soon...</span>
-                </p>
-            </div>
-        `;
-    }
     // 2. Đổ dữ liệu chi tiết vào trang (Đã sửa nút Quay lại và xử lý ẩn link xem)
     detailContent.innerHTML = `
         <div class="flex flex-col sm:flex-row gap-6 items-start pb-6 border-b border-gray-100">
@@ -510,33 +490,27 @@ function goToMangaDetail(manga) {
                 </div>
             </div>
 
-            <div class="space-y-2">
-                <h4 class="text-base font-black text-gray-800 flex items-center gap-2">
-                    <span class="w-1.5 h-4 bg-amber-500 rounded-full"></span> Review
-                </h4>
-                <div class="bg-gray-100 p-5 rounded-xl border border-gray-100">
-                    ${
-                        (Array.isArray(manga.review) && manga.review.length > 0) || (typeof manga.review === 'string' && manga.review.trim() !== "")
-                        ? `
-                            <ul class="list-disc pl-5 space-y-2 text-gray-700 text-[14px] leading-relaxed font-medium">
-                                ${
-                                    Array.isArray(manga.review)
-                                    ? manga.review.map(item => `<li>${item}</li>`).join('')
-                                    : `<li>${manga.review}</li>`
-                                }
-                            </ul>
-                        `
-                        : `
-                            <p class="text-gray-700 text-[14px] font-medium">
-                                Đang cập nhật...
-                            </p>
-                        `
-                    }
-                </div>
-            </div>
+           <div class="space-y-2">
+    <h4 class="text-base font-black text-gray-800 flex items-center gap-2">
+        <span class="w-1.5 h-4 bg-amber-500 rounded-full"></span> Chapter List
+    </h4>
+    <div class="border border-gray-100 rounded-xl overflow-hidden">
+        ${
+            manga.chapters && manga.chapters.length > 0
+            ? manga.chapters.map(ch => `
+                <a ${ch.link && ch.link.trim() !== "" ? `href="${ch.link}" target="_blank"` : ""}
+                   class="flex justify-between items-center px-4 py-3 text-sm border-b border-gray-100 last:border-0 hover:bg-amber-50 transition-colors ${ch.link && ch.link.trim() !== "" ? "cursor-pointer" : "cursor-default"}">
+                    <span class="text-gray-800 font-medium">Chapter ${ch.number}${ch.title ? ': ' + ch.title : ''}</span>
+                    <span class="text-gray-400 text-xs">${ch.date}</span>
+                </a>
+            `).join('')
+            : `<p class="text-gray-400 text-sm p-4">Đang cập nhật...</p>`
+        }
+    </div>
+</div>
 
             ${linkXemHTML}
-            ${linkDocHTML}
+
         </div>
 
     `;
