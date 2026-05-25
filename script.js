@@ -3,6 +3,22 @@
 // ==========================================
     const mangaData = [
     {
+         title: "The Day I Became a God",
+        othertitle: "Kamisama ni Natta Hi",
+        image: "img/kami.jpg",
+        author: "Maeda Jun",
+        year: "2020",
+        genre: ["Slice of life"],
+        status: "Hoàn thành",
+        rating: 8.3,
+        intro: `Narukami Youta, một nam sinh chuẩn bị thi đại học, bất ngờ gặp được một cô bé tự do là thần linh toàn tri tên Hina — 
+                người tuyên bố thế giới sẽ diệt vong trong 30 ngày. vui vẻ bên nhau.`,
+        review: "",
+        link: "",
+        linkDoc: ""
+
+    },
+    {
         title: "Seraph of the End: Vampire Reign",
         othertitle: "Owari no seraph",
         image: "img/owari.jpg",
