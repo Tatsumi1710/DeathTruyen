@@ -361,7 +361,7 @@ function resetToAll() {
     }
     window.scrollTo(0, 0);
 }
-// --- HÀM MỚI 1: Hiển thị 6 bộ truyện demo ra ngoài trang chủ ---
+// --- HÀM MỚI 6: Hiển thị 6 bộ truyện demo ra ngoài trang chủ ---
 // --- HÀM 1: Hiển thị 6 bộ truyện demo ra ngoài trang chủ (An toàn tuyệt đối) ---
 function renderDemoMangas(mangas) {
     try {
@@ -429,7 +429,6 @@ function renderDemoMangas(mangas) {
     }
 }
 
-// --- HÀM 2: Cài đặt sự kiện click chuyển phân vùng trang (Chống crash) ---
 
 // --- HÀM MỚI 2: Cài đặt sự kiện chuyển phân vùng trang khi click nút ---
 function setupNavigationEvents() {

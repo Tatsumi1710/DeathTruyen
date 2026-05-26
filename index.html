@@ -8,6 +8,78 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-[#f9f9f9] text-[#1a1a1a] font-sans antialiased min-h-screen flex flex-col">
+    <!-- LOADING SCREEN -->
+<div id="loading-screen" style="
+    position: fixed; inset: 0; background: #e8d5b7;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    z-index: 9999; overflow: hidden;
+">
+    <!-- Ảnh nền kéo từ trên xuống -->
+    <div id="loading-bg" style="
+        position: absolute; top: -100%; left: 0; right: 0;
+        height: 50%; 
+        
+        transition: top 0.8s ease-in-out;
+    "></div>
+
+    <!-- Chữ DeathTruyen -->
+   <div id="loading-title" style="
+    font-size: 2.5rem; font-weight: 900;
+    opacity: 0;
+    z-index: 1; letter-spacing: 2px;
+    ">
+        <span style="color: #e05a8a;">Death</span><span style="color: #f59e0b;">Truyen</span>
+    </div>
+
+    <!-- Bánh xe quay -->
+    <div style="margin-top: 40px; z-index: 1;">
+        <svg width="40" height="40" viewBox="0 0 40 40" style="animation: spin 1.2s linear infinite;">
+            <circle cx="20" cy="20" r="18" fill="none" stroke="#c8a882" stroke-width="2"/>
+            <line x1="20" y1="2" x2="20" y2="38" stroke="#c8a882" stroke-width="2"/>
+            <line x1="2" y1="20" x2="38" y2="20" stroke="#c8a882" stroke-width="2"/>
+            <line x1="6" y1="6" x2="34" y2="34" stroke="#c8a882" stroke-width="2"/>
+            <line x1="34" y1="6" x2="6" y2="34" stroke="#c8a882" stroke-width="2"/>
+            <circle cx="20" cy="20" r="3" fill="#c8a882"/>
+        </svg>
+    </div>
+</div>
+
+<style>
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes fadeInText {
+    from { opacity: 0; letter-spacing: 8px; }
+    to { opacity: 1; letter-spacing: 2px; }
+}
+</style>
+
+<script>
+window.addEventListener('load', function() {
+    // Kéo ảnh nền từ trên xuống NHANH, thẳng đến cuối luôn
+    setTimeout(() => {
+        const bg = document.getElementById('loading-bg');
+        bg.style.transition = 'top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        bg.style.top = '0';
+    }, 100);
+
+    // Hiện chữ DeathTruyen sau 0.8s, fade từ nhạt đến đậm chậm hơn
+    setTimeout(() => {
+        const title = document.getElementById('loading-title');
+        title.style.animation = 'fadeInText 1.2s ease forwards';
+    }, 800);
+
+    // Ẩn loading screen sau 2.5 giây
+    setTimeout(() => {
+        const screen = document.getElementById('loading-screen');
+        screen.style.transition = 'opacity 0.5s ease';
+        screen.style.opacity = '0';
+        setTimeout(() => screen.style.display = 'none', 500);
+    }, 2500);
+});
+</script>
     <input type="text" id="top-page-anchor" style="position: absolute; top: 0; opacity: 0; pointer-events: none;" />
     <header class="bg-amber-600 text-white sticky top-0 z-50 shadow-md">
     <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-14">
