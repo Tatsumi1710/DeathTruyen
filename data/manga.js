@@ -5,7 +5,7 @@
     {
          title: "The Day I Became a God",
         othertitle: "Kamisama ni Natta Hi",
-        image: "img/kami.jpg",
+        image: "../img/kami.jpg",
         author: "Maeda Jun",
         year: "2020",
         genre: ["Slice of life"],
@@ -15,13 +15,12 @@
                 người tuyên bố thế giới sẽ diệt vong trong 30 ngày. vui vẻ bên nhau.`,
         review: "",
         link: "",
-        linkDoc: ""
 
     },
     {
         title: "Seraph of the End: Vampire Reign",
         othertitle: "Owari no seraph",
-        image: "img/owari.jpg",
+        image: "../img/owari.jpg",
         author: "Kagami Takaya",
         year: "2012",
         genre: ["Action"],
@@ -32,7 +31,7 @@
                 Dù bị giam cầm, nhưng cậu có hoài bão lớn, khao khát có ngày giết hết toàn bộ ma cà rồng.`,
         review: "",
         link: "",
-        linkDoc: "",
+        
 
 
     },    
@@ -40,7 +39,7 @@
     {
         title: "Kem Đá",
         othertitle: "Hyouka",
-        image:"img/hyouka.jpg",
+        image:"../img/hyouka.jpg",
         author: "Honobu Yonezawa",
         year: "2012",
         genre: ["Slice of life"],
@@ -49,13 +48,13 @@
         intro: "",
         review: "",
         link: "",
-        linkDoc: ""
+       
 
     },
     {
          title: "Is This a Zombie?",
         othertitle: "Kore wa Zonbi desu ka?",
-        image: "img/Zombie.jpg",
+        image: "../img/Zombie.jpg",
         author:"Shinichi Kimura",
         year:"2010",
         genre:["Comedy"],
@@ -64,12 +63,12 @@
         intro:"",
         review: "",
         link: "",
-        linkDoc: ""
+        
     },
     {
         title: "A Bridge to the Starry Skies",
         othertitle:"Hoshizora E kakuru",
-        image: "img/hoshizora.jpg",
+        image: "../img/hoshizora.jpg",
         author:" Feng",
         year: "2010",
         genre: ["Comedy"],
@@ -78,13 +77,13 @@
         intro:"",
         review:"",
         link: "",
-        link:""
+        
 
     },
     {
         title: "Akame ga Kill",
         othertitle: "Akame ga Kiru",
-        image: "img/Akamegakill.jpg",
+        image: "../img/Akamegakill.jpg",
         author: "Takahiro",
         year: "20/3/2010",
         genre: ["Dark Fantasy", "Action"],
@@ -100,7 +99,7 @@
     {
         title: "Date a Live",
         othertitle: "Dēto A Raibu",
-        image: "img/datealive.jpg",
+        image: "../img/datealive.jpg",
         author: "Tachibana Kōshi",
         year: "2011",
         genre: ["Harem","Comedy","Fantasy"],
@@ -113,7 +112,7 @@
     {
         title:"Song Tinh Diệt Quỷ Sư",
         othertitle: "Sōsei no Onmyōji",
-        image: "img/onmyoji.jpg",
+        image: "../img/onmyoji.jpg",
         author: "Yoshiaki Sukeno",
         year: "2013",
         genre: ["Adventure","Comedy","Supernatural"],
@@ -126,7 +125,7 @@
     {
         title: "Fly Me to The Moon",
         othertitle: "Tonikaku Kawaii",
-        image: "img/tonikaku.jpg",
+        image: "../img/tonikaku.jpg",
         author: "Hata Kenjiro",
         year:"14/2/2018,",
         genre:["Comedy"],
@@ -140,7 +139,7 @@
     {
         title:"The Angel Next Door Spoils Me Rotten",
         othertitle: "Otonari no Tenshi-sama ni Itsu no Ma ni ka Dame Ningen ni Sareteita Ken",
-        image:"img/tenshi.jpg",
+        image:"../img/tenshi.jpg",
         author:"Saekisan",
         year:"2018",
         genre: ["Comedy"],
@@ -157,7 +156,7 @@
     {
         title: "The Tunnal to Summer, the Exit of Goodbye",
         othertitle: "Natsu e no Tonneru, Sayonara no Deguchi",
-        image: "img/theTunnal.jpg",
+        image: "../img/theTunnal.jpg",
         author: "Hachimoku Mei",
         year: "2022",
         genre:["Comedy"],
@@ -171,7 +170,7 @@
     {
         title: "Josee, the Tiger and the Fish",
         othertitle:"Joze to Tora to Sakana-tachi",
-        image: "img/josee.jpg",
+        image: "../img/josee.jpg",
         author: "Seiko Tanabe",
         year: "2020",
         genre:["Comedy"],
@@ -186,7 +185,7 @@
     {
         title: "Shikimori's Not Just a Cutie",
         othertitle:"Kawaii dake ja Nai Shikimori-san",
-        image: "img/shikimori.jpg",
+        image: "../img/shikimori.jpg",
         author: "Maki Keigo",
         year: "2019",
         genre: ["Comedy"],
@@ -202,7 +201,7 @@
     {
         title: "One Piece",
         othertitle:"One Piece",
-        image: "img/onepiece.jpg",
+        image: "../img/onepiece.jpg",
         author:"Oda Eiichiro",
         year: "1997",
         genre: ["Shonen"],
@@ -218,7 +217,7 @@
     {
         title: "Grand Blue",
         othertitle: "Guranburu",
-        image: "img/grandblue.jpg",
+        image: "../img/grandblue.jpg",
         author: "Kenji Inoue",
         year: "2014",
         genre: ["Comedy"],
@@ -235,7 +234,7 @@
     {
         title: "KonoSuba: Gods Blessing on this Wonderful World!",
         othertitle:"Kono subarashii sekai ni shukufuku o!",
-        image: "img/konosuba.jpg",
+        image: "../img/konosuba.jpg",
         author: "Natsume Akatsuki",
         year: "2013",
         genre: ["Adventure", "Action", "Comedy"],
