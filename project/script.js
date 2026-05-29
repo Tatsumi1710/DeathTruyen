@@ -242,17 +242,42 @@ function goToMangaDetail(manga) {
         <span class="w-1.5 h-4 bg-amber-500 rounded-full"></span> Chapter List
     </h4>
     <div class="border border-gray-100 rounded-xl overflow-hidden">
-        ${
-            manga.chapters && manga.chapters.length > 0
-            ? manga.chapters.map(ch => `
-                <a ${ch.link && ch.link.trim() !== "" ? `href="${ch.link}" target="_blank"` : ""}
-                   class="flex justify-between items-center px-4 py-3 text-sm border-b border-gray-100 last:border-0 hover:bg-amber-50 transition-colors ${ch.link && ch.link.trim() !== "" ? "cursor-pointer" : "cursor-default"}">
-                    <span class="text-gray-800 font-medium">Chapter ${ch.number}${ch.title ? ': ' + ch.title : ''}</span>
-                    <span class="text-gray-400 text-xs">${ch.date}</span>
-                </a>
-            `).join('')
-            : `<p class="text-gray-400 text-sm p-4">Đang cập nhật...</p>`
-        }
+
+    
+       ${  // hiển thị nút xem thêm
+    manga.chapters && manga.chapters.length > 0  
+    ? (() => {
+        const limit = 15;
+        const visibleChaps = manga.chapters.slice(0, limit);
+        const hiddenChaps = manga.chapters.slice(limit);
+
+        const renderChap = ch => `
+            <a ${ch.link && ch.link.trim() !== "" ? `href="${ch.link}" target="_blank"` : ""}
+               class="flex justify-between items-center px-4 py-3 text-sm border-b border-gray-100 last:border-0 hover:bg-amber-50 transition-colors ${ch.link && ch.link.trim() !== "" ? "cursor-pointer" : "cursor-default"}">
+                <span class="text-gray-800 font-medium">Chapter ${ch.number}${ch.title ? ': ' + ch.title : ''}</span>
+                <span class="text-gray-400 text-xs">${ch.date}</span>
+            </a>
+        `;
+
+        return `
+            ${visibleChaps.map(renderChap).join('')}
+            ${hiddenChaps.length > 0 ? `
+                <div id="hidden-chaps" class="hidden">
+                    ${hiddenChaps.map(renderChap).join('')}
+                </div>
+                <button onclick="
+                    const el = document.getElementById('hidden-chaps');
+                    const isHidden = el.classList.contains('hidden');
+                    el.classList.toggle('hidden');
+                    this.innerHTML = isHidden ? '▲ Thu gọn' : '➕️ Xem thêm';
+                " class="w-full py-3 text-sm text-amber-600 font-semibold hover:bg-amber-50 transition-colors border-t border-gray-100 cursor-pointer">
+                    ➕️ Xem thêm 
+                </button>
+            ` : ''}
+        `;
+    })()
+    : `<p class="text-gray-400 text-sm p-4">Đang cập nhật...</p>`
+}
     </div>
 </div>
 
