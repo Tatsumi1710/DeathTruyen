@@ -27,7 +27,7 @@
         rating: 8.3,
         intro: `Narukami Youta, một nam sinh chuẩn bị thi đại học, bất ngờ gặp được một cô bé tự do là thần linh toàn tri tên Hina — 
                 người tuyên bố thế giới sẽ diệt vong trong 30 ngày. vui vẻ bên nhau.`,
-        review: "",
+        chapters: [],
         link: "",
 
     },
@@ -43,7 +43,7 @@
         intro: `Một loại Virus xuất hiện trên Trái đất và giết hết tất cả những người bị nhiễm có tuổi trên 13. 
                 Cùng lúc đó, ma cà rồng xuất hiện từ lòng đất sâu thẳm và biến loài người thành nô lệ. Nhân vật chính Hyakuya Yuuichirou là một trẻ mồ côi, bị ma cà rồng xem như loài vật cho chúng hút máu. 
                 Dù bị giam cầm, nhưng cậu có hoài bão lớn, khao khát có ngày giết hết toàn bộ ma cà rồng.`,
-        review: "",
+        chapters: [],
         link: "",
         
 
@@ -60,7 +60,7 @@
         status: "Đang tiến hành",
         rating: 8.7,
         intro: "",
-        review: "",
+        chapter: [],
         link: "",
        
 
@@ -75,7 +75,7 @@
         status: "Hoàn thành",
         rating: 8,
         intro:"",
-        review: "",
+        chapters :[],
         link: "",
         
     },
@@ -89,7 +89,7 @@
         status: "Hoàn thành",
         rating: 7.5,
         intro:"",
-        review:"",
+        chapters: [],
         link: "",
         
 
@@ -105,9 +105,7 @@
         rating: "9.25",
         intro:`Tatsumi, một chàng trai trẻ từ vùng quê nghèo, gia nhập tổ chức ám sát bí mật Night Raid với mong muốn thay đổi đế chế thối nát. 
                Hành trình của cậu là những trận chiến đẫm máu, những mất mát đau lòng và câu hỏi liệu cái ác có thể bị tiêu diệt bằng cái ác hay không.`,
-        review: ["Đây là bộ anime đầu tiên mình xem",
-                "Cái tên Tatsumi mình lấy từ nhân vật chính của bộ truyện này:v",
-        ],
+        chapters: [],
         link: ""
     },
     {
@@ -120,7 +118,7 @@
         status: "Hoàn thành",
         rating: 8.2,
         intro: "",
-        review: [],
+        chapters: [],
         link: ""
     },
     {
@@ -133,7 +131,7 @@
         status: "Hoàn thành",
         rating: 8.8,
         intro: "",
-        review:[],
+        chapter: [],
         link: ""
     },
     {
@@ -146,7 +144,7 @@
         status:"Đang tiến hành",
         rating: 8.4,
         intro: "",
-        review:[],
+        chapter: [],
         link: ""
 
     },
@@ -161,7 +159,7 @@
         rating: 9,
         intro: `Amane, một nam sinh bình thường, tình cờ giúp đỡ Mahiru — cô gái được cả trường gọi là "thiên thần" — trong một đêm mưa. 
                 Từ đó, cô hàng xóm hoàn hảo bỗng dưng xuất hiện mỗi ngày để nấu ăn và chăm sóc cậu...`,
-        review:[],
+        chapters: [],
         link: "https://www.youtube.com/playlist?list=PLxSscENEp7JiAoaxImun4H_FRDkFI9k3Q"
 
 
@@ -177,7 +175,7 @@
         status: "Hoàn thành",
         rating: 8.5,
         intro: "",
-        review: [],
+        chapters: [],
         link: ""
 
     },
@@ -192,7 +190,7 @@
         rating: 9.1,
         intro:`Tsuneo, sinh viên đại học đam mê lặn biển, tình cờ gặp Josee — cô gái ngồi xe lăn với tính cách gai góc nhưng tâm hồn đầy màu sắc. 
                 Hai người dần kéo nhau ra khỏi vỏ bọc của chính mình và cùng nhau theo đuổi những ước mơ tưởng chừng không thể.`,
-        review:[],
+        chapter: [],
         link: ""
     },
 
@@ -208,7 +206,7 @@
         intro:  `Izumi là một nam sinh trung học bị xui xẻo bẩm sinh.Bạn gái của cậu là một cô bạn cùng lớp tên Shikimori.
         Shikimori rất xinh đẹp, dễ thương và tràn đầy tình yêu, tuy nhiên mỗi khi Izumi gặp rắc rối, cô lại trở thành người bạn gái ngầu nhất trên đời!
         Cuộc sống thường ngày dễ thương và đầy những pha kỳ thú của Shikimori, Izumi và những người bạn sẽ bắt đầu tại đây.`,
-        review:[],
+        chapters: [],
         link: "https://www.youtube.com/playlist?list=PLdM751AKK4aPXPNBecZyWlru3Qe45ggrU"
     },
     
@@ -223,7 +221,7 @@
         rating: 9,
         intro: `Monkey D. Luffy, chàng trai mang trong mình sức mạnh của Trái Ác Quỷ, lên đường chinh phục Grand Line với giấc mơ trở thành Vua Hải Tặc.
                 Cùng với đội thuyền ngày càng đông đảo, mỗi hòn đảo là một cuộc phiêu lưu mới, một kẻ thù mạnh hơn và một bí ẩn lớn hơn đang chờ đợi.`,
-        review:["lan man, dài quá"],
+        chapters: [],
         link:""
 
 
@@ -238,8 +236,7 @@
         status: "Đang tiến hành",
         rating: 8.75,
         intro: "",
-        review: ["bộ này bựa vl"],
-                    
+        chapters: [],            
          link: ""
 
     },
