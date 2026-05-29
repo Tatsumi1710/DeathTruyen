@@ -8,7 +8,7 @@
         image: "../img/classassin.jpg",
         author: "Matsui Yūsei",
         year: "2012",
-        genre: ["action"],
+        genre: ["Action"],
         statsus: "Hoàn thành",
         rating: 9,
         intro:``,

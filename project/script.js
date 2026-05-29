@@ -22,7 +22,7 @@ function renderReviews(mangasToDisplay) {
     document.getElementById("pagination-container").innerHTML = "";
 
     if (mangasToDisplay.length === 0) {
-        container.innerHTML = `<p class="text-center text-gray-400 my-8 text-sm">Không tìm thấy truyện nào phù hợp...</p>`;
+        container.innerHTML = `<p class="text-center text-gray-800 my-8 text-sm">Không tìm thấy truyện nào phù hợp...</p>`;
         return;
     }
 
@@ -572,19 +572,28 @@ function setupDropdownEvents() {
     
     dropdownButtons.forEach(btn => {
         btn.addEventListener("click", function() {
-            // Lấy tên thể loại được gắn ở thuộc tính data-genre
             const selectedGenre = this.getAttribute("data-genre");
-            
-            // Cập nhật biến thể loại toàn cục và tiến hành lọc dữ liệu
             currentGenre = selectedGenre;
+
+            // ✅ THÊM: Chuyển sang trang all-manga và ẩn trang chủ
+            const mainPage = document.getElementById("main-page");
+            const allMangaPage = document.getElementById("all-manga-page");
+            const viewAllBtn = document.getElementById("view-all-btn");
+            const carousel = document.getElementById("popular-carousel");
+
+            if (mainPage) mainPage.classList.add("hidden");
+            if (allMangaPage) allMangaPage.classList.remove("hidden");
+            if (viewAllBtn) viewAllBtn.classList.add("hidden");
+            if (carousel) carousel.classList.add("hidden");
+
+            currentView = "all"; // ✅ Cập nhật trạng thái
+            currentPage = 1;
+
             filterData();
-            
-            // Cuộn trang xuống mượt mà để người dùng nhìn thấy kết quả ngay
-            window.scrollTo({ top: 150, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     });
 }
 
-// Gọi kích hoạt hàm này cùng với các hàm khởi chạy ban đầu ở cuối file script.js
-setupDropdownEvents();
+
 
