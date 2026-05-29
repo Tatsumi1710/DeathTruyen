@@ -3,7 +3,21 @@
 // ==========================================
     const mangaData = [
     {
-         title: "The Day I Became a God",
+        title: "Assassination Classroom",
+        othertitle: "Ansatsu Kyōshitsu",
+        image: "../img/classassin.jpg",
+        author: "Matsui Yūsei",
+        year: "2012",
+        genre: ["action"],
+        statsus: "Hoàn thành",
+        rating: 9,
+        intro:``,
+        chapters: [],
+        link:""
+    },
+    
+    {
+        title: "The Day I Became a God",
         othertitle: "Kamisama ni Natta Hi",
         image: "../img/kami.jpg",
         author: "Maeda Jun",
