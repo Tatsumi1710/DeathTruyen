@@ -9,7 +9,7 @@
         author: "Matsui Yūsei",
         year: "2012",
         genre: ["Action"],
-        statsus: "Hoàn thành",
+        status: "Hoàn thành",
         rating: 9,
         intro:``,
         chapters: [],
