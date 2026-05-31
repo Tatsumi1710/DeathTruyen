@@ -500,8 +500,8 @@ function setupNavigationEvents() {
 function setupCarousel() {
     // Lấy các bộ rating >= 9, sắp xếp theo rating giảm dần
     const popularMangas = [...mangaData]
-        .filter(m => parseFloat(m.rating) >= 9)
-        .sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
+       .sort((a,b) => parseFloat(b.rating) - parseFloat(a.rating))
+       .slice(0,8);
 
     const track = document.getElementById("carousel-track");
     const dotsContainer = document.getElementById("carousel-dots");
@@ -519,31 +519,37 @@ function setupCarousel() {
     currentView = "home";
     goToMangaDetail(manga);
 });
+ /// Ảnh nền đằng sau
+      slide.innerHTML = `  
+    <div class="absolute inset-0" style="overflow: hidden;">
+        <img src="${manga.image}" alt="${manga.title}"    
+             class="w-full h-full object-cover object-center" style="filter:  blur(0px)  brightness(0.8); transform: scale(1.15);">
+    </div>
 
-        slide.innerHTML = `
-            <!-- Ảnh nền -->
-            <div class="absolute inset-0">
-                <img src="${manga.image}" alt="${manga.title}" 
-                     class="w-full h-full object-cover object-top">
-                <!-- Lớp tối đè lên -->
-                <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
-            </div>
+    <div class="absolute inset-0 flex flex-row items-center px-10 gap-8">
+        <!-- Ảnh bìa nhỏ bên trái -->
+        <div class="flex-shrink-0 w-36 h-52 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20">
+            <img src="${manga.image}" alt="${manga.title}" class="w-full h-full object-cover">
+        </div>
 
-            <!-- Chữ đè lên -->
-            <div class="absolute inset-0 flex flex-col justify-center px-10 max-w-2xl">
-                <div class="flex items-center gap-2 mb-2">
-                    <span class="text-amber-400 font-black text-lg">⭐ ${manga.rating}/10</span>
-                    
-                </div>
-                <h2 class="text-white font-black text-2xl sm:text-3xl leading-tight mb-3 drop-shadow-lg">${manga.title}</h2>
-                <p class="text-white/80 text-sm leading-relaxed line-clamp-3 drop-shadow">${manga.intro}</p>
-                <div class="mt-4 flex items-center gap-2 text-xs text-white/60">
-                    <span>✏️ ${manga.author}</span>
-                    <span>•</span>
-                    <span class="text-amber-400 font-semibold">${manga.status}</span>
-                </div>
+        <!-- Thông tin bên phải -->
+        <div class="flex flex-col max-w-xl">
+            <h2 class="text-white font-black text-2xl sm:text-3xl leading-tight mb-3 drop-shadow-lg">${manga.title}</h2>
+            <div class="flex items-center gap-2 mb-2 flex-wrap">
+                ${manga.genre.map(g => `<span class="bg-white/20 text-white text-xs px-2 py-0.5 rounded font-medium">${g}</span>`).join('')}
             </div>
-        `;
+            
+            <p class="text-white/80 text-sm leading-relaxed line-clamp-3 drop-shadow">${manga.intro}</p>
+            <div class="mt-4 flex items-center gap-2 text-xs text-white/60">
+                <span>✏️ ${manga.author}</span>
+                <span>•</span>
+                <span class="text-amber-400 font-semibold">${manga.status}</span>
+                <span>•</span>
+                <span class="text-amber-400 font-semibold">⭐ ${manga.rating}/10</span>
+            </div>
+        </div>
+    </div>
+`;
         track.appendChild(slide);
 
         // Dot
