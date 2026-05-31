@@ -3,6 +3,21 @@
 // ==========================================
     const mangaData = [
     {
+        title: "Thất nghiệp chuyển sinh",
+        othertitle: "Mushoku Tensei ",
+        image: "../img/mushoku.jpg",
+        author: "Rifujin na Magonote",
+        year: "2014",
+        genre: ["Adventure"],
+        status: "Đang tiến hành",
+        rating: 9.2,
+        intro: ``,
+        chapters: [],
+        link: ""
+
+    },
+    
+    {
         title: "Assassination Classroom",
         othertitle: "Ansatsu Kyōshitsu",
         image: "../img/classassin.jpg",
