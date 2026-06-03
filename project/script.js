@@ -391,69 +391,66 @@ function resetToAll() {
 function renderDemoMangas(mangas) {
     try {
         const demoContainer = document.getElementById("demo-container");
-        if (!demoContainer) {
-            console.error("Không tìm thấy thẻ #demo-container trong HTML!");
-            return;
-        }
+        if (!demoContainer) return;
         demoContainer.innerHTML = "";
-
         if (!mangas || mangas.length === 0) return;
 
-        // Lấy tối đa 6 bộ truyện đầu tiên
-        const demoList = mangas.slice(0, 6);
-
+        const demoList = mangas.slice(0, 16); // 8 cột x 2 hàng
+        
         demoList.forEach(manga => {
             const card = document.createElement("article");
-            card.className = "w-full bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-amber-200 transition-all duration-200 flex flex-col sm:flex-row gap-5 items-start cursor-pointer";
-            
+            card.className = "cursor-pointer group";
             card.addEventListener("click", () => {
-    currentView = "home"; // Ghi nhớ đang click từ trang chủ demo
-    goToMangaDetail(manga);
-});
-
-            // Đổ HTML đồng bộ với dữ liệu gốc của bạn
+                currentView = "home";
+                goToMangaDetail(manga);
+            });
             card.innerHTML = `
-                <div class="w-32 h-44 flex-shrink-0 overflow-hidden rounded-xl border border-gray-100 shadow-sm">
-                    <img src="${manga.image || ''}" alt="${manga.title || ''}" class="w-full h-full object-cover">
+                <div class="overflow-hidden rounded-lg shadow-sm group-hover:shadow-md transition-all" style="aspect-ratio: 2/3;">
+                    <img src="${manga.image || ''}" alt="${manga.title || ''}" class="w-full h-full object-cover group-hover:scale-106 transition-transform duration-300">
                 </div>
-
-                <div class="flex-grow space-y-1.5 text-sm w-full">
-                <div class="flex justify-between items-start gap-4 mb-1">
-                    <h2 class="text-xl font-black tracking-tight text-gray-950">${manga.title}</h2>
-                    <div class="flex-shrink-0 bg-amber-50 border border-amber-200 px-3 py-1 rounded-xl text-center min-w-[80px]">
-                        <div class="flex items-center justify-center font-black text-amber-600 text-base">
-                            <span>${manga.rating}</span>
-                            <span class="text-amber-500/80 font-bold ml-0.5">/10</span>
-                        </div>
-                        <span class="text-[9px] text-amber-400 block font-bold tracking-wider -mt-0.5">⭐ RATE</span>
-                    </div>
+                <div class="mt-1.5 px-0.5">
+                    <p class="text-xs font-semibold text-gray-800 line-clamp-2 leading-tight">${manga.title}</p>
+                    <p class="text-[10px] text-amber-500 font-bold mt-0.5">⭐ ${manga.rating}/10</p>
                 </div>
-                
-                
-                
-                <ul class="space-y-1 text-gray-700 font-normal">
-                    <li><span class ="text-gray-700 font-medium">✏️ Tên khác:</span> ${manga.othertitle}</li>
-                    <li><span class="text-gray-700 font-medium">🔹 Tác giả:</span> ${manga.author}</li>
-                    <li><span class="text-gray-700 font-medium">📅 Xuất bản:</span> ${manga.year}</li>
-                    <li><span class="text-gray-700 font-medium">📌 Tình trạng:</span> ${manga.status}</li>
-                </ul>
-                <ul class="space-y-1 text-gray-700 font-normal">
-                    <li>
-                        <span class="text-gray-700 font-medium">🏷️ Thể loại:</span>
-                        <span class="inline-flex flex-wrap gap-1">
-                            ${manga.genre.map(g => `<span class="bg-gray-200 text-amber-600 px-2 py-0.5 rounded text-xs font-medium">${g}</span>`).join('')}
-                        </span>
-                    </li>
-                </ul>
-            </div>
             `;
             demoContainer.appendChild(card);
         });
-    } catch (error) {
-        console.error("Lỗi xảy ra trong hàm renderDemoMangas:", error);
-    }
+
+        // 8 cột total, hiện 7, ẩn 1 bên phải
+        const maxOffset = 1;
+        let offset = 0;
+
+       function updateGrid() {
+    const wrapper = demoContainer.parentElement;
+    const colWidth = wrapper.getBoundingClientRect().width / 4;
+    demoContainer.style.transform = `translateX(-${offset * colWidth}px)`;
+    demoContainer.style.transition = "transform 0.4s ease";
+
+    const prevBtn = document.getElementById("demo-prev");
+    const nextBtn = document.getElementById("demo-next");
+    const fade = document.getElementById("demo-fade");
+
+    if (prevBtn) prevBtn.classList.toggle("hidden", offset === 0);
+    if (nextBtn) nextBtn.classList.toggle("hidden", offset >= maxOffset);
+    if (fade) fade.classList.toggle("hidden", offset >= maxOffset);
 }
 
+        const nextBtn = document.getElementById("demo-next");
+        const prevBtn = document.getElementById("demo-prev");
+
+        if (nextBtn) nextBtn.onclick = () => {
+            if (offset < maxOffset) { offset++; updateGrid(); }
+        };
+        if (prevBtn) prevBtn.onclick = () => {
+            if (offset > 0) { offset--; updateGrid(); }
+        };
+
+        updateGrid();
+
+    } catch (error) {
+        console.error("Lỗi renderDemoMangas:", error);
+    }
+}
 
 // --- HÀM MỚI 2: Cài đặt sự kiện chuyển phân vùng trang khi click nút ---
 function setupNavigationEvents() {
@@ -465,24 +462,17 @@ function setupNavigationEvents() {
         const allMangaPage = document.getElementById("all-manga-page");
         const detailPage = document.getElementById("detail-page");
 
-        if (viewAllBtn) {
-            viewAllBtn.onclick = function() {
-                mainPage.classList.add("hidden");
-                detailPage.classList.add("hidden");
-                allMangaPage.classList.remove("hidden");
-                viewAllBtn.classList.add("hidden"); 
-
-                document.getElementById("popular-carousel").classList.add("hidden");
-                
-                currentPage = 1; 
-                renderReviews(mangaData);
-
-                // Scroll lên đầu SAU khi render xong
-                setTimeout(() => {
-                    window.scrollTo(0, 0);
-                }, 50);
-            };
-        }
+       if (viewAllBtn) {    ///xem tất cả
+    viewAllBtn.onclick = function() {
+        mainPage.classList.add("hidden");
+        detailPage.classList.add("hidden");
+        allMangaPage.classList.remove("hidden");
+        document.getElementById("popular-carousel").classList.add("hidden");
+        currentPage = 1;
+        renderReviews(mangaData);
+        setTimeout(() => { window.scrollTo(0, 0); }, 50);
+    };
+}
 
         if (backToHomeBtn) {
             backToHomeBtn.onclick = function() {

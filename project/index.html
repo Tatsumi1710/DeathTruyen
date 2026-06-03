@@ -193,18 +193,28 @@ window.addEventListener('load', function() {
         <span class="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full tracking-wider"> Popular Titles</span>
     </div>
 </div>
-        
-        <div id="main-page" class="space-y-6">
-            <h2 class="text-xl font-bold text-gray-800 border-b border-gray-100 pb-2 mt-12">Latest Updates</h2>
-            <div id="demo-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            </div>
-            
-            <div class="flex justify-center pt-4">
-                <button id="view-all-btn" class="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-2.5 rounded-xl shadow-sm transition-all flex items-center gap-1 cursor-pointer text-sm">
-                     Tất cả các truyện ➔
-                </button>
-            </div>
-        </div>
+    <!--khung truyện ngang-->
+<div id="main-page" class="space-y-6">
+
+    <!-- Tiêu đề Latest Updates -->
+    <h2 class="text-xl font-bold text-gray-800 mt-8">Latest Updates</h2>
+
+    <!-- Grid ảnh -->
+    <div class="relative overflow-hidden">
+        <div id="demo-container" class="gap-4"></div>
+        <div id="demo-fade" class="absolute top-0 right-0 h-full w-24 bg-gradient-to-l from-[#f9f9f9] to-transparent pointer-events-none z-10"></div>
+        <button id="demo-next" class="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 shadow-md w-9 h-9 rounded-full flex items-center justify-center text-gray-600 hover:text-amber-600 hover:border-amber-400 transition-all cursor-pointer">›</button>
+        <button id="demo-prev" class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 shadow-md w-9 h-9 rounded-full flex items-center justify-center text-gray-600 hover:text-amber-600 hover:border-amber-400 transition-all cursor-pointer hidden">‹</button>
+    </div>
+
+    <!-- Nút Xem tất cả ở góc phải bên dưới -->
+    <div class="flex justify-end">
+        <button id="view-all-btn" class="text-sm font-semibold text-amber-600 hover:text-amber-700 transition-colors cursor-pointer flex items-center gap-1">
+            › Xem tất cả truyện
+        </button>
+    </div>
+
+</div>
 
         <div id="all-manga-page" class="hidden space-y-6">
             <div id="all-manga-top"></div> 

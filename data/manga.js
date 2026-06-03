@@ -3,6 +3,20 @@
 // ==========================================
     const mangaData = [
     {
+        title: "Hige o Soru",
+        othertitle: "Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway",
+        image: "../img/hige.jpg",
+        author: "Shimesaba",
+        year: "2018",
+        genre: ["Comedy", "Slice of life"],
+        status: "Hoàn thành",
+        rating: 8.52,
+        intro: ``,
+        chapter: [],
+        link: ""
+
+    },
+    {
         title: "Tamako love story",
         othertitle: "Tamako rabusutōrī",
         image: "../img/tamako.jpg",

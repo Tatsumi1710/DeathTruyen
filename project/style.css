@@ -1,9 +1,7 @@
-/* Hiệu ứng chuyển động mượt mà khi đổi màu hoặc click */
 .category-btn {
     transition: all 0.2s ease-in-out;
 }
 
-/* Tùy chỉnh thanh cuộn cho tinh tế */
 ::-webkit-scrollbar {
     width: 6px;
 }
@@ -17,4 +15,12 @@
 
 html, body {
     overflow-x: hidden;
+}
+
+#demo-container {
+    display: grid;
+    grid-template-columns: repeat(8, calc(100% / 7));
+    grid-template-rows: repeat(2, auto);
+    grid-auto-rows: 0px;
+    width: 100%;
 }
