@@ -3,6 +3,19 @@
 // ==========================================
     const mangaData = [
     {
+        title: "Tamako love story",
+        othertitle: "Tamako rabusutōrī",
+        image: "../img/tamako.jpg",
+        author: "Mutsuki Ichinose",
+        year: "2014",
+        genre: ["comedy", "Slice of life"],
+        status: "Hoàn thành",
+        rating: 8.43,
+        intro: ``,
+        chapter: [],
+        link: ""
+    },
+    {
         title: "Thất nghiệp chuyển sinh",
         othertitle: "Mushoku Tensei ",
         image: "../img/mushoku.jpg",
