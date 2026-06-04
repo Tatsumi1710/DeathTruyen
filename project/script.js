@@ -513,7 +513,7 @@ function setupCarousel() {
       slide.innerHTML = `  
     <div class="absolute inset-0" style="overflow: hidden;">
         <img src="${manga.image}" alt="${manga.title}"    
-             class="w-full h-full object-cover object-center" style="filter:  blur(0px)  brightness(0.8); transform: scale(1.15);">
+             class="w-full h-full object-cover object-center" style="filter:  blur(4px)  brightness(0.8); transform: scale(1.15);">
     </div>
 
     <div class="absolute inset-0 flex flex-row items-center px-10 gap-8">
@@ -526,16 +526,16 @@ function setupCarousel() {
         <div class="flex flex-col max-w-xl">
             <h2 class="text-white font-black text-2xl sm:text-3xl leading-tight mb-3 drop-shadow-lg">${manga.title}</h2>
             <div class="flex items-center gap-2 mb-2 flex-wrap">
-                ${manga.genre.map(g => `<span class="bg-white/20 text-white text-xs px-2 py-0.5 rounded font-medium">${g}</span>`).join('')}
+                ${manga.genre.map(g => `<span class="bg-white/100 text-black text-xs px-2 py-0.5 rounded font-medium">${g}</span>`).join('')}
             </div>
             
-            <p class="text-white/80 text-sm leading-relaxed line-clamp-3 drop-shadow">${manga.intro}</p>
-            <div class="mt-4 flex items-center gap-2 text-xs text-white/60">
-                <span>✏️ ${manga.author}</span>
-                <span>•</span>
-                <span class="text-amber-400 font-semibold">${manga.status}</span>
-                <span>•</span>
-                <span class="text-amber-400 font-semibold">⭐ ${manga.rating}/10</span>
+            <p class="text-white/100 text-sm leading-relaxed line-clamp-3 drop-shadow">${manga.intro}</p>
+            <div class="mt-4 flex items-center gap-2 text-xs">
+                <span class="text-white/100 font-semibold">✏️ ${manga.author}</span>
+                <span class="text-white/60">•</span>
+                <span class="text-white/100 font-semibold">${manga.status}</span>
+                <span class="text-white/60">•</span>
+                 <span class="text-amber-400 font-semibold">⭐ ${manga.rating}/10</span>
             </div>
         </div>
     </div>
