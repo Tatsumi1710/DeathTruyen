@@ -2,6 +2,20 @@
 // ĐOẠN DỮ LIỆU GỐC (DATABASE MÔ PHỎNG)
 // ==========================================
     const mangaData = [
+
+    {
+        title: "Plunderer",
+        othertitle: "Purandara",
+        image: "../img/plundere.jpg",
+        author: "Minazuki Suu",
+        year: "2020",
+        genre: ["Action", "Comedy"],
+        status: "Hoàn Thành",
+        rating: 8.36,
+        intro: ``,
+        chapter: [],
+        link: ""
+    },
     {
         title: "Hige o Soru",
         othertitle: "Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway",
@@ -139,7 +153,7 @@
     {
         title: "Akame ga Kill",
         othertitle: "Akame ga Kiru",
-        image: "../img/Akamegakill.jpg",
+        image: "../img/Akamegakill1.jpg",
         author: "Takahiro",
         year: "20/3/2010",
         genre: ["Dark Fantasy", "Action"],

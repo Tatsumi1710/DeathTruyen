@@ -2,7 +2,7 @@
 // --- CẤU HÌNH PHÂN TRANG ---
 let currentView = "home";
 let currentPage = 1;       // Mặc định ban đầu ở trang 1
-const itemsPerPage = 10;    // Số lượng truyện hiển thị trên mỗi trang
+const itemsPerPage = 24;    // Số lượng truyện hiển thị trên mỗi trang
 let globalMangasToDisplay = []; // Biến lưu trữ danh sách truyện sau khi đã tìm kiếm/lọc
 
 // Biến toàn cục để lưu trạng thái thể loại đang chọn (mặc định là hiển thị 'all')
@@ -33,53 +33,24 @@ function renderReviews(mangasToDisplay) {
 
     // 2. HIỂN THỊ CÁC THẺ TRUYỆN CỦA TRANG HIỆN TẠI
     paginatedMangas.forEach(manga => {
-        const card = document.createElement("article");
-        
-        // Class chuẩn: items-start và không ép cứng chiều cao (h-auto tự nhiên)
-        card.className = "w-full bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-amber-200 transition-all duration-200 flex flex-col sm:flex-row gap-5 items-start cursor-pointer";
-        
-        card.addEventListener("click", () => {
-    currentView = "all"; // Ghi nhớ đang click từ trang Tất cả truyện (phân trang)
-    goToMangaDetail(manga);
-});
-
-        card.innerHTML = `
-            <div class="w-32 h-48 flex-shrink-0 mx-auto sm:mx-0 overflow-hidden rounded-lg shadow-inner bg-gray-50 border border-gray-100">
-                <img src="${manga.image}" alt="${manga.title}" class="w-full h-full object-cover">
-            </div>
-            
-            <div class="flex-grow space-y-1.5 text-sm w-full">
-                <div class="flex justify-between items-start gap-4 mb-1">
-                    <h2 class="text-xl font-black tracking-tight text-gray-950">${manga.title}</h2>
-                    <div class="flex-shrink-0 bg-amber-50 border border-amber-200 px-3 py-1 rounded-xl text-center min-w-[80px]">
-                        <div class="flex items-center justify-center font-black text-amber-600 text-base">
-                            <span>${manga.rating}</span>
-                            <span class="text-amber-500/80 font-bold ml-0.5">/10</span>
-                        </div>
-                        <span class="text-[9px] text-amber-400 block font-bold tracking-wider -mt-0.5">⭐ RATE</span>
-                    </div>
-                </div>
-                
-                
-                
-                <ul class="space-y-1 text-gray-700 font-normal">
-                    <li><span class ="text-gray-700 font-medium">✏️ Tên khác:</span> ${manga.othertitle}</li>
-                    <li><span class="text-gray-700 font-medium">🔹 Tác giả:</span> ${manga.author}</li>
-                    <li><span class="text-gray-700 font-medium">📅 Xuất bản:</span> ${manga.year}</li>
-                    <li><span class="text-gray-700 font-medium">📌 Tình trạng:</span> ${manga.status}</li>
-                </ul>
-                <ul class="space-y-1 text-gray-700 font-normal">
-                    <li>
-                        <span class="text-gray-700 font-medium">🏷️ Thể loại:</span>
-                        <span class="inline-flex flex-wrap gap-1">
-                            ${manga.genre.map(g => `<span class="bg-gray-200 text-amber-600 px-2 py-0.5 rounded text-xs font-medium">${g}</span>`).join('')}
-                        </span>
-                    </li>
-                </ul>
-            </div>
-        `;
-        container.appendChild(card);
+    const card = document.createElement("article");
+    card.className = "cursor-pointer group";
+    card.addEventListener("click", () => {
+        currentView = "all";
+        goToMangaDetail(manga);
     });
+
+    card.innerHTML = `
+        <div class="overflow-hidden rounded-lg border border-gray-100 shadow-sm group-hover:shadow-md group-hover:border-amber-200 transition-all" style="aspect-ratio: 3/4;">
+            <img src="${manga.image}" alt="${manga.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="mt-1.5 px-0.5">
+            <p class="text-xs font-semibold text-gray-800 line-clamp-2 leading-tight">${manga.title}</p>
+            <p class="text-[10px] text-amber-500 font-bold mt-0.5">⭐ ${manga.rating}/10</p>
+        </div>
+    `;
+    container.appendChild(card);
+});
   
     // 3. TỰ ĐỘNG SINH CỤM NÚT PHÂN TRANG [1] [2] [3] Ở PHÍA DƯỚI DÀNH CHO BẠN
     renderPaginationControls(mangasToDisplay.length);
