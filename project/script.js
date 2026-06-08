@@ -422,7 +422,74 @@ function renderDemoMangas(mangas) {
         console.error("Lỗi renderDemoMangas:", error);
     }
 }
+  /// Mục one shot
+    function renderOneShotMangas(mangas) {
+    try {
+        const container = document.getElementById("oneshot-container");
+        if (!container) return;
+        container.innerHTML = "";
 
+        // Lọc những bộ có thể loại "One Shot" hoặc lấy 16 bộ cuối danh sách
+        const oneShotList = mangas.filter(m => 
+            m.genre && m.genre.some(g => g.toLowerCase().includes("one shot") || g.toLowerCase().includes("oneshot"))
+        );
+
+        // Nếu không có bộ nào có tag One Shot thì lấy 16 bộ cuối
+        const displayList = oneShotList.length > 0 ? oneShotList.slice(0, 16) : mangas.slice(-16);
+        const totalCols = 8;
+        const visibleCols = 6;
+
+        container.style.gridTemplateColumns = `repeat(${totalCols}, calc((100vw * 0.85 - 2rem) / ${visibleCols}))`;
+
+        displayList.forEach((manga, i) => {
+            const card = document.createElement("article");
+            card.className = "cursor-pointer group";
+            const col = i % totalCols;
+            const row = Math.floor(i / totalCols);
+            card.style.gridColumn = `${col + 1}`;
+            card.style.gridRow = `${row + 1}`;
+
+            card.addEventListener("click", () => {
+                currentView = "home";
+                goToMangaDetail(manga);
+            });
+
+            card.innerHTML = `
+                <div class="overflow-hidden rounded-lg border border-gray-100 shadow-sm group-hover:shadow-md group-hover:border-amber-200 transition-all" style="aspect-ratio: 3/4;">
+                    <img src="${manga.image || ''}" alt="${manga.title || ''}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="mt-1.5 px-0.5">
+                    <p class="text-xs font-semibold text-gray-800 line-clamp-2 leading-tight">${manga.title}</p>
+                    <p class="text-[10px] text-amber-500 font-bold mt-0.5">⭐ ${manga.rating}/10</p>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+
+        let offset = 0;
+        const maxOffset = totalCols - visibleCols;
+        const colWidth = (window.innerWidth * 0.85 - 32) / visibleCols;
+
+        function updateScroll() {
+            container.style.transform = `translateX(-${offset * colWidth}px)`;
+            document.getElementById("oneshot-prev").classList.toggle("hidden", offset === 0);
+            document.getElementById("oneshot-next").classList.toggle("hidden", offset >= maxOffset);
+            document.getElementById("oneshot-fade").classList.toggle("hidden", offset >= maxOffset);
+        }
+
+        document.getElementById("oneshot-next").onclick = () => {
+            if (offset < maxOffset) { offset++; updateScroll(); }
+        };
+        document.getElementById("oneshot-prev").onclick = () => {
+            if (offset > 0) { offset--; updateScroll(); }
+        };
+
+        updateScroll();
+
+    } catch (error) {
+        console.error("Lỗi renderOneShotMangas:", error);
+    }
+}
 // --- HÀM MỚI 2: Cài đặt sự kiện chuyển phân vùng trang khi click nút ---
 function setupNavigationEvents() {
     try {
@@ -558,6 +625,7 @@ setupSearchEvent();        // Kích hoạt tính năng gõ chữ tìm kiếm
 setupNavigationEvents(); // Kích hoạt tính năng click chuyển đổi cho nút "Xem tất cả"
 setupDropdownEvents();
 setupCarousel();
+renderOneShotMangas(mangaData); // hiển thị danh sách truyện one shot 
 // --- HÀM BỔ SUNG: Lắng nghe sự kiện click từ bảng thể loại thả xuống (Dropdown) ---
 function setupDropdownEvents() {
     const dropdownButtons = document.querySelectorAll(".menu-genre-btn");

@@ -213,7 +213,26 @@ window.addEventListener('load', function() {
             › Xem tất cả truyện
         </button>
     </div>
+    <!-- MỤC ONE SHOT -->
+<div class="mt-10">
+    <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-bold text-gray-800">One Shot</h2>
+    </div>
 
+    <div class="relative">
+        <div style="overflow: hidden;">
+            <div id="oneshot-container" style="
+                display: grid;
+                grid-template-rows: repeat(2, auto);
+                gap: 12px;
+                transition: transform 0.4s ease;
+            "></div>
+        </div>
+        <div id="oneshot-fade" class="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-[#f9f9f9] to-transparent pointer-events-none z-10"></div>
+        <button id="oneshot-prev" class="hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white border border-gray-200 shadow-md w-9 h-9 rounded-full flex items-center justify-center text-xl text-gray-600 hover:text-amber-600 cursor-pointer">‹</button>
+        <button id="oneshot-next" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white border border-gray-200 shadow-md w-9 h-9 rounded-full flex items-center justify-center text-xl text-gray-600 hover:text-amber-600 cursor-pointer">›</button>
+    </div>
+</div>
 </div>
 
         <div id="all-manga-page" class="hidden space-y-6">
@@ -226,10 +245,10 @@ window.addEventListener('load', function() {
                 </button>
             </div>
             <div id="manga-container" class="grid grid-cols-3 md:grid-cols-6 gap-4"></div>
-                </div>
+            
             
             <div id="pagination-container" class="flex justify-center gap-2 mt-6">
-                </div>
+            </div>
         </div>
 
 
@@ -245,8 +264,8 @@ window.addEventListener('load', function() {
 </main>
 
     <footer class="border-t border-gray-200 text-center py-6 text-xs text-gray-700 bg-white mt-10">
-       © DeathTruyen by Tatsumi
-    DeathTruyen Project 2026
+       © DeathTruyen Project 2026
+    
     </footer>
 
     <script src ="../data/manga.js"></script>
