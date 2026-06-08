@@ -2,7 +2,78 @@
 // ĐOẠN DỮ LIỆU GỐC (DATABASE MÔ PHỎNG)
 // ==========================================
     const mangaData = [
+    {
+        title: "Parasol Alliance",
+       othertitle: "Parasol Doumei",
+       image: "../img/parasol.jpg",
+       author: "Miura Kouji",
+       year: "2020",
+       genre: ["One shot"],
+       status: "Hoàn thành",
+       rating: 9.1,
+       intro: ``,
+       chapter: [],
+       link: ""
+    },
+    {
+       title: "The Pet Girl of Sakurasou",
+       othertitle: "Sakura-sō no Pet na Kanojo",
+       image: "../img/sakura.jpg",
+       author: "Kamoshida Hajime",
+       year: "2013",
+       genre: ["Comedy","Romance","Slice of life"],
+       status: "Hoàn Thành",
+       rating: 8.6,
+       intro: ``,
+       chapter: [],
+       link: ""
+    },
+   
+    {
+       title: "Lúc đó, tôi đã chuyển sinh thành Slime",
+       othertitle: "Tensei-shitara Suraimu datta Ken",
+       image: "../img/slime.jpg",
+       author: "Fuse",
+       year: "2016",
+       genre: ["Isekai","Action","Comdey"],
+       status: "Đang tiến hành",
+       rating: 9.3,
+       intro: ``,
+       chapter: [],
+       link: ""
+    },
+ 
+    {
+       title: "Chuunibyou demo koi ga shitai",
+       othertitle: "Hội chứng tuổi dậy thì",
+       image: "../img/chuunibyou.jpg",
+       author: "Torako",
+       year: "2012",
+       genre: ["Comedy","Romance","Slice of life","Supernatural"],
+       status: "Hoàn Thành",
+       rating: 9.45,
+       intro: ``,
+       chapter: [],
+       link: ""
+    },
 
+    {
+        
+       title: "Naruto Shippuden",
+       othertitle: "Naruto",
+       image: "../img/naruto.jpg",
+       author: "Kishimoto Masashi.",
+       year: "2007",
+       genre: ["Action", "Shounen"],
+       status: "Hoàn Thành",
+       rating: 9,
+       intro: ``,
+       chapter: [],
+       link: ""
+
+
+    },
+    
     {
         title: "Plunderer",
         othertitle: "Purandara",
