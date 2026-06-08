@@ -455,7 +455,7 @@ function renderDemoMangas(mangas) {
             });
 
             card.innerHTML = `
-                <div class="overflow-hidden rounded-lg border border-gray-100 shadow-sm group-hover:shadow-md group-hover:border-amber-200 transition-all" style="aspect-ratio: 3/4;">
+                <div class="overflow-hidden rounded-lg border border-gray-100 shadow-sm group-hover:shadow-md group-hover:border-amber-200 transition-all" style="aspect-ratio: 2/3;">
                     <img src="${manga.image || ''}" alt="${manga.title || ''}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="mt-1.5 px-0.5">
@@ -640,11 +640,13 @@ function setupDropdownEvents() {
             const allMangaPage = document.getElementById("all-manga-page");
             const viewAllBtn = document.getElementById("view-all-btn");
             const carousel = document.getElementById("popular-carousel");
+            const detailPage = document.getElementById("detail-page");
 
             if (mainPage) mainPage.classList.add("hidden");
             if (allMangaPage) allMangaPage.classList.remove("hidden");
             if (viewAllBtn) viewAllBtn.classList.add("hidden");
             if (carousel) carousel.classList.add("hidden");
+            if (detailPage) detailPage.classList.add("hidden");
 
             currentView = "all"; // ✅ Cập nhật trạng thái
             currentPage = 1;
