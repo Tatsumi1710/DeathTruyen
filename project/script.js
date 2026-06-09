@@ -345,6 +345,9 @@ function setupSearchEvent() {
 
 // --- HÀM 5: Reset toàn bộ bộ lọc quay về trạng thái ban đầu khi bấm vào chữ Trang Chủ ---
 function resetToAll() {
+    const readerPage = document.getElementById("reader-page");
+    if (readerPage) readerPage.classList.add("hidden");
+    
     // 1. Xóa chữ trong ô tìm kiếm và đặt lại thể loại về tất cả
     const searchInput = document.getElementById("search-input");
     if (searchInput) searchInput.value = "";

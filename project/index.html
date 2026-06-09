@@ -301,6 +301,9 @@ window.addEventListener('load', function() {
         <!-- Nút chương sau -->
         <button id="reader-next-bottom" style="background:#2c2c2e; color:#fff; border:none; border-radius:8px; width:40px; height:40px; cursor:pointer; font-size:18px; display:flex; align-items:center; justify-content:center;">▶</button>
 
+         <!-- Nút scroll lên đầu -->
+        <button onclick="document.getElementById('reader-images').scrollIntoView({behavior:'smooth'}); window.scrollTo({top:0, behavior:'smooth'});" style="background:#2c2c2e; color:#fff; border:none; border-radius:8px; width:40px; height:40px; cursor:pointer; font-size:18px; display:flex; align-items:center; justify-content:center;">↑</button>
+        
     </div>
 </div>
 
