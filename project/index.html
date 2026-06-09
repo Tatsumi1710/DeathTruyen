@@ -164,6 +164,8 @@ window.addEventListener('load', function() {
             </div>
 
             <a href="#" class="px-4 py-4 hover:bg-amber-700 transition-colors hidden sm:block">Xếp Hạng</a>
+            <a href="#" onclick="openAboutPage()" class="px-4 py-4 hover:bg-amber-700 transition-colors hidden sm:block">Giới Thiệu</a>
+           
            
         </nav>
 
@@ -215,26 +217,33 @@ window.addEventListener('load', function() {
         </button>
     </div>
     <!-- MỤC ONE SHOT -->
-<div class="mt-10">
+
+<div style="
+    background: #e9d8bd; 
+    width: 100vw; 
+    position: relative; 
+    left: 50%; 
+    transform: translateX(-50%);
+    padding: 32px 0;
+    margin-top: 40px;
+">
+    <div style="width: 85%; margin: 0 auto; padding: 0 1rem;">
     <div class="flex items-center justify-between mb-4">
         <h2 class="text-xl font-bold text-gray-800">One Shot</h2>
     </div>
 
     <div class="relative">
-        <div style="overflow: hidden;">
-            <div id="oneshot-container" style="
-                display: grid;
-                grid-template-rows: repeat(2, auto);
-                gap: 12px;
-                transition: transform 0.4s ease;
-            "></div>
+                <div style="overflow: hidden;">
+                    <div id="oneshot-container" style="display: grid; grid-template-rows: repeat(2, auto); gap: 12px; transition: transform 0.4s ease;"></div>
+                </div>
+                <div id="oneshot-fade" class="absolute top-0 right-0 h-full w-20 pointer-events-none z-10" style="background: linear-gradient(to left, #e9d8bd, transparent);"></div>
+                <button id="oneshot-prev" class="hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white border border-gray-200 shadow-md w-9 h-9 rounded-full flex items-center justify-center text-xl text-gray-600 hover:text-amber-600 cursor-pointer">‹</button>
+                <button id="oneshot-next" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white border border-gray-200 shadow-md w-9 h-9 rounded-full flex items-center justify-center text-xl text-gray-600 hover:text-amber-600 cursor-pointer">›</button>
+            </div>
         </div>
-        <div id="oneshot-fade" class="absolute top-0 right-0 h-full w-20 bg-gradient-to-l from-[#f9f9f9] to-transparent pointer-events-none z-10"></div>
-        <button id="oneshot-prev" class="hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white border border-gray-200 shadow-md w-9 h-9 rounded-full flex items-center justify-center text-xl text-gray-600 hover:text-amber-600 cursor-pointer">‹</button>
-        <button id="oneshot-next" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white border border-gray-200 shadow-md w-9 h-9 rounded-full flex items-center justify-center text-xl text-gray-600 hover:text-amber-600 cursor-pointer">›</button>
     </div>
-</div>
-</div>
+
+</div>  <!-- đóng main-page -->
 
         <div id="all-manga-page" class="hidden space-y-6">
             <div id="all-manga-top"></div> 
@@ -262,6 +271,39 @@ window.addEventListener('load', function() {
             </div>
     </div>
 
+   <div id="reader-page" class="hidden" style="position:fixed; inset:0; z-index:999; overflow-y:auto;">
+    <div style="background:#18181b; min-height:100vh; padding-bottom:80px;">
+
+        <!-- Thanh nav trên (nhỏ gọn) -->
+        <div style="position:sticky; top:0; z-index:100; background:#27272a; border-bottom:1px solid #3f3f46; padding:8px 16px; display:flex; align-items:center; justify-content:space-between;">
+            <button id="reader-back-btn" style="color:#f59e0b; background:none; border:none; cursor:pointer; font-size:13px; font-weight:700;">⬅ Quay lại</button>
+            <h3 id="reader-title" style="color:#fff; font-size:13px; font-weight:700; text-align:center; flex:1; margin:0 12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;"></h3>
+            <div style="width:60px;"></div>
+        </div>
+
+        <!-- Ảnh truyện -->
+        <div id="reader-images" style="max-width:800px; margin:0 auto;"></div>
+
+    </div>
+
+    <!-- Thanh điều hướng dưới STICKY -->
+    <div style="position:fixed; bottom:0; left:0; right:0; z-index:200; background:#1c1c1e; border-top:1px solid #3f3f46; padding:10px 16px; display:flex; align-items:center; justify-content:center; gap:8px;">
+        
+        <!-- Nút Home -->
+        <button onclick="resetToAll()" style="background:#2c2c2e; color:#fff; border:none; border-radius:8px; width:40px; height:40px; cursor:pointer; font-size:18px; display:flex; align-items:center; justify-content:center;">🏠</button>
+
+        <!-- Nút chương trước -->
+        <button id="reader-prev-bottom" style="background:#2c2c2e; color:#fff; border:none; border-radius:8px; width:40px; height:40px; cursor:pointer; font-size:18px; display:flex; align-items:center; justify-content:center;">◀</button>
+
+        <!-- Dropdown chọn chương -->
+        <select id="chapter-select" style="background:#2c2c2e; color:#fff; border:1px solid #52525b; border-radius:8px; padding:8px 10px; font-size:13px; cursor:pointer; flex:1; max-width:200px; height:40px;"></select>
+
+        <!-- Nút chương sau -->
+        <button id="reader-next-bottom" style="background:#2c2c2e; color:#fff; border:none; border-radius:8px; width:40px; height:40px; cursor:pointer; font-size:18px; display:flex; align-items:center; justify-content:center;">▶</button>
+
+    </div>
+</div>
+
 </main>
 
     <footer class="border-t border-gray-200 text-center py-6 text-xs text-gray-700 bg-white mt-10">
@@ -281,6 +323,60 @@ window.addEventListener('load', function() {
 
         <div id="modal-content" class="p-6 sm:p-8">
             </div>
+    </div>
+</div>
+<div id="about-page" class="fixed inset-0 z-[998] hidden overflow-y-auto" style="background:#111113;">
+    <div style="max-width:860px; margin:0 auto; padding:60px 24px 80px;">
+        
+        <!-- Nút quay lại -->
+        <button onclick="closeAboutPage()" style="color:#f59e0b; background:none; border:none; cursor:pointer; font-size:14px; font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom:60px;">
+            ← Quay lại
+        </button>
+
+        <!-- Tiêu đề -->
+        <h1 style="color:#fff; font-size:2.8rem; font-weight:900; text-align:center; margin-bottom:24px;">
+            DeathTruyen là...
+        </h1>
+
+        <!-- Mô tả ngắn -->
+        <p style="color:#a1a1aa; font-size:1rem; text-align:center; line-height:1.8; max-width:620px; margin:0 auto 60px;">
+            Một trang web đọc truyện tranh được tạo ra bởi một người, vì tất cả mọi người. Không hào nhoáng, không quảng cáo — chỉ có truyện hay và những trang manga đáng để lật.
+        </p>
+
+        <!-- 4 card -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            
+            <div style="background:#1c1c1e; border-radius:16px; padding:36px 28px; text-align:center;">
+                <div style="font-size:2.5rem; margin-bottom:16px;">🚫</div>
+                <h3 style="color:#fff; font-size:1.1rem; font-weight:800; margin-bottom:12px;">Không quảng cáo</h3>
+                <p style="color:#a1a1aa; font-size:0.875rem; line-height:1.7;">DeathTruyen được tạo ra để bạn đọc truyện, không phải để xem quảng cáo. Trải nghiệm đọc sạch sẽ, không popup, không banner làm phiền.</p>
+            </div>
+
+            <div style="background:#1c1c1e; border-radius:16px; padding:36px 28px; text-align:center;">
+                <div style="font-size:2.5rem; margin-bottom:16px;">📖</div>
+                <h3 style="color:#fff; font-size:1.1rem; font-weight:800; margin-bottom:12px;">Môi trường văn minh</h3>
+                <p style="color:#a1a1aa; font-size:0.875rem; line-height:1.7;">Vào đọc truyện thôi đừng có chửi nhau làm gì? Đến lúc ăn ban thì lại kêu.</p>
+            </div>
+
+            <div style="background:#1c1c1e; border-radius:16px; padding:36px 28px; text-align:center;">
+                <div style="font-size:2.5rem; margin-bottom:16px;">⚖️</div>
+                <h3 style="color:#fff; font-size:1.1rem; font-weight:800; margin-bottom:12px;">Tuân thủ pháp luật bản quyền</h3>
+                <p style="color:#a1a1aa; font-size:0.875rem; line-height:1.7;">Vì web này không có tên miền lên không phải lo.</p>
+            </div>
+
+            <div style="background:#1c1c1e; border-radius:16px; padding:36px 28px; text-align:center;">
+                <div style="font-size:2.5rem; margin-bottom:16px;">💀</div>
+                <h3 style="color:#fff; font-size:1.1rem; font-weight:800; margin-bottom:12px;"> Dự án </h3>
+                <p style="color:#a1a1aa; font-size:0.875rem; line-height:1.7;">Một dự án nhỏ làm bằng cả tấm lòng. Hy vọng bạn tìm được bộ truyện yêu thích của mình tại đây.</p>
+            </div>
+
+            <!-- Card nguồn thu - full width -->
+            <div style="background:#1c1c1e; border-radius:16px; padding:36px 28px; text-align:center; grid-column: span 2;">
+                <div style="font-size:2.5rem; margin-bottom:16px;">💰</div>
+                <h3 style="color:#fff; font-size:1.1rem; font-weight:800; margin-bottom:12px;">Về nguồn thu</h3>
+                <p style="color:#a1a1aa; font-size:0.875rem; line-height:1.7;">DeathTruyen hoàn toàn miễn phí và không có quảng cáo. Nếu bạn muốn ủng hộ dự án này tiếp tục tồn tại, mọi sự đóng góp đều được trân trọng.</p>
+            </div>
+        </div>
     </div>
 </div>
 </body>

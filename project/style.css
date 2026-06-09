@@ -24,3 +24,26 @@ html, body {
     grid-auto-rows: 0px;
     width: 100%;
 }
+
+#reader-page.hidden {
+    height: 0 !important;
+    overflow: hidden !important;
+    min-height: 0 !important;
+}
+
+#reader-page::-webkit-scrollbar {
+    width: 10px;
+}
+
+#reader-page::-webkit-scrollbar-track {
+    background: #e9eae9;
+}
+
+#reader-page::-webkit-scrollbar-thumb {
+    background: #373535;
+    border-radius: 999px;
+}
+
+#reader-page::-webkit-scrollbar-thumb:hover {
+    background: #3b3939;
+}
