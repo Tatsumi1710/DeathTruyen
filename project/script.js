@@ -40,16 +40,19 @@ function renderReviews(mangasToDisplay) {
         currentView = "all";
         goToMangaDetail(manga);
     });
-
-    card.innerHTML = `
-        <div class="overflow-hidden rounded-lg border border-gray-100 shadow-sm group-hover:shadow-md group-hover:border-amber-200 transition-all" style="aspect-ratio: 3/4;">
-            <img src="${manga.image}" alt="${manga.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        </div>
-        <div class="mt-1.5 px-0.5">
-            <p class="text-xs font-semibold text-gray-800 line-clamp-2 leading-tight">${manga.title}</p>
-            <p class="text-[10px] text-amber-500 font-bold mt-0.5">⭐ ${manga.rating}/10</p>
-        </div>
-    `;
+      /// hiển thị số chap ở dưới truyện
+      card.innerHTML = `
+    <div class="overflow-hidden rounded-lg border border-gray-100 shadow-sm group-hover:shadow-md group-hover:border-amber-200 transition-all" style="aspect-ratio: 3/4;">
+        <img src="${manga.image}" alt="${manga.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+    </div>
+    <div class="mt-1.5 px-0.5 text-center">
+        <p class="text-xs font-semibold text-gray-800 line-clamp-2 leading-tight">${manga.title}</p>
+        ${manga.chapters && manga.chapters.length > 0 
+            ? `<p class="text-[11px] text-gray-500 font-medium mt-1">Chapter ${manga.chapters[0].number}</p>` 
+            : ''}
+    </div>
+`;
+    
     container.appendChild(card);
 });
   
@@ -367,6 +370,8 @@ function resetToAll() {
     const detailPage = document.getElementById("detail-page");
     if (allMangaPage) allMangaPage.classList.add("hidden");
     if (detailPage) detailPage.classList.add("hidden");
+    const followPage = document.getElementById("following-page");
+    if (followPage) followPage.classList.add("hidden");
     
     // 3. Hiện lại trang chủ demo và nút Xem tất cả
     const mainPage = document.getElementById("main-page");
@@ -404,13 +409,17 @@ function renderDemoMangas(mangas) {
                 currentView = "home";
                 goToMangaDetail(manga);
             });
+
+            /// hiển thị số chap ở dưới truyện
             card.innerHTML = `
                 <div class="overflow-hidden rounded-lg shadow-sm group-hover:shadow-md transition-all" style="aspect-ratio: 2/3;">
                     <img src="${manga.image || ''}" alt="${manga.title || ''}" class="w-full h-full object-cover group-hover:scale-106 transition-transform duration-300">
                 </div>
-                <div class="mt-1.5 px-0.5">
+                <div class="mt-1.5 px-0.5 text-center">
                     <p class="text-xs font-semibold text-gray-800 line-clamp-2 leading-tight">${manga.title}</p>
-                    <p class="text-[10px] text-amber-500 font-bold mt-0.5">⭐ ${manga.rating}/10</p>
+                    ${manga.chapters && manga.chapters.length > 0 
+                        ? `<p class="text-[11px] text-gray-500 font-medium mt-1">Chapter ${manga.chapters[0].number}</p>` 
+                        : ''}
                 </div>
             `;
             demoContainer.appendChild(card);
@@ -535,6 +544,8 @@ function setupNavigationEvents() {
         detailPage.classList.add("hidden");
         allMangaPage.classList.remove("hidden");
         document.getElementById("popular-carousel").classList.add("hidden");
+        const followPage = document.getElementById("following-page");
+        if (followPage) followPage.classList.add("hidden");
         currentPage = 1;
         renderReviews(mangaData);
         setTimeout(() => { window.scrollTo(0, 0); }, 50);
@@ -644,6 +655,30 @@ function setupCarousel() {
         goToSlide((currentSlide + 1) % popularMangas.length);
     }, 4000);
 }
+
+// THÊM MỚI: TỰ ĐỘNG SẮP XẾP TRUYỆN MỚI CẬP NHẬT LÊN ĐẦU
+
+// Hàm phụ trợ: Lấy thời gian của chapter mới nhất để làm chuẩn so sánh
+function getLatestChapterTime(manga) {
+    // Nếu truyện chưa có chapter nào thì cho thời gian = 0 (rớt xuống cuối)
+    if (!manga.chapters || manga.chapters.length === 0) return 0;
+    
+    const dateString = manga.chapters[0].date;
+    if (!dateString) return 0;
+
+    // Tách chuỗi ngày (VD: "26/05/2026" thành mảng [26, 05, 2026])
+    const parts = dateString.split('/');
+    if (parts.length === 3) {
+        // Javascript đếm tháng từ 0-11, nên phải lấy parts[1] trừ đi 1
+        return new Date(parts[2], parts[1] - 1, parts[0]).getTime();
+    }
+    return 0; 
+}
+
+// Sắp xếp lại toàn bộ mảng mangaData gốc trước khi đổ ra web
+mangaData.sort((a, b) => {
+    return getLatestChapterTime(b) - getLatestChapterTime(a);
+});
 
 // KHỞI CHẠY ỨNG DỤNG LẦN ĐẦU KHI LOAD TRANG
 renderDemoMangas(mangaData);   // Hiển thị danh sách truyện ban đầu
