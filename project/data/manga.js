@@ -2,14 +2,14 @@
 // ĐOẠN DỮ LIỆU GỐC (DATABASE MÔ PHỎNG)
 function chapterImages(mangaFolder, chNum, totalPages) {
     return Array.from({length: totalPages}, (_, i) => 
-        `../manga/chapters/${mangaFolder}/ch${chNum}/${String(i+1).padStart(2,'0')}.jpg`
+        `manga/chapters/${mangaFolder}/ch${chNum}/${String(i+1).padStart(2,'0')}.jpg`
     );
 }
     const mangaData = [
     {
        title: "Beyond the Bourdary",
        othertitle: "Kyoukai no kanata",
-       image: "../img/boundary.jpg",
+       image: "img/boundary.jpg",
        author: "Torii Nagomu",
        year: "2013",
        genre: ["Slice of life", "Dark Fantasy","School life","Comedy","Romance","Drama"],
@@ -24,7 +24,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
        title: "Josee, the tiger and the Fish",
        othertitle: "Joze to Tora to Sakana-tachi",
-       image: "../img/tigerandfish.jpg",
+       image: "img/tigerandfish.jpg",
        author: "Seiko Tanabe",
        year: "2020",
        genre: ["Slice of life","Comedy","Romance","Drama"],
@@ -41,7 +41,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
        title: "You are still in a bird cage",
        othertitle: "Kimi wa mada tori kago no naka",
-       image: "../img/birdcage.jpg",
+       image: "img/birdcage.jpg",
        author: "Hakuri",
        year: "2017",
        genre: ["One shot","Tragedy","shoujo","School life","Drama"],
@@ -57,7 +57,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
        title: "Watashi wa Jakuchu ni naritai",
        othertitle: " Tớ sẽ trở thành Jakuchu!",
-       image: "../img/jakuchu.jpg",
+       image: "img/jakuchu.jpg",
        author: "Manami Miya",
        year: "2025",
        genre: ["One shot","Seinen"],
@@ -72,7 +72,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
        title: "Nitamono Doushi",
        othertitle: "(Không) Giống như hai giọt nước",
-       image: "../img/doushi.jpg",
+       image: "img/doushi.jpg",
        author: "Efu",
        year: "2026",
        genre: ["One shot","School life","Romance","Drama"],
@@ -89,7 +89,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
        title: "Hanrou to Shoujo",
        othertitle: "Bán sói và cô bé",
-       image: "../img/hanrou.jpg",
+       image: "img/hanrou.jpg",
        author: "Fukuda Dai",
        year: "2025",
        genre: ["One shot","Tragedy","Fantasy","Slice of life","Drama"],
@@ -105,7 +105,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
        title: "Sakura no Uta",
        othertitle: "Vần thơ Sakura",
-       image: "../img/sakura1.jpg",
+       image: "img/sakura1.jpg",
        author: "Hayashi Nema",
        year: "2022",
        genre: ["One shot","Slice of life","Drama"],
@@ -122,7 +122,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
        title: "Ao và Sakura",
        othertitle: " Ao to Sakura ",
-       image: "../img/aoandsakura.jpg",
+       image: "img/aoandsakura.jpg",
        author: "Kasuka Io",
        year: "2026",
        genre: ["One shot","Romance","Comedy","Slice of life"],
@@ -139,7 +139,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
        title: "Spring Returns to Aoi's Room",
        othertitle: "Aoi no Heya ni Mata Haru ga Kita",
-       image: "../img/aoi.jpg",
+       image: "img/aoi.jpg",
        author: "Ishikawa Ireishi",
        year: "2025",
        genre: ["One shot","Romance","Slice of life"],
@@ -155,7 +155,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
        title: "Light Again",
        othertitle: "Ánh sáng cuối cùng",
-       image: "../img/lightagain.jpg",
+       image: "img/lightagain.jpg",
        author: "Arisaka Ako",
        year: "2021",
        genre: ["One shot", "Sci-fi","Drama"],
@@ -170,7 +170,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "Parasol Alliance",
        othertitle: "Parasol Doumei",
-       image: "../img/parasol.jpg",
+       image: "img/parasol.jpg",
        author: "Miura Kouji",
        year: "2020",
        genre: ["One shot"],
@@ -183,7 +183,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
        title: "The Pet Girl of Sakurasou",
        othertitle: "Sakura-sō no Pet na Kanojo",
-       image: "../img/sakura.jpg",
+       image: "img/sakura.jpg",
        author: "Kamoshida Hajime",
        year: "2013",
        genre: ["Comedy","Romance","Slice of life"],
@@ -197,7 +197,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
        title: "Lúc đó, tôi đã chuyển sinh thành Slime",
        othertitle: "Tensei-shitara Suraimu datta Ken",
-       image: "../img/slime.jpg",
+       image: "img/slime.jpg",
        author: "Fuse",
        year: "2016",
        genre: ["Isekai","Action","Comdey"],
@@ -211,7 +211,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
        title: "Chuunibyou demo koi ga shitai",
        othertitle: "Hội chứng tuổi dậy thì",
-       image: "../img/chuunibyou.jpg",
+       image: "img/chuunibyou.jpg",
        author: "Torako",
        year: "2012",
        genre: ["Comedy","Romance","Slice of life","Supernatural"],
@@ -226,7 +226,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         
        title: "Naruto Shippuden",
        othertitle: "Naruto",
-       image: "../img/naruto.jpg",
+       image: "img/naruto.jpg",
        author: "Kishimoto Masashi.",
        year: "2007",
        genre: ["Action", "Shounen"],
@@ -242,7 +242,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "Plunderer",
         othertitle: "Purandara",
-        image: "../img/plundere.jpg",
+        image: "img/plundere.jpg",
         author: "Minazuki Suu",
         year: "2020",
         genre: ["Action", "Comedy"],
@@ -255,7 +255,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "Hige o Soru",
         othertitle: "Higehiro: After Being Rejected, I Shaved and Took in a High School Runaway",
-        image: "../img/hige.jpg",
+        image: "img/hige.jpg",
         author: "Shimesaba",
         year: "2018",
         genre: ["Comedy", "Slice of life"],
@@ -269,7 +269,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "Tamako love story",
         othertitle: "Tamako rabusutōrī",
-        image: "../img/tamako.jpg",
+        image: "img/tamako.jpg",
         author: "Mutsuki Ichinose",
         year: "2014",
         genre: ["comedy", "Slice of life"],
@@ -282,7 +282,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "Thất nghiệp chuyển sinh",
         othertitle: "Mushoku Tensei ",
-        image: "../img/mushoku.jpg",
+        image: "img/mushoku.jpg",
         author: "Rifujin na Magonote",
         year: "2014",
         genre: ["Adventure"],
@@ -297,7 +297,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "Assassination Classroom",
         othertitle: "Ansatsu Kyōshitsu",
-        image: "../img/classassin.jpg",
+        image: "img/classassin.jpg",
         author: "Matsui Yūsei",
         year: "2012",
         genre: ["Action"],
@@ -311,7 +311,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "The Day I Became a God",
         othertitle: "Kamisama ni Natta Hi",
-        image: "../img/kami.jpg",
+        image: "img/kami.jpg",
         author: "Maeda Jun",
         year: "2020",
         genre: ["Slice of life"],
@@ -326,7 +326,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "Seraph of the End: Vampire Reign",
         othertitle: "Owari no seraph",
-        image: "../img/owari.jpg",
+        image: "img/owari.jpg",
         author: "Kagami Takaya",
         year: "2012",
         genre: ["Action"],
@@ -345,7 +345,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "Kem Đá",
         othertitle: "Hyouka",
-        image:"../img/hyouka.jpg",
+        image:"img/hyouka.jpg",
         author: "Honobu Yonezawa",
         year: "2012",
         genre: ["Slice of life"],
@@ -360,7 +360,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
          title: "Is This a Zombie?",
         othertitle: "Kore wa Zonbi desu ka?",
-        image: "../img/Zombie.jpg",
+        image: "img/Zombie.jpg",
         author:"Shinichi Kimura",
         year:"2010",
         genre:["Comedy"],
@@ -374,7 +374,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "A Bridge to the Starry Skies",
         othertitle:"Hoshizora E kakuru",
-        image: "../img/hoshizora.jpg",
+        image: "img/hoshizora.jpg",
         author:" Feng",
         year: "2010",
         genre: ["Comedy"],
@@ -389,7 +389,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "Akame ga Kill",
         othertitle: "Akame ga Kiru",
-        image: "../img/Akamegakill1.jpg",
+        image: "img/Akamegakill1.jpg",
         author: "Takahiro",
         year: "20/3/2010",
         genre: ["Dark Fantasy", "Action"],
@@ -403,7 +403,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "Date a Live",
         othertitle: "Dēto A Raibu",
-        image: "../img/datealive.jpg",
+        image: "img/datealive.jpg",
         author: "Tachibana Kōshi",
         year: "2011",
         genre: ["Harem","Comedy","Fantasy"],
@@ -416,7 +416,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title:"Song Tinh Diệt Quỷ Sư",
         othertitle: "Sōsei no Onmyōji",
-        image: "../img/onmyoji.jpg",
+        image: "img/onmyoji.jpg",
         author: "Yoshiaki Sukeno",
         year: "2013",
         genre: ["Adventure","Comedy","Supernatural"],
@@ -429,7 +429,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "Fly Me to The Moon",
         othertitle: "Tonikaku Kawaii",
-        image: "../img/tonikaku.jpg",
+        image: "img/tonikaku.jpg",
         author: "Hata Kenjiro",
         year:"14/2/2018,",
         genre:["Comedy"],
@@ -443,7 +443,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title:"The Angel Next Door Spoils Me Rotten",
         othertitle: "Otonari no Tenshi-sama ni Itsu no Ma ni ka Dame Ningen ni Sareteita Ken",
-        image:"../img/tenshi.jpg",
+        image:"img/tenshi.jpg",
         author:"Saekisan",
         year:"2018",
         genre: ["Comedy"],
@@ -460,7 +460,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "The Tunnal to Summer, the Exit of Goodbye",
         othertitle: "Natsu e no Tonneru, Sayonara no Deguchi",
-        image: "../img/theTunnal.jpg",
+        image: "img/theTunnal.jpg",
         author: "Hachimoku Mei",
         year: "2022",
         genre:["Comedy"],
@@ -475,7 +475,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "Shikimori's Not Just a Cutie",
         othertitle:"Kawaii dake ja Nai Shikimori-san",
-        image: "../img/shikimori.jpg",
+        image: "img/shikimori.jpg",
         author: "Maki Keigo",
         year: "2019",
         genre: ["Comedy"],
@@ -491,7 +491,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "One Piece",
         othertitle:"One Piece",
-        image: "../img/onepiece.jpg",
+        image: "img/onepiece.jpg",
         author:"Oda Eiichiro",
         year: "1997",
         genre: ["Shonen"],
@@ -507,7 +507,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "Grand Blue",
         othertitle: "Guranburu",
-        image: "../img/grandblue.jpg",
+        image: "img/grandblue.jpg",
         author: "Kenji Inoue",
         year: "2014",
         genre: ["Comedy"],
@@ -523,7 +523,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     {
         title: "KonoSuba: Gods Blessing on this Wonderful World!",
         othertitle:"Kono subarashii sekai ni shukufuku o!",
-        image: "../img/konosuba.jpg",
+        image: "img/konosuba.jpg",
         author: "Natsume Akatsuki",
         year: "2013",
         genre: ["Adventure", "Action", "Comedy"],
