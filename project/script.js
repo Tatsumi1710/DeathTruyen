@@ -89,9 +89,7 @@ function renderPaginationControls(totalItems) {
     }
     paginationDiv.appendChild(prevBtn);
 
-    // ==========================================
     // 2. CÁC NÚT SỐ TRANG [1] [2] [3]...
-    // ==========================================
     for (let i = 1; i <= totalPages; i++) {
         const btn = document.createElement("button");
         btn.innerText = i;
@@ -191,8 +189,18 @@ function goToMangaDetail(manga) {
                         ${manga.genre.map(g => `<span class="bg-amber-50 text-amber-700 border border-amber-100 px-2.5 py-0.5 rounded-md text-xs font-medium">${g}</span>`).join('')}
                     </div>
                 </div>
+           
+            <div class="flex gap-3 pt-2">
+                    <button id="follow-btn" onclick="toggleFollow('${manga.title}')" 
+                        class="px-4 py-2 rounded-xl text-sm font-bold border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white transition-colors cursor-pointer">
+                         Theo dõi
+                    </button>
+                    <button onclick="openReader(currentDetailManga, currentDetailManga.chapters.length - 1)"
+                        class="px-4 py-2 rounded-xl text-sm font-bold bg-amber-500 text-white hover:bg-amber-600 transition-colors cursor-pointer">
+                         Đọc từ đầu
+                    </button>
+                </div>
             </div>
-            
         </div>
 
        <div class="pt-6 space-y-6">
@@ -261,7 +269,6 @@ function goToMangaDetail(manga) {
 
    
    // 3. Kích hoạt sự kiện quay lại cho nút bấm ở trang chi tiết
-    // Kích hoạt sự kiện quay lại cho nút bấm ở trang chi tiết
     const backBtn = document.getElementById("back-to-list-btn");
     if (backBtn) {
         backBtn.onclick = function() {
@@ -293,6 +300,7 @@ function goToMangaDetail(manga) {
     document.getElementById("popular-carousel").classList.add("hidden");
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    checkFollowStatus(manga.title);
 }
 
 // --- HÀM 3: Lọc dữ liệu tổng hợp dựa trên cả Thể loại và Thanh tìm kiếm ---
@@ -761,6 +769,124 @@ function renderReader() {
     document.getElementById("reader-back-btn2").onclick = backFn;
 }
 
+/// Hàm truyện theo dõi
+async function toggleFollow(mangaTitle) {
+    const token = localStorage.getItem("token");
+    if (!token) {
+        openAuthModal('login');
+        return;
+    }
+
+    try {
+        const res = await fetch("http://localhost:5000/api/auth/follow", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({ mangaTitle })
+        });
+        const data = await res.json();
+        updateFollowBtn(mangaTitle, data.followedMangas);
+    } catch {
+        console.error("Lỗi theo dõi!");
+    }
+}
+ /// Hiển thị trạng thái theo dõi truyện
+function updateFollowBtn(mangaTitle, followedMangas) {
+    const btn = document.getElementById("follow-btn");
+    if (!btn) return;
+    const isFollowing = followedMangas.includes(mangaTitle);
+    btn.innerHTML = isFollowing ? " Đã theo dõi" : " Theo dõi";
+    btn.className = isFollowing
+        ? "px-4 py-2 rounded-xl text-sm font-bold bg-green-100 text-green-600 border-2 border-green-400 cursor-pointer"
+        : "px-4 py-2 rounded-xl text-sm font-bold border-2 border-amber-500 text-amber-600 hover:bg-amber-500 hover:text-white transition-colors cursor-pointer";
+    btn.setAttribute("onclick", `toggleFollow('${mangaTitle}')`);
+}
+
+async function checkFollowStatus(mangaTitle) {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+    try {
+        const res = await fetch("http://localhost:5000/api/auth/following", {
+            headers: { "Authorization": `Bearer ${token}` }
+        });
+        const data = await res.json();
+        updateFollowBtn(mangaTitle, data.followedMangas);
+    } catch {}
+}
+
+async function openFollowingPage() {
+    const token = localStorage.getItem("token");
+    if (!token) { openAuthModal('login'); return; }
+
+    try {
+        const res = await fetch("http://localhost:5000/api/auth/following", {
+            headers: { "Authorization": `Bearer ${token}` }
+        });
+        const data = await res.json();
+        const followedTitles = data.followedMangas;
+        const followedList = mangaData.filter(m => followedTitles.includes(m.title));
+
+        // Ẩn tất cả trang
+        document.getElementById("main-page").classList.add("hidden");
+        document.getElementById("all-manga-page").classList.add("hidden");
+        document.getElementById("detail-page").classList.add("hidden");
+        document.getElementById("popular-carousel").classList.add("hidden");
+
+        // Hiện trang following
+        let followPage = document.getElementById("following-page");
+        if (!followPage) {
+            followPage = document.createElement("div");
+            followPage.id = "following-page";
+            followPage.className = "space-y-6";
+            document.querySelector("main").appendChild(followPage);
+        }
+        followPage.classList.remove("hidden");
+
+        // Render
+        followPage.innerHTML = `
+            <div class="flex items-center justify-between border-b border-gray-100 pb-2 mt-6">
+                <h2 class="text-xl font-bold text-gray-900">Truyện Theo Dõi</h2>
+            </div>
+            ${followedList.length === 0 
+                ? `<p class="text-center text-gray-400 py-12">Bạn chưa theo dõi truyện nào!</p>`
+                : `<div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+                    ${followedList.map(manga => `
+                        <article class="cursor-pointer group" onclick="openFollowingDetail('${manga.title}')">
+                            <div class="overflow-hidden rounded-lg border border-gray-100 shadow-sm group-hover:shadow-md transition-all" style="aspect-ratio:3/4;">
+                                <img src="${manga.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <p class="text-xs font-semibold text-gray-800 line-clamp-2 mt-1">${manga.title}</p>
+                            <p class="text-[10px] text-amber-500 font-bold">⭐ ${manga.rating}/10</p>
+                        </article>
+                    `).join('')}
+                </div>`
+            }
+        `;
+        window.scrollTo(0, 0);
+    } catch {
+        console.error("Lỗi lấy danh sách theo dõi!");
+    }
+}
+
+function closeFollowingPage() {
+    const followPage = document.getElementById("following-page");
+    if (followPage) followPage.classList.add("hidden");
+    document.getElementById("main-page").classList.remove("hidden");
+    document.getElementById("popular-carousel").classList.remove("hidden");
+}
+
+function openFollowingDetail(title) {
+    const manga = mangaData.find(m => m.title === title);
+    if (manga) {
+        const followPage = document.getElementById("following-page");
+        if (followPage) followPage.classList.add("hidden");
+        currentView = "following";
+        goToMangaDetail(manga);
+    }
+}
+
 function openAboutPage() {
     document.getElementById("about-page").classList.remove("hidden");
     window.scrollTo(0, 0);
@@ -880,10 +1006,8 @@ function updateAuthUI() {
                 <p class="text-xs text-gray-400">Đã đăng nhập là</p>
                 <p class="font-bold text-gray-800">${user.username}</p>
             </div>
-            <button class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium"> Truyện theo dõi </button>
+           <button onclick="openFollowingPage()" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium"> Truyện theo dõi</button>
             <button class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium"> Lịch sử đọc truyện</button>
-            <button class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium"> Thiết lập</button>
-            <div class="border-t border-gray-100 mt-1"></div>
             <button onclick="handleLogout()" class="w-full text-left px-4 py-2.5 hover:bg-red-50 text-red-500 font-medium"> Đăng xuất</button>
         `;
     } else {
@@ -913,5 +1037,7 @@ document.addEventListener("click", function(e) {
         dropdown.classList.add("hidden");
     }
 });
+
+
 // Gọi khi load trang
 updateAuthUI();

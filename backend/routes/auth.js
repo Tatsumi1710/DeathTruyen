@@ -63,4 +63,47 @@ router.post('/login', async (req, res) => {
     }
 });
 
+// Middleware xác thực token
+const authMiddleware = (req, res, next) => {
+    const token = req.headers.authorization?.split(" ")[1];
+    if (!token) return res.status(401).json({ message: "Chưa đăng nhập!" });
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.userId = decoded.userId;
+        next();
+    } catch {
+        res.status(401).json({ message: "Token không hợp lệ!" });
+    }
+};
+
+// THEO DÕI / BỎ THEO DÕI
+router.post('/follow', authMiddleware, async (req, res) => {
+    try {
+        const { mangaTitle } = req.body;
+        const user = await User.findById(req.userId);
+        
+        const index = user.followedMangas.indexOf(mangaTitle);
+        if (index === -1) {
+            user.followedMangas.push(mangaTitle);
+        } else {
+            user.followedMangas.splice(index, 1);
+        }
+        await user.save();
+        res.json({ followedMangas: user.followedMangas });
+    } catch {
+        res.status(500).json({ message: "Lỗi server!" });
+    }
+});
+
+// LẤY DANH SÁCH THEO DÕI
+router.get('/following', authMiddleware, async (req, res) => {
+    try {
+        const user = await User.findById(req.userId);
+        res.json({ followedMangas: user.followedMangas });
+    } catch {
+        res.status(500).json({ message: "Lỗi server!" });
+    }
+});
+
 module.exports = router;
+
