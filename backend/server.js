@@ -19,9 +19,13 @@ mongoose.connect(process.env.MONGO_URI)
 app.use('/api/auth', require('./routes/auth'));
 
  // đặt SAU routes API
-app.use(express.static(path.join(__dirname, '..', 'project')));
+// đặt SAU routes API
+const projectPath = path.join(__dirname, '..', 'project');
+console.log('Looking for frontend at:', projectPath);
+
+app.use(express.static(projectPath));
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'project', 'index.html'));
+    res.sendFile(path.join(projectPath, 'index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
