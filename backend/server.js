@@ -24,7 +24,7 @@ const projectPath = path.join(__dirname, '..', 'project');
 console.log('Looking for frontend at:', projectPath);
 
 app.use(express.static(projectPath));
-app.get('*', (req, res) => {
+app.get('/{*path}', (req, res) => {
     res.sendFile(path.join(projectPath, 'index.html'));
 });
 
