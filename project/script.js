@@ -769,3 +769,124 @@ function openAboutPage() {
 function closeAboutPage() {
     document.getElementById("about-page").classList.add("hidden");
 }
+
+/// Hàm đăng nhập, đăng ký
+function openAuthModal(tab) {
+    document.getElementById("auth-modal").classList.remove("hidden");
+    switchTab(tab);
+}
+
+function closeAuthModal() {
+    document.getElementById("auth-modal").classList.add("hidden");
+}
+
+function switchTab(tab) {
+    document.getElementById("form-login").classList.toggle("hidden", tab !== "login");
+    document.getElementById("form-register").classList.toggle("hidden", tab !== "register");
+    document.getElementById("tab-login").className = `flex-1 py-4 text-sm font-bold ${tab === "login" ? "text-amber-600 border-b-2 border-amber-500" : "text-gray-400"}`;
+    document.getElementById("tab-register").className = `flex-1 py-4 text-sm font-bold ${tab === "register" ? "text-amber-600 border-b-2 border-amber-500" : "text-gray-400"}`;
+}
+
+async function handleLogin() {
+    const email = document.getElementById("login-email").value;
+    const password = document.getElementById("login-password").value;
+    const errorEl = document.getElementById("login-error");
+
+    try {
+        const res = await fetch("http://localhost:5000/api/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+
+        if (!res.ok) {
+            errorEl.textContent = data.message;
+            errorEl.classList.remove("hidden");
+            return;
+        }
+
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        closeAuthModal();
+        updateAuthUI();
+    } catch (err) {
+        errorEl.textContent = "Lỗi kết nối server!";
+        errorEl.classList.remove("hidden");
+    }
+}
+
+async function handleRegister() {
+    const username = document.getElementById("reg-username").value;
+    const email = document.getElementById("reg-email").value;
+    const password = document.getElementById("reg-password").value;
+    const errorEl = document.getElementById("reg-error");
+
+    try {
+        const res = await fetch("http://localhost:5000/api/auth/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, email, password })
+        });
+        const data = await res.json();
+
+        if (!res.ok) {
+            errorEl.textContent = data.message;
+            errorEl.classList.remove("hidden");
+            return;
+        }
+
+        alert("Đăng ký thành công! Vui lòng đăng nhập.");
+        switchTab("login");
+    } catch (err) {
+        errorEl.textContent = "Lỗi kết nối server!";
+        errorEl.classList.remove("hidden");
+    }
+}
+
+function updateAuthUI() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const dropdown = document.getElementById("user-dropdown");
+    if (!dropdown) return;
+
+    if (user) {
+        dropdown.innerHTML = `
+            <div class="px-4 py-2 border-b border-gray-100">
+                <p class="text-xs text-gray-400">Đã đăng nhập là</p>
+                <p class="font-bold text-gray-800">${user.username}</p>
+            </div>
+            <button class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium">📚 Danh sách theo dõi</button>
+            <button class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium">🕐 Lịch sử đọc truyện</button>
+            <button class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium">⚙️ Thiết lập</button>
+            <div class="border-t border-gray-100 mt-1"></div>
+            <button onclick="handleLogout()" class="w-full text-left px-4 py-2.5 hover:bg-red-50 text-red-500 font-medium">🚪 Đăng xuất</button>
+        `;
+    } else {
+        dropdown.innerHTML = `
+            <button onclick="openAuthModal('login')" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium">🔑 Đăng nhập</button>
+            <button onclick="openAuthModal('register')" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium">📝 Đăng ký</button>
+        `;
+    }
+}
+
+function handleLogout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    location.reload();
+}
+
+function toggleDropdown() {
+    const dropdown = document.getElementById("user-dropdown");
+    dropdown.classList.toggle("hidden");
+}
+
+// Bấm ra ngoài thì đóng dropdown
+document.addEventListener("click", function(e) {
+    const btn = document.getElementById("hamburger-btn");
+    const dropdown = document.getElementById("user-dropdown");
+    if (btn && dropdown && !btn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add("hidden");
+    }
+});
+// Gọi khi load trang
+updateAuthUI();
