@@ -846,6 +846,31 @@ async function handleRegister() {
 
 function updateAuthUI() {
     const user = JSON.parse(localStorage.getItem("user"));
+    const btn = document.getElementById("hamburger-btn");
+    if (!btn) return;
+
+   if (user) {
+    const parent = btn.parentElement;
+    
+    // Đổi nút hamburger thành avatar
+    btn.innerHTML = `<span style="font-size:14px; font-weight:900;">${user.username.charAt(0).toUpperCase()}</span>`;
+    btn.className = "w-9 h-9 rounded-full bg-amber-200 text-amber-700 font-black flex items-center justify-center hover:bg-amber-300 transition-colors";
+
+    // Thêm icon thông báo nếu chưa có
+    if (!document.getElementById("notif-btn")) {
+        const notifBtn = document.createElement("button");
+        notifBtn.id = "notif-btn";
+        notifBtn.className = "w-9 h-9 rounded-full bg-amber-700/40 hover:bg-amber-700 flex items-center justify-center transition-colors";
+        notifBtn.innerHTML = `
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+        `;
+        parent.insertBefore(notifBtn, btn);
+    }
+}
+
     const dropdown = document.getElementById("user-dropdown");
     if (!dropdown) return;
 
@@ -855,16 +880,16 @@ function updateAuthUI() {
                 <p class="text-xs text-gray-400">Đã đăng nhập là</p>
                 <p class="font-bold text-gray-800">${user.username}</p>
             </div>
-            <button class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium">📚 Danh sách theo dõi</button>
-            <button class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium">🕐 Lịch sử đọc truyện</button>
-            <button class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium">⚙️ Thiết lập</button>
+            <button class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium"> Truyện theo dõi </button>
+            <button class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium"> Lịch sử đọc truyện</button>
+            <button class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium"> Thiết lập</button>
             <div class="border-t border-gray-100 mt-1"></div>
-            <button onclick="handleLogout()" class="w-full text-left px-4 py-2.5 hover:bg-red-50 text-red-500 font-medium">🚪 Đăng xuất</button>
+            <button onclick="handleLogout()" class="w-full text-left px-4 py-2.5 hover:bg-red-50 text-red-500 font-medium"> Đăng xuất</button>
         `;
     } else {
         dropdown.innerHTML = `
-            <button onclick="openAuthModal('login')" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium">🔑 Đăng nhập</button>
-            <button onclick="openAuthModal('register')" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium">📝 Đăng ký</button>
+            <button onclick="openAuthModal('login')" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium"> Đăng nhập</button>
+            <button onclick="openAuthModal('register')" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium"> Đăng ký</button>
         `;
     }
 }
