@@ -779,7 +779,7 @@ async function toggleFollow(mangaTitle) {
     }
 
     try {
-        const res = await fetch("http://localhost:5000/api/auth/follow", {
+        const res = await fetch("https://deathtruyen.onrender.com/api/auth/follow", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -809,7 +809,7 @@ async function checkFollowStatus(mangaTitle) {
     const token = localStorage.getItem("token");
     if (!token) return;
     try {
-        const res = await fetch("http://localhost:5000/api/auth/following", {
+        const res = await fetch("https://deathtruyen.onrender.com/api/auth/following", {
             headers: { "Authorization": `Bearer ${token}` }
         });
         const data = await res.json();
@@ -822,7 +822,7 @@ async function openFollowingPage() {
     if (!token) { openAuthModal('login'); return; }
 
     try {
-        const res = await fetch("http://localhost:5000/api/auth/following", {
+        const res = await fetch("https://deathtruyen.onrender.com/api/auth/following", {
             headers: { "Authorization": `Bearer ${token}` }
         });
         const data = await res.json();
@@ -920,7 +920,7 @@ async function handleLogin() {
     const errorEl = document.getElementById("login-error");
 
     try {
-        const res = await fetch("http://localhost:5000/api/auth/login", {
+        const res = await fetch("https://deathtruyen.onrender.com/api/auth/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })
@@ -950,7 +950,7 @@ async function handleRegister() {
     const errorEl = document.getElementById("reg-error");
 
     try {
-        const res = await fetch("http://localhost:5000/api/auth/register", {
+        const res = await fetch("https://deathtruyen.onrender.com/api/auth/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, email, password })
