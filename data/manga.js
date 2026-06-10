@@ -7,6 +7,152 @@ function chapterImages(mangaFolder, chNum, totalPages) {
 }
     const mangaData = [
     {
+       title: "Josee, the tiger and the Fish",
+       othertitle: "Joze to Tora to Sakana-tachi",
+       image: "../img/tigerandfish.jpg",
+       author: "Seiko Tanabe",
+       year: "2020",
+       genre: ["Slice of life","Comedy","Romance","Drama"],
+       status: "Hoàn thành",
+       rating: 9.8,
+       intro: `Câu chuyện chủ yếu xoay quanh mối quan hệ của Tsuneo và Josee. 
+               Tsuneo là một sinh viên đại học, còn Josee là một cô gái trẻ hiếm khi ra khỏi nhà do không thể đi lại được như người bình thường. 
+               Hai người họ đã vô tình gặp nhau khi Tsuneo thấy bà của Josee đưa cô ấy tản bộ vào đêm tối...`,
+       chapter: [],
+       link: "https://youtu.be/i1o9eiRFzqc?si=sg8kvbfuOF7Ftbg6"
+
+
+    },
+    {
+       title: "You are still in a bird cage",
+       othertitle: "Kimi wa mada tori kago no naka",
+       image: "../img/birdcage.jpg",
+       author: "Hakuri",
+       year: "2017",
+       genre: ["One shot","Tragedy","shoujo","School life","Drama"],
+       status: "Hoàn thành",
+       rating: 8.1,
+       intro: `Nitogi Amane và Utsuya Madoka lần đầu gặp nhau vào giữa năm 2 sơ trung. 
+              Nhưng vì một sai lầm nhỏ nhưng chết người đã khiến Amane phải trả giá đắt hơn cả người bạn thân tưởng chừng như vô hại của cô...`,
+       chapter: [],
+       link: ""
+
+
+    },
+    {
+       title: "Watashi wa Jakuchu ni naritai",
+       othertitle: " Tớ sẽ trở thành Jakuchu!",
+       image: "../img/jakuchu.jpg",
+       author: "Manami Miya",
+       year: "2025",
+       genre: ["One shot","Seinen"],
+       status: "Hoàn thành",
+       rating: 8.64,
+       intro: `Không biết nói gì nữa, chỉ biết là oneshot nhân văn`,
+       chapter: [],
+       link: ""
+
+
+    },
+    {
+       title: "Nitamono Doushi",
+       othertitle: "(Không) Giống như hai giọt nước",
+       image: "../img/doushi.jpg",
+       author: "Efu",
+       year: "2026",
+       genre: ["One shot","School life","Romance","Drama"],
+       status: "Hoàn thành",
+       rating: 9.1,
+       intro: `Teru là một thanh niên bị ám ảnh bởi tuổi thơ, tự cô lập bản thân và tránh giao tiếp với xã hội. 
+              Niềm vui duy nhất của cậu đến từ việc chơi game... cho đến khi cuộc gặp gỡ đầy định mệnh tại quán chơi game cậu hay chơi, phá vỡ thế giới bình yên của cậu.
+               Một câu chuyện cảm động, về cuộc gặp gỡ giữa hay tâm hồn lạc lối, kéo họ lại với nhau sau một đêm`,
+       chapter: [],
+       link: ""
+
+
+    },
+    {
+       title: "Hanrou to Shoujo",
+       othertitle: "Bán sói và cô bé",
+       image: "../img/hanrou.jpg",
+       author: "Fukuda Dai",
+       year: "2025",
+       genre: ["One shot","Tragedy","Fantasy","Slice of life","Drama"],
+       status: "Hoàn thành",
+       rating: 8.5,
+       intro: `Một người sói cô độc tìm thấy một cô bé bị mù...
+               Câu chuyện về một kẻ "không phải người" làm tất cả vì mạng sống của một "người"`,
+       chapter: [],
+       link: ""
+
+
+    },
+    {
+       title: "Sakura no Uta",
+       othertitle: "Vần thơ Sakura",
+       image: "../img/sakura1.jpg",
+       author: "Hayashi Nema",
+       year: "2022",
+       genre: ["One shot","Slice of life","Drama"],
+       status: "Hoàn thành",
+       rating: 8.9,
+       intro: `Vì bố mẹ ly hôn, Sakura hiện sống với bố. Em được mọi người đánh giá là "một đứa trẻ ngoan ngoãn chững chạc". 
+              Tuy nhiên, cậu bạn cùng khoá Minato đặt ra cho em một câu hỏi khiến em phải bất giác khựng mình. 
+              Lúc đó Sakura không nghĩ ngợi mấy, nhưng sau khi gặp lại mẹ, mọi thứ bắt đầu thay đổi...?`,
+       chapter: [],
+       link: ""
+
+
+    },
+    {
+       title: "Ao và Sakura",
+       othertitle: " Ao to Sakura ",
+       image: "../img/aoandsakura.jpg",
+       author: "Kasuka Io",
+       year: "2026",
+       genre: ["One shot","Romance","Comedy","Slice of life"],
+       status: "Hoàn thành",
+       rating: 8.7,
+       intro: `Fujieda Ao, một học sinh cao trung không hoà nhập được với lớp của mình. 
+               Sau giờ học cậu hay đến thư viện nơi cậu gặp cô ấy. Cô rạng rỡ, vô tư, và hay cười; đối lập hoàn toàn với cậu. 
+               Cô ấy tên là Hidaka Sakura. Ao dần bị Sakura hớp hồn. Từ cuộc gặp gỡ ấy, hạt giống “tình yêu” đã dần nảy mầm.`,
+       chapter: [],
+       link: ""
+
+
+    },
+    {
+       title: "Spring Returns to Aoi's Room",
+       othertitle: "Aoi no Heya ni Mata Haru ga Kita",
+       image: "../img/aoi.jpg",
+       author: "Ishikawa Ireishi",
+       year: "2025",
+       genre: ["One shot","Romance","Slice of life"],
+       status: "Hoàn thành",
+       rating: 9.34,
+       intro: `Câu chuyện chữa lành về Aoi — một cô gái trẻ sống tự hủy hoại bản thân, 
+               bỗng một ngày căn phòng của cô xuất hiện các biểu tượng mùa xuân (hoa anh đào, bướm) lặng lẽ dõi theo cô hằng ngày.`,
+       chapter: [],
+       link: ""
+
+
+    },
+    {
+       title: "Light Again",
+       othertitle: "Ánh sáng cuối cùng",
+       image: "../img/lightagain.jpg",
+       author: "Arisaka Ako",
+       year: "2021",
+       genre: ["One shot", "Sci-fi","Drama"],
+       status: "Hoàn thành",
+       rating: 9,
+       intro: `Trái đất mất đi nguồn sáng sau vụ va chạm của thiên thạch vào mặt trăng, từ đó, một căn bệnh lạ xuất hiện...`,
+       chapter: [],
+       link: ""
+
+
+    },
+    {
         title: "Parasol Alliance",
        othertitle: "Parasol Doumei",
        image: "../img/parasol.jpg",
@@ -309,20 +455,6 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         chapters: [],
         link: ""
 
-    },
-    {
-        title: "Josee, the Tiger and the Fish",
-        othertitle:"Joze to Tora to Sakana-tachi",
-        image: "../img/josee.jpg",
-        author: "Seiko Tanabe",
-        year: "2020",
-        genre:["Comedy"],
-        status: "Hoàn thành",
-        rating: 9.1,
-        intro:`Tsuneo, sinh viên đại học đam mê lặn biển, tình cờ gặp Josee — cô gái ngồi xe lăn với tính cách gai góc nhưng tâm hồn đầy màu sắc. 
-                Hai người dần kéo nhau ra khỏi vỏ bọc của chính mình và cùng nhau theo đuổi những ước mơ tưởng chừng không thể.`,
-        chapter: [],
-        link: ""
     },
 
     {

@@ -22,7 +22,7 @@ function renderReviews(mangasToDisplay) {
     document.getElementById("pagination-container").innerHTML = "";
 
     if (mangasToDisplay.length === 0) {
-        container.innerHTML = `<p class="text-center text-gray-800 my-8 text-sm">Không tìm thấy truyện nào phù hợp...</p>`;
+        container.innerHTML = `<p class="text-center text-gray-800 my-8 text-sm">Không tìm thấy truyện nào phù hợp</p>`;
         return;
     }
 
