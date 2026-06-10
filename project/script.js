@@ -22,6 +22,7 @@ function renderReviews(mangasToDisplay) {
     document.getElementById("pagination-container").innerHTML = "";
 
     if (mangasToDisplay.length === 0) {
+        container.className = "flex justify-center items-center w-full min-h-[300px]";
         container.innerHTML = `<p class="text-center text-gray-800 my-8 text-sm">Không tìm thấy truyện nào phù hợp</p>`;
         return;
     }
@@ -465,7 +466,7 @@ function renderDemoMangas(mangas) {
         // Nếu không có bộ nào có tag One Shot thì lấy 16 bộ cuối
         const displayList = oneShotList.length > 0 ? oneShotList.slice(0, 16) : mangas.slice(-16);
         const totalCols = 8;
-        const visibleCols = 6;
+        const visibleCols = 7;
 
         container.style.gridTemplateColumns = `repeat(${totalCols}, calc((100vw * 0.85 - 2rem) / ${visibleCols}))`;
 
@@ -495,11 +496,11 @@ function renderDemoMangas(mangas) {
         });
 
         let offset = 0;
-        const maxOffset = totalCols - visibleCols;
+        const maxOffset = totalCols - visibleCols ;
         const colWidth = (window.innerWidth * 0.85 - 32) / visibleCols;
 
         function updateScroll() {
-            container.style.transform = `translateX(-${offset * colWidth}px)`;
+            container.style.transform = `translateX(-${offset * colWidth * 1.75}px)`;
             document.getElementById("oneshot-prev").classList.toggle("hidden", offset === 0);
             document.getElementById("oneshot-next").classList.toggle("hidden", offset >= maxOffset);
             document.getElementById("oneshot-fade").classList.toggle("hidden", offset >= maxOffset);

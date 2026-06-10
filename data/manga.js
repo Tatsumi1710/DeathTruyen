@@ -7,6 +7,21 @@ function chapterImages(mangaFolder, chNum, totalPages) {
 }
     const mangaData = [
     {
+       title: "Beyond the Bourdary",
+       othertitle: "Kyoukai no kanata",
+       image: "../img/boundary.jpg",
+       author: "Torii Nagomu",
+       year: "2013",
+       genre: ["Slice of life", "Dark Fantasy","School life","Comedy","Romance","Drama"],
+       status: "Hoàn thành",
+       rating: 9.2,
+       intro: `Mirai và Senpai.`,
+       chapter: [],
+       link: ""
+
+
+    },
+    {
        title: "Josee, the tiger and the Fish",
        othertitle: "Joze to Tora to Sakana-tachi",
        image: "../img/tigerandfish.jpg",
