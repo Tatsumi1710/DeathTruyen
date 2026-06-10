@@ -47,3 +47,41 @@ html, body {
 #reader-page::-webkit-scrollbar-thumb:hover {
     background: #3b3939;
 }
+
+/* --- CHẾ ĐỘ TỐI (DARK MODE) --- */
+body.dark-theme {
+    background-color: #121212 !important;
+    color: #e5e7eb !important;
+}
+
+/* Biến nền trắng thành nền đen xám */
+body.dark-theme .bg-white,
+
+body.dark-theme #main-page,
+body.dark-theme #all-manga-page,
+body.dark-theme #detail-content,
+body.dark-theme footer {
+    background-color: #18181b !important;
+    border-color: #27272a !important;
+}
+
+/* Làm trắng các chữ đen để dễ đọc */
+body.dark-theme .text-gray-800,
+body.dark-theme .text-gray-900,
+body.dark-theme .text-gray-950 {
+    color: #e1e1e2 !important;
+}
+
+body.dark-theme .text-gray-700,
+body.dark-theme .text-gray-600 {
+    color: #dee0e3 !important;
+}
+
+/* Làm tối khung dropdown */
+body.dark-theme .bg-gray-100 {
+    background-color: #454444 !important;
+}
+
+body.dark-theme .hover\:bg-amber-50:hover {
+    background-color: #497ae3 !important;
+}

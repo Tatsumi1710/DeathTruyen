@@ -893,10 +893,14 @@ async function openFollowingPage() {
                             <div class="overflow-hidden rounded-lg border border-gray-100 shadow-sm group-hover:shadow-md transition-all" style="aspect-ratio:3/4;">
                                 <img src="${manga.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                             </div>
-                            <p class="text-xs font-semibold text-gray-800 line-clamp-2 mt-1">${manga.title}</p>
-                            <p class="text-[10px] text-amber-500 font-bold">⭐ ${manga.rating}/10</p>
-                        </article>
-                    `).join('')}
+                            <div class="mt-1.5 px-0.5 text-center">
+                            <p class="text-xs font-semibold text-gray-800 line-clamp-2 leading-tight">${manga.title}</p>
+                            ${manga.chapters && manga.chapters.length > 0 
+                                ? `<p class="text-[11px] text-gray-500 font-medium mt-1">Chapter ${manga.chapters[0].number}</p>` 
+                                : ''}
+                            </div>
+                            </article>
+                        `).join('')}
                 </div>`
             }
         `;
@@ -1037,13 +1041,13 @@ function updateAuthUI() {
     if (!dropdown) return;
 
     if (user) {
-        dropdown.innerHTML = `
+       dropdown.innerHTML = `
             <div class="px-4 py-2 border-b border-gray-100">
                 <p class="text-xs text-gray-400">Đã đăng nhập là</p>
                 <p class="font-bold text-gray-800">${user.username}</p>
             </div>
-           <button onclick="openFollowingPage()" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium"> Truyện theo dõi</button>
-            <button class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium"> Lịch sử đọc truyện</button>
+            <button onclick="openFollowingPage()" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium"> Truyện theo dõi</button>
+            <button onclick="toggleTheme()" class="w-full text-left px-4 py-2.5 hover:bg-amber-50 text-gray-700 font-medium"> Đổi giao diện</button>
             <button onclick="handleLogout()" class="w-full text-left px-4 py-2.5 hover:bg-red-50 text-red-500 font-medium"> Đăng xuất</button>
         `;
     } else {
@@ -1077,3 +1081,24 @@ document.addEventListener("click", function(e) {
 
 // Gọi khi load trang
 updateAuthUI();
+
+// --- HỆ THỐNG GIAO DIỆN SÁNG/TỐI (DARK MODE) ---
+function toggleTheme() {
+    // Bật/tắt class dark-theme
+    document.body.classList.toggle("dark-theme");
+    
+    // Ẩn menu đi sau khi bấm
+    const dropdown = document.getElementById("user-dropdown");
+    if (dropdown) dropdown.classList.add("hidden");
+    
+    // Lưu lựa chọn vào máy
+    const isDark = document.body.classList.contains("dark-theme");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+}
+
+// Giữ màu đen khi load lại trang
+window.addEventListener('load', () => {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-theme");
+    }
+});
