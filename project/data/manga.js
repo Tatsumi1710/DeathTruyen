@@ -7,6 +7,168 @@ function chapterImages(mangaFolder, chNum, totalPages) {
 }
     const mangaData = [
     {
+       title: "Oozoku Furenzu",
+       othertitle: "",
+       image: "img/oozoku.jpg",
+       author: "Gatou Ari",
+       year: "2026",
+       genre: ["One shot","Romance"],
+       status: "Hoàn thành",
+       rating: 8.65,
+       intro: `Lấy bối cảnh tại học viện quý tộc ở vương quốc của thú nhân. Nào, hãy cùng theo chân nàng công chúa rụt rè trên con đường làm thân với cô thường dân nhút nhát...`,
+       chapter: [],
+       link: ""
+    },
+    {
+       title: "From The Hero In His Past",
+       othertitle: "Anh hùng đến từ quá khứ",
+       image: "img/past.jpg",
+       author: "Punniz",
+       year: "2024",
+       genre: ["One shot"],
+       status: "Hoàn thành",
+       rating: 8.74,
+       intro: ``,
+       chapter: [],
+       link: ""
+    },
+    {
+       title: "Sora kara Onnanoko ga!",
+       othertitle: "Cô gái trên bầu trời cao ấy",
+       image: "img/sora.jpg",
+       author: "Kouhei Katou",
+       year: "2023",
+       genre: ["One shot","Sports","Romance","Slice of life"],
+       status: "Hoàn thành",
+       rating: 9,
+       intro: `Nhân vật chính là một nam sinh bị bạn cùng lớp bắt nạt và đã chạy trốn lên sân thượng vào mỗi giờ nghỉ trưa. Ở đó, cậu gặp một cô gái, người cũng ở trong hoàn cảnh tương tự với cậu, và cô ấy đã rủ cậu cùng nhảy dù với cô ấy với nỗ lực thay đổi cuộc đời của họ ...?`,
+       chapter: [],
+       link: ""
+    },
+    {
+       title: "Blue Lock",
+       othertitle: "Khóa Xanh",
+       image: "img/bluelock.jpg",
+       author: "Kaneshiro Muneyuki",
+       year: "2022",
+       genre: ["Sports","Drama","Fantasy","Shounen"],
+       status: "Đang tiến hành",
+       rating: 8.82,
+       intro: `Đã bao giờ bạn đá bóng bằng cả tính mạng chưa?`,
+       chapter: [],
+       link: ""
+    },
+    {
+       title: "Natsu no Hi no Refrain",
+       othertitle: "Ngày hè vọng lại",
+       image: "img/natsu.jpg",
+       author: " Icereizou ",
+       year: "2024",
+       genre: ["One shot","Romance","Comedy","Slice of life"],
+       status: "Hoàn thành",
+       rating: 8.4,
+       intro: `Cô bạn thuở nhỏ của Sou Irie là Natsuki Nonoka bất ngờ gặp tai nạn và rồi...`,
+       chapter: [],
+       link: ""
+
+
+    },
+    {
+       title: "Ichizu De Bitch Na Kouhai",
+       othertitle: "A story about a flirty kouhai seducing her senpai",
+       image: "img/ichizu.jpg",
+       author: "Ironon",
+       year: "2022",
+       genre: ["One shot","School life","Slice of life","Romance","Comedy"],
+       status: "Đang tiến hành",
+       rating: 9.2,
+       intro: `One shot nhưng lại là series`,
+       chapter: [],
+       link: ""
+    },
+    {
+       title: "Kikikaikai",
+       othertitle: "Kikikaikai",
+       image: "img/demons.jpg",
+       author: "Sakurai Ato",
+       year: "2025",
+       genre: ["One shot","Vampires","Supernatural"],
+       status: "Hoàn thành",
+       rating: 8.5,
+       intro: `Aoi, một cậu trai quỷ đang giấu kín thân phận của mình vì sự kì thị cực đoan từ con người đối với loài quỷ, sống một đời bình lặng như học sinh trung học bình thường. Một ngày nọ, từ trên trời rơi xuống một cô nàng đáng yêu không được bình thường cho lắm.`,
+       chapter: [],
+       link: ""
+    },
+    
+    {
+       title: "The angel next door spoils me rotten",
+       othertitle: "Otonari no Tenshi-sama ni Itsu no Ma ni ka Dame Ningen ni Sareteita Ken",
+       image: "img/tenshi.jpg",
+       author: "Saekisan",
+       year: "2022",
+       genre: ["Romance","Comedy","Slice of life","School life"],
+       status: "Đang tiến hành",
+       rating: 9.1,
+       intro: `Mahiru là một cô nàng được mệnh danh là "Thiên sứ" của cả trường, vẻ ngoài xinh đẹp, học giỏi, chơi thể thao tốt, một cô nàng thiên sứ gần như hoàn hảo về mọi mặt. Trái ngược lại với cô, chàng hàng xóm Amane lại chỉ là một cậu trai bình thường đến tầm thường, mờ nhạt, u ám, luôn xa lánh người khác.. Tuy nhiên, mọi thứ đã dần thay đổi sau cuộc gặp mặt định mệnh kia`,
+       chapter: [],
+       link: "https://www.youtube.com/playlist?list=PLxSscENEp7JiAoaxImun4H_FRDkFI9k3Q"
+    },
+    {
+       title: "Lời nói dối của kẻ gác mộ",
+       othertitle: "Đang cập nhật",
+       image: "img/1.jpg",
+       author: "Furumiya Koto",
+       year: "2026",
+       genre: ["One shot","tradegy","fantasy","Romance"],
+       status: "Hoàn thành",
+       rating: 8.3,
+       intro: `Ở một ngôi làng nọ, có một thiếu nữ nổi tiếng xinh đẹp tên là Lily.
+              Cô cùng em trai Lenny gắn bó nương tựa vào nhau, ngày ngày chăm sóc nghĩa trang đã được gia đình quản lý qua nhiều thế hệ.
+
+            Thế nhưng, gần đây Lenny ngày càng hay bị thương, và nụ cười trên gương mặt cậu cũng dần dần biến mất.
+            “Có gì đó không ổn lắm…” – linh cảm ấy bắt đầu lớn dần trong lòng Lily, nhưng rồi…?
+
+            “Chị sẽ không đi đâu cả. Chúng ta sẽ bên nhau mãi mãi”.
+            Câu chuyện về lời hứa và lời nói dối dịu dàng mà tàn nhẫn giữa hai chị em người gác mộ.`,
+       chapter: [],
+       link: ""
+    },
+
+    {
+       title: "Mu Jyuu Ryoku Shojou",
+       othertitle: "Cô gái không trọng lực",
+       image: "img/jyuu.jpg",
+       author: "Obaru Regu",
+       year: "2025",
+       genre: ["one shot","Slice of life","Comedy","Romance"],
+       status: "Hoàn thành",
+       rating: 8.1,
+       intro: `Khi cảm giác lâng lâng từ những niềm vui khó tả có thể được bộc lộ ra thì sẽ trông thế nào?`,
+       chapter: [],
+       link: ""
+    },
+
+    {
+       title: "Mayonaka Heart Tune",
+       othertitle: "Tune In to the Midnight Heart",
+       image: "img/mayonaka.jpg",
+       author: "Masakuni Igarashi",
+       year: "2023",
+       genre: ["School life","Slice of life","Romance","Comedy",],
+       status: "Đang tiến hành",
+       rating: 9.3,
+       intro: `"Giữa đêm khuya thanh vắng, nằm cô độc trên giường, chỉ có giọng nói của cậu là thứ duy nhất cứu rỗi tớ. Tớ muốn được trò chuyện cùng cậu một lần nữa. Tớ có điều này muốn nói với cậu."
+
+            Yamabuki Arisu, một nam sinh trung học năm hai, đang mãi miết tìm kiếm cô gái mang tên "Apollo" - một cô gái bí ẩn mà cậu chẳng hề biết tên thật hay dung mạo.
+
+            Thế rồi một ngày nọ, Arisu bắt được manh mối về Apollo ngay tại Câu lạc bộ Phát thanh của ngôi trường mình đang theo học. Chờ đợi cậu ở đó là 4 thiếu nữ xinh đẹp cùng ấp ủ ước mơ "được làm những công việc liên quan đến giọng nói"!!
+
+            Rốt cuộc, ai trong số họ mới là Apollo? Và chặng đường theo đuổi ước mơ của 4 cô gái ấy sẽ đi về đâu?`,
+       chapter: [],
+       link: ""
+
+    },
+    {
        title: "Beyond the Bourdary",
        othertitle: "Kyoukai no kanata",
        image: "img/boundary.jpg",
@@ -18,7 +180,6 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        intro: `Mirai và Senpai.`,
        chapter: [],
        link: ""
-
 
     },
     {
@@ -440,23 +601,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         link: ""
 
     },
-    {
-        title:"The Angel Next Door Spoils Me Rotten",
-        othertitle: "Otonari no Tenshi-sama ni Itsu no Ma ni ka Dame Ningen ni Sareteita Ken",
-        image:"img/tenshi.jpg",
-        author:"Saekisan",
-        year:"2018",
-        genre: ["Comedy"],
-        status: "Đang tiến hành",
-        rating: 9,
-        intro: `Amane, một nam sinh bình thường, tình cờ giúp đỡ Mahiru — cô gái được cả trường gọi là "thiên thần" — trong một đêm mưa. 
-                Từ đó, cô hàng xóm hoàn hảo bỗng dưng xuất hiện mỗi ngày để nấu ăn và chăm sóc cậu...`,
-        chapters: [],
-        link: "https://www.youtube.com/playlist?list=PLxSscENEp7JiAoaxImun4H_FRDkFI9k3Q"
 
-
-
-    },
     {
         title: "The Tunnal to Summer, the Exit of Goodbye",
         othertitle: "Natsu e no Tonneru, Sayonara no Deguchi",
@@ -531,13 +676,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         rating: 9.37,
         intro: "Satou Kazuma, một hikikomori đam mê trò chơi, Nhưng cuộc sống ngắn ngủi của anh kết thúc vì tai nạn giao thông lãng xẹt ... Nhưng khi anh ta tỉnh dậy, một cô gái xinh đẹp, người tự gọi mình là một nữ thần đã ở phía trước đôi mắt anh ấy và đưa anh ấy đến một thế giới khác, Khi sang thế giới mới, cậu gặp ngày càng nhiều mấy cô nàng không điên thì cũng tâm thần, riết rồi cậu muốn quay trở về thế giới cũ càng nhanh càng tốt...",
         review: ["peak isekai, mấy con gà biết gì:))"],
-        chapters: [        
-            {number: 14, title: "", date: "26/05/2026", link: ""},
-            {number: 13, title: "", date: "26/05/2026", link: ""},
-            {number: 12, title: "", date: "26/05/2026", link: ""},
-            {number: 11, title: "", date: "26/05/2026", link: ""},
-            {number: 10, title: "", date: "26/05/2026", link: ""},
-            {number: 9, title: "", date: "26/05/2026", link: ""},
+        chapters: [   
             {number: 8, title: "", date: "26/05/2026", link: ""},
             {number: 7, title: "", date: "26/05/2026", link: ""},
             {number: 6, title: "", date: "26/05/2026", link: ""},

@@ -213,10 +213,21 @@ function goToMangaDetail(manga) {
                     <span class="w-1.5 h-4 bg-amber-500 rounded-full"></span> Summary
                 </h4>
                 <div class="bg-gray-100 p-5 rounded-xl border border-gray-100">
-                    ${
-                        manga.intro && manga.intro.trim() !== ""
-                        ? `<p class="text-gray-700 text-[14px] leading-relaxed font-medium">${manga.intro}</p>`
-                        : `<p class="text-gray-700 text-[14px] font-medium ">Đang cập nhật...</p>`
+                  ${
+                    !manga.intro || manga.intro.trim() === ""
+                    ? `<p class="text-gray-700 text-[14px] font-medium ">Đang cập nhật...</p>`
+                    : (manga.intro.length > 280 || manga.intro.split('\n').length > 3)
+                        ? `<div>
+                            <p id="manga-summary" class="whitespace-pre-line text-gray-700 text-[14px] leading-relaxed font-medium line-clamp-4 transition-all duration-300">${manga.intro}</p>
+                            <div class="text-center mt-3">
+                                <button onclick="toggleSummary()" id="summary-btn" class="text-[13px] font-bold text-gray-500 hover:text-amber-500 transition-colors cursor-pointer">
+                                    Xem thêm ▾
+                                </button>
+                            </div>
+                        </div>`
+                    : `<div>
+                        <p class="whitespace-pre-line text-gray-700 text-[14px] leading-relaxed font-medium">${manga.intro}</p>
+                       </div>`
                     }
                 </div>
             </div>
@@ -253,14 +264,14 @@ function goToMangaDetail(manga) {
                     const el = document.getElementById('hidden-chaps');
                     const isHidden = el.classList.contains('hidden');
                     el.classList.toggle('hidden');
-                    this.innerHTML = isHidden ? '▲ Thu gọn' : '➕️ Xem thêm';
+                    this.innerHTML = isHidden ? '▲ Thu gọn' : ' Xem thêm ▾';
                 " class="w-full py-3 text-sm text-amber-600 font-semibold hover:bg-amber-50 transition-colors border-t border-gray-100 cursor-pointer">
-                    ➕️ Xem thêm 
+                     Xem thêm ▾ 
                 </button>
             ` : ''}
         `;
     })()
-    : `<p class="text-gray-400 text-sm p-4">Đang cập nhật...</p>`
+    : `<p class="text-gray-600 font-semibold text-[14px] p-3">Đang cập nhật...</p>`
 }
     </div>
 </div>
@@ -392,7 +403,6 @@ function resetToAll() {
     window.scrollTo(0, 0);
 }
 // --- HÀM MỚI 6: Hiển thị 6 bộ truyện demo ra ngoài trang chủ ---
-// --- HÀM 1: Hiển thị 6 bộ truyện demo ra ngoài trang chủ (An toàn tuyệt đối) ---
 function renderDemoMangas(mangas) {
     try {
         const demoContainer = document.getElementById("demo-container");
@@ -528,7 +538,55 @@ function renderDemoMangas(mangas) {
         console.error("Lỗi renderOneShotMangas:", error);
     }
 }
-// --- HÀM MỚI 2: Cài đặt sự kiện chuyển phân vùng trang khi click nút ---
+
+// --- MỞ TRANG XEM TẤT CẢ: ONE SHOT ---
+function openAllOneShots() {
+    // 1. Lọc dữ liệu: Chỉ lấy các bộ One shot
+    const filteredReviews = mangaData.filter(manga => 
+        manga.genre && (manga.genre.includes("One shot") || manga.genre.includes("Oneshot"))
+    );
+    
+    // 2. Reset về trang 1
+    currentPage = 1;
+    
+    // 3. Đổi tiêu đề
+    const pageTitle = document.querySelector("#all-manga-page h2"); 
+    if (pageTitle) {
+        pageTitle.textContent = "One Shot";
+    }
+
+    // 4. Ẩn trang chủ, hiện trang lưới truyện
+    document.getElementById("main-page").classList.add("hidden");
+    document.getElementById("popular-carousel").classList.add("hidden");
+    document.getElementById("all-manga-page").classList.remove("hidden");
+    window.scrollTo(0, 0);
+
+    // 5. Vẽ giao diện với mảng đã lọc
+    renderReviews(filteredReviews);
+} 
+    
+function openAllLatestUpdates() {
+    // Lấy toàn bộ truyện (hoặc bác có thể dùng logic sắp xếp mới nhất nếu có)
+    filteredReviews = mangaData; 
+    currentPage = 1;
+    
+    // Trả lại tiêu đề là Latest Updates
+    const pageTitle = document.querySelector("#all-manga-page h2"); 
+    if (pageTitle) {
+        pageTitle.textContent = "Latest Updates";
+    }
+
+    // Ẩn trang chủ, hiện trang danh sách lưới
+    document.getElementById("main-page").classList.add("hidden");
+    document.getElementById("popular-carousel").classList.add("hidden");
+    document.getElementById("all-manga-page").classList.remove("hidden");
+    window.scrollTo(0, 0);
+
+    // Vẽ giao diện lưới
+    renderReviews(filteredReviews);
+}
+
+// --- HÀM MỚI 7 : Cài đặt sự kiện chuyển phân vùng trang khi click nút ---
 function setupNavigationEvents() {
     try {
         const viewAllBtn = document.getElementById("view-all-btn");
@@ -546,6 +604,11 @@ function setupNavigationEvents() {
         document.getElementById("popular-carousel").classList.add("hidden");
         const followPage = document.getElementById("following-page");
         if (followPage) followPage.classList.add("hidden");
+        const pageTitle = document.querySelector("#all-manga-page h2"); 
+                if (pageTitle) {
+                    pageTitle.textContent = "Latest Updates";
+                }
+
         currentPage = 1;
         renderReviews(mangaData);
         setTimeout(() => { window.scrollTo(0, 0); }, 50);
@@ -656,9 +719,7 @@ function setupCarousel() {
     }, 4000);
 }
 
-// THÊM MỚI: TỰ ĐỘNG SẮP XẾP TRUYỆN MỚI CẬP NHẬT LÊN ĐẦU
-
-// Hàm phụ trợ: Lấy thời gian của chapter mới nhất để làm chuẩn so sánh
+// Hàm 8: Lấy thời gian của chapter mới nhất để làm chuẩn so sánh
 function getLatestChapterTime(manga) {
     // Nếu truyện chưa có chapter nào thì cho thời gian = 0 (rớt xuống cuối)
     if (!manga.chapters || manga.chapters.length === 0) return 0;
@@ -679,6 +740,25 @@ function getLatestChapterTime(manga) {
 mangaData.sort((a, b) => {
     return getLatestChapterTime(b) - getLatestChapterTime(a);
 });
+
+// --- HỆ THỐNG XEM THÊM / THU GỌN TÓM TẮT ---
+function toggleSummary() {
+    const summaryEl = document.getElementById("manga-summary");
+    const btnEl = document.getElementById("summary-btn");
+
+    if (!summaryEl || !btnEl) return;
+
+    // Kiểm tra xem đoạn văn có đang bị giới hạn (có class line-clamp-4) hay không
+    if (summaryEl.classList.contains("line-clamp-4")) {
+        // Nếu đang bị cắt -> Gỡ bỏ giới hạn để hiện hết chữ
+        summaryEl.classList.remove("line-clamp-4");
+        btnEl.innerHTML = "Thu gọn ▴";
+    } else {
+        // Nếu đang hiện hết -> Lắp lại giới hạn 4 dòng
+        summaryEl.classList.add("line-clamp-4");
+        btnEl.innerHTML = "Xem thêm ▾";
+    }
+}
 
 // KHỞI CHẠY ỨNG DỤNG LẦN ĐẦU KHI LOAD TRANG
 renderDemoMangas(mangaData);   // Hiển thị danh sách truyện ban đầu
@@ -721,7 +801,8 @@ function setupDropdownEvents() {
 
 let currentMangaReading = null;
 let currentChapterIndex = 0;
-
+ 
+/// mở tất cả truyện
 function openReader(manga, chapterIndex) {
     currentMangaReading = manga;
     currentChapterIndex = chapterIndex;

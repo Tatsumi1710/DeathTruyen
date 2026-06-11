@@ -135,7 +135,8 @@ window.addEventListener('load', function() {
                     <button class="menu-genre-btn text-left hover:text-amber-600 transition-colors cursor-pointer" data-genre="School life">School life</button>
                     <button class="menu-genre-btn text-left hover:text-amber-600 transition-colors cursor-pointer" data-genre="Tragedy">Tragedy</button>
                     <button class="menu-genre-btn text-left hover:text-amber-600 transition-colors cursor-pointer" data-genre="Shoujo">Shoujo</button>
-                    
+                    <button class="menu-genre-btn text-left hover:text-amber-600 transition-colors cursor-pointer" data-genre="Psychological"> Psychological</button>
+                    <button class="menu-genre-btn text-left hover:text-amber-600 transition-colors cursor-pointer" data-genre="Vampires">Vampires</button>
                     
                 </div>
             </div>
@@ -201,7 +202,7 @@ window.addEventListener('load', function() {
 
     <!-- Nút Xem tất cả ở góc phải bên dưới -->
     <div class="flex justify-end">
-        <button id="view-all-btn" class="text-sm font-semibold text-amber-600 hover:text-amber-700 transition-colors cursor-pointer flex items-center gap-1">
+        <button onclick="openAllLatestUpdates()" class="text-sm font-semibold text-amber-600 hover:text-amber-700 transition-colors cursor-pointer flex items-center gap-1">
             › Xem tất cả truyện
         </button>
     </div>
@@ -230,6 +231,11 @@ window.addEventListener('load', function() {
                 <button id="oneshot-next" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white border border-gray-200 shadow-md w-9 h-9 rounded-full flex items-center justify-center text-xl text-gray-600 hover:text-amber-600 cursor-pointer">›</button>
             </div>
         </div>
+        <div class="flex justify-end mt-4 pr-30">
+    <button onclick="openAllOneShots()" class="text-[13px] font-semibold text-amber-500 hover:text-amber-600 hover:underline transition-colors cursor-pointer">
+        › Xem tất cả truyện
+    </button>
+</div>
     </div>
 
 </div>  <!-- đóng main-page -->
