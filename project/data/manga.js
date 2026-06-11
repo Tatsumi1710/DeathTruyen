@@ -8,7 +8,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
     const mangaData = [
     {
        title: "Oozoku Furenzu",
-       othertitle: "",
+       othertitle: "Công chúa và những người bạn",
        image: "img/oozoku.jpg",
        author: "Gatou Ari",
        year: "2026",
@@ -16,9 +16,12 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        status: "Hoàn thành",
        rating: 8.65,
        intro: `Lấy bối cảnh tại học viện quý tộc ở vương quốc của thú nhân. Nào, hãy cùng theo chân nàng công chúa rụt rè trên con đường làm thân với cô thường dân nhút nhát...`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "27/05/2026", images:chapterImages()},
+       ],
        link: ""
     },
+
     {
        title: "From The Hero In His Past",
        othertitle: "Anh hùng đến từ quá khứ",
@@ -29,9 +32,13 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        status: "Hoàn thành",
        rating: 8.74,
        intro: ``,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+       ],
+       
        link: ""
     },
+
     {
        title: "Sora kara Onnanoko ga!",
        othertitle: "Cô gái trên bầu trời cao ấy",
@@ -42,9 +49,12 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        status: "Hoàn thành",
        rating: 9,
        intro: `Nhân vật chính là một nam sinh bị bạn cùng lớp bắt nạt và đã chạy trốn lên sân thượng vào mỗi giờ nghỉ trưa. Ở đó, cậu gặp một cô gái, người cũng ở trong hoàn cảnh tương tự với cậu, và cô ấy đã rủ cậu cùng nhảy dù với cô ấy với nỗ lực thay đổi cuộc đời của họ ...?`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "16/05/2026", images:chapterImages()},
+       ],
        link: ""
     },
+
     {
        title: "Blue Lock",
        othertitle: "Khóa Xanh",
@@ -54,10 +64,27 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        genre: ["Sports","Drama","Fantasy","Shounen"],
        status: "Đang tiến hành",
        rating: 8.82,
-       intro: `Đã bao giờ bạn đá bóng bằng cả tính mạng chưa?`,
-       chapter: [],
+       intro: ` Đá bóng bằng cả tính mạng. `,
+       chapters: [
+            {number: 15, title: "", date: "10/06/2026", images:chapterImages()},
+            {number: 14, title: "", date: "10/06/2026", images:chapterImages()},
+            {number: 13, title: "", date: "03/06/2026", images:chapterImages()},
+            {number: 12, title: "", date: "01/06/2026", images:chapterImages()},
+            {number: 11, title: "", date: "30/05/2026", images:chapterImages()},
+            {number: 10, title: "", date: "25/05/2026", images:chapterImages()},
+            {number: 9, title: "", date: "22/05/2026", images:chapterImages()},
+            {number: 8, title: "", date: "18/05/2026", images:chapterImages()},
+            {number: 7, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 6, title: "", date: "16/05/2026", images:chapterImages()},
+            {number: 5, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+       ],
        link: ""
     },
+
     {
        title: "Natsu no Hi no Refrain",
        othertitle: "Ngày hè vọng lại",
@@ -68,11 +95,12 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        status: "Hoàn thành",
        rating: 8.4,
        intro: `Cô bạn thuở nhỏ của Sou Irie là Natsuki Nonoka bất ngờ gặp tai nạn và rồi...`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "18/05/2026", images:chapterImages()},
+       ],
        link: ""
-
-
     },
+
     {
        title: "Ichizu De Bitch Na Kouhai",
        othertitle: "A story about a flirty kouhai seducing her senpai",
@@ -83,9 +111,24 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        status: "Đang tiến hành",
        rating: 9.2,
        intro: `One shot nhưng lại là series`,
-       chapter: [],
+       chapters: [
+            {number: 12, title: "", date: "24/05/2026", images:chapterImages()},
+            {number: 11, title: "", date: "22/05/2026", images:chapterImages()},
+            {number: 10, title: "", date: "20/05/2026", images:chapterImages()},
+            {number: 9, title: "", date: "19/05/2026", images:chapterImages()},
+            {number: 8, title: "", date: "18/05/2026", images:chapterImages()},
+            {number: 7, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 6, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 5, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+       ],
        link: ""
     },
+
     {
        title: "Kikikaikai",
        othertitle: "Kikikaikai",
@@ -96,7 +139,9 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        status: "Hoàn thành",
        rating: 8.5,
        intro: `Aoi, một cậu trai quỷ đang giấu kín thân phận của mình vì sự kì thị cực đoan từ con người đối với loài quỷ, sống một đời bình lặng như học sinh trung học bình thường. Một ngày nọ, từ trên trời rơi xuống một cô nàng đáng yêu không được bình thường cho lắm.`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+       ],
        link: ""
     },
     
@@ -110,7 +155,17 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        status: "Đang tiến hành",
        rating: 9.1,
        intro: `Mahiru là một cô nàng được mệnh danh là "Thiên sứ" của cả trường, vẻ ngoài xinh đẹp, học giỏi, chơi thể thao tốt, một cô nàng thiên sứ gần như hoàn hảo về mọi mặt. Trái ngược lại với cô, chàng hàng xóm Amane lại chỉ là một cậu trai bình thường đến tầm thường, mờ nhạt, u ám, luôn xa lánh người khác.. Tuy nhiên, mọi thứ đã dần thay đổi sau cuộc gặp mặt định mệnh kia`,
-       chapter: [],
+       chapters: [
+            {number: 9, title: "", date: "02/06/2026", images:chapterImages()},
+            {number: 8, title: "", date: "30/05/2026", images:chapterImages()},
+            {number: 7, title: "", date: "28/05/2026", images:chapterImages()},
+            {number: 6, title: "", date: "22/05/2026", images:chapterImages()},
+            {number: 5, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+       ],
        link: "https://www.youtube.com/playlist?list=PLxSscENEp7JiAoaxImun4H_FRDkFI9k3Q"
     },
     {
@@ -130,7 +185,9 @@ function chapterImages(mangaFolder, chNum, totalPages) {
 
             “Chị sẽ không đi đâu cả. Chúng ta sẽ bên nhau mãi mãi”.
             Câu chuyện về lời hứa và lời nói dối dịu dàng mà tàn nhẫn giữa hai chị em người gác mộ.`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "14/05/2026", images:chapterImages()},
+       ],
        link: ""
     },
 
@@ -144,7 +201,9 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        status: "Hoàn thành",
        rating: 8.1,
        intro: `Khi cảm giác lâng lâng từ những niềm vui khó tả có thể được bộc lộ ra thì sẽ trông thế nào?`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "15/05/2026", images:chapterImages()},
+       ],
        link: ""
     },
 
@@ -164,10 +223,17 @@ function chapterImages(mangaFolder, chNum, totalPages) {
             Thế rồi một ngày nọ, Arisu bắt được manh mối về Apollo ngay tại Câu lạc bộ Phát thanh của ngôi trường mình đang theo học. Chờ đợi cậu ở đó là 4 thiếu nữ xinh đẹp cùng ấp ủ ước mơ "được làm những công việc liên quan đến giọng nói"!!
 
             Rốt cuộc, ai trong số họ mới là Apollo? Và chặng đường theo đuổi ước mơ của 4 cô gái ấy sẽ đi về đâu?`,
-       chapter: [],
+       chapters: [
+            {number: 6, title: "", date: "02/06/2026", images:chapterImages()},
+            {number: 5, title: "", date: "22/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+       ],
        link: ""
-
     },
+
     {
        title: "Beyond the Bourdary",
        othertitle: "Kyoukai no kanata",
@@ -178,10 +244,13 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        status: "Hoàn thành",
        rating: 9.2,
        intro: `Mirai và Senpai.`,
-       chapter: [],
+       chapters: [
+            {number: 2, title: "", date: "20/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "13/05/2026", images:chapterImages()},
+       ],
        link: ""
-
     },
+
     {
        title: "Josee, the tiger and the Fish",
        othertitle: "Joze to Tora to Sakana-tachi",
@@ -194,11 +263,21 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        intro: `Câu chuyện chủ yếu xoay quanh mối quan hệ của Tsuneo và Josee. 
                Tsuneo là một sinh viên đại học, còn Josee là một cô gái trẻ hiếm khi ra khỏi nhà do không thể đi lại được như người bình thường. 
                Hai người họ đã vô tình gặp nhau khi Tsuneo thấy bà của Josee đưa cô ấy tản bộ vào đêm tối...`,
-       chapter: [],
+       chapters: [
+            {number: 10, title: "",date: "03/06/2026", images:chapterImages()},
+            {number: 9, title: "", date: "27/05/2026", images:chapterImages()},
+            {number: 8, title: "", date: "22/05/2026", images:chapterImages()},
+            {number: 7, title: "", date: "20/05/2026", images:chapterImages()},
+            {number: 6, title: "", date: "15/05/2026", images:chapterImages()},
+            {number: 5, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+       ],
        link: "https://youtu.be/i1o9eiRFzqc?si=sg8kvbfuOF7Ftbg6"
-
-
     },
+
     {
        title: "You are still in a bird cage",
        othertitle: "Kimi wa mada tori kago no naka",
@@ -210,11 +289,12 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        rating: 8.1,
        intro: `Nitogi Amane và Utsuya Madoka lần đầu gặp nhau vào giữa năm 2 sơ trung. 
               Nhưng vì một sai lầm nhỏ nhưng chết người đã khiến Amane phải trả giá đắt hơn cả người bạn thân tưởng chừng như vô hại của cô...`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "22/05/2026", images:chapterImages()},
+       ],
        link: ""
-
-
     },
+
     {
        title: "Watashi wa Jakuchu ni naritai",
        othertitle: " Tớ sẽ trở thành Jakuchu!",
@@ -225,11 +305,12 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        status: "Hoàn thành",
        rating: 8.64,
        intro: `Không biết nói gì nữa, chỉ biết là oneshot nhân văn`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "25/05/2026", images:chapterImages()},
+       ],
        link: ""
-
-
     },
+
     {
        title: "Nitamono Doushi",
        othertitle: "(Không) Giống như hai giọt nước",
@@ -242,11 +323,12 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        intro: `Teru là một thanh niên bị ám ảnh bởi tuổi thơ, tự cô lập bản thân và tránh giao tiếp với xã hội. 
               Niềm vui duy nhất của cậu đến từ việc chơi game... cho đến khi cuộc gặp gỡ đầy định mệnh tại quán chơi game cậu hay chơi, phá vỡ thế giới bình yên của cậu.
                Một câu chuyện cảm động, về cuộc gặp gỡ giữa hay tâm hồn lạc lối, kéo họ lại với nhau sau một đêm`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "23/05/2026", images:chapterImages()},
+       ],
        link: ""
-
-
     },
+
     {
        title: "Hanrou to Shoujo",
        othertitle: "Bán sói và cô bé",
@@ -258,7 +340,9 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        rating: 8.5,
        intro: `Một người sói cô độc tìm thấy một cô bé bị mù...
                Câu chuyện về một kẻ "không phải người" làm tất cả vì mạng sống của một "người"`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "21/05/2026", images:chapterImages()},
+       ],
        link: ""
 
 
@@ -275,11 +359,12 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        intro: `Vì bố mẹ ly hôn, Sakura hiện sống với bố. Em được mọi người đánh giá là "một đứa trẻ ngoan ngoãn chững chạc". 
               Tuy nhiên, cậu bạn cùng khoá Minato đặt ra cho em một câu hỏi khiến em phải bất giác khựng mình. 
               Lúc đó Sakura không nghĩ ngợi mấy, nhưng sau khi gặp lại mẹ, mọi thứ bắt đầu thay đổi...?`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "24/05/2026", images:chapterImages()},
+       ],
        link: ""
-
-
     },
+
     {
        title: "Ao và Sakura",
        othertitle: " Ao to Sakura ",
@@ -292,11 +377,12 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        intro: `Fujieda Ao, một học sinh cao trung không hoà nhập được với lớp của mình. 
                Sau giờ học cậu hay đến thư viện nơi cậu gặp cô ấy. Cô rạng rỡ, vô tư, và hay cười; đối lập hoàn toàn với cậu. 
                Cô ấy tên là Hidaka Sakura. Ao dần bị Sakura hớp hồn. Từ cuộc gặp gỡ ấy, hạt giống “tình yêu” đã dần nảy mầm.`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "23/05/2026", images:chapterImages()},
+       ],
        link: ""
-
-
     },
+
     {
        title: "Spring Returns to Aoi's Room",
        othertitle: "Aoi no Heya ni Mata Haru ga Kita",
@@ -308,11 +394,12 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        rating: 9.34,
        intro: `Câu chuyện chữa lành về Aoi — một cô gái trẻ sống tự hủy hoại bản thân, 
                bỗng một ngày căn phòng của cô xuất hiện các biểu tượng mùa xuân (hoa anh đào, bướm) lặng lẽ dõi theo cô hằng ngày.`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+       ],
        link: ""
-
-
     },
+
     {
        title: "Light Again",
        othertitle: "Ánh sáng cuối cùng",
@@ -323,24 +410,28 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        status: "Hoàn thành",
        rating: 9,
        intro: `Trái đất mất đi nguồn sáng sau vụ va chạm của thiên thạch vào mặt trăng, từ đó, một căn bệnh lạ xuất hiện...`,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "17/05/2026", images:chapterImages()},
+       ],
        link: ""
-
-
     },
+
     {
         title: "Parasol Alliance",
        othertitle: "Parasol Doumei",
        image: "img/parasol.jpg",
        author: "Miura Kouji",
        year: "2020",
-       genre: ["One shot"],
+       genre: ["One shot","Comedy"],
        status: "Hoàn thành",
        rating: 9.1,
        intro: ``,
-       chapter: [],
+       chapters: [
+            {number: 1, title: "", date: "01/06/2026", images:chapterImages()},
+       ],
        link: ""
     },
+
     {
        title: "The Pet Girl of Sakurasou",
        othertitle: "Sakura-sō no Pet na Kanojo",
@@ -351,7 +442,13 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        status: "Hoàn Thành",
        rating: 8.6,
        intro: ``,
-       chapter: [],
+       chapters: [
+            {number: 5, title: "", date: "16/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+       ],
        link: ""
     },
    
@@ -361,11 +458,17 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        image: "img/slime.jpg",
        author: "Fuse",
        year: "2016",
-       genre: ["Isekai","Action","Comdey"],
+       genre: ["Isekai","Action","Comdey","Fantasy"],
        status: "Đang tiến hành",
        rating: 9.3,
        intro: ``,
-       chapter: [],
+       chapters: [
+            {number: 5, title: "", date: "22/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "18/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+       ],
        link: ""
     },
  
@@ -379,7 +482,13 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        status: "Hoàn Thành",
        rating: 9.45,
        intro: ``,
-       chapter: [],
+       chapters: [
+            {number: 5, title: "", date: "21/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+       ],
        link: ""
     },
 
@@ -390,11 +499,17 @@ function chapterImages(mangaFolder, chNum, totalPages) {
        image: "img/naruto.jpg",
        author: "Kishimoto Masashi.",
        year: "2007",
-       genre: ["Action", "Shounen"],
+       genre: ["Action", "Shounen","Comedy"],
        status: "Hoàn Thành",
        rating: 9,
        intro: ``,
-       chapter: [],
+       chapters: [
+            {number: 5, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+       ],
        link: ""
 
 
@@ -406,11 +521,15 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         image: "img/plundere.jpg",
         author: "Minazuki Suu",
         year: "2020",
-        genre: ["Action", "Comedy"],
+        genre: ["Action", "Comedy","Fantasy"],
         status: "Hoàn Thành",
         rating: 8.36,
         intro: ``,
-        chapter: [],
+        chapters: [
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+        ],
         link: ""
     },
     {
@@ -419,11 +538,17 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         image: "img/hige.jpg",
         author: "Shimesaba",
         year: "2018",
-        genre: ["Comedy", "Slice of life"],
+        genre: ["Comedy", "Slice of life","Tragedy"],
         status: "Hoàn thành",
         rating: 8.52,
         intro: ``,
-        chapter: [],
+        chapters: [
+            {number: 5, title: "", date: "14/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+        ],
         link: ""
 
     },
@@ -433,11 +558,17 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         image: "img/tamako.jpg",
         author: "Mutsuki Ichinose",
         year: "2014",
-        genre: ["comedy", "Slice of life"],
+        genre: ["comedy","Romance","Slice of life"],
         status: "Hoàn thành",
         rating: 8.43,
         intro: ``,
-        chapter: [],
+        chapters: [
+            {number: 5, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+        ],
         link: ""
     },
     {
@@ -446,11 +577,17 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         image: "img/mushoku.jpg",
         author: "Rifujin na Magonote",
         year: "2014",
-        genre: ["Adventure"],
+        genre: ["Adventure","Harem","Comedy","Tragedy","Dark Fantasy"],
         status: "Đang tiến hành",
         rating: 9.2,
         intro: ``,
-        chapters: [],
+        chapters: [
+            {number: 5, title: "", date: "24/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "16/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "15/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "14/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+        ],
         link: ""
 
     },
@@ -461,11 +598,17 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         image: "img/classassin.jpg",
         author: "Matsui Yūsei",
         year: "2012",
-        genre: ["Action"],
+        genre: ["Action","Shounen","Comedy","School life"],
         status: "Hoàn thành",
         rating: 9,
         intro:``,
-        chapters: [],
+        chapters: [
+            {number: 5, title: "", date: "20/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "14/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "14/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "14/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+        ],
         link:""
     },
     
@@ -475,12 +618,19 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         image: "img/kami.jpg",
         author: "Maeda Jun",
         year: "2020",
-        genre: ["Slice of life"],
+        genre: ["Slice of life","Tragedy","Romance","Fantasy"],
         status: "Hoàn thành",
         rating: 8.3,
         intro: `Narukami Youta, một nam sinh chuẩn bị thi đại học, bất ngờ gặp được một cô bé tự do là thần linh toàn tri tên Hina — 
                 người tuyên bố thế giới sẽ diệt vong trong 30 ngày. vui vẻ bên nhau.`,
-        chapters: [],
+        chapters: [
+            {number: 6, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 5, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "12/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+        ],
         link: "",
 
     },
@@ -496,11 +646,15 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         intro: `Một loại Virus xuất hiện trên Trái đất và giết hết tất cả những người bị nhiễm có tuổi trên 13. 
                 Cùng lúc đó, ma cà rồng xuất hiện từ lòng đất sâu thẳm và biến loài người thành nô lệ. Nhân vật chính Hyakuya Yuuichirou là một trẻ mồ côi, bị ma cà rồng xem như loài vật cho chúng hút máu. 
                 Dù bị giam cầm, nhưng cậu có hoài bão lớn, khao khát có ngày giết hết toàn bộ ma cà rồng.`,
-        chapters: [],
+        chapters: [
+            {number: 6, title: "", date: "18/05/2026", images:chapterImages()},
+            {number: 5, title: "", date: "18/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "18/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "18/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "13/05/2026", images:chapterImages()},
+        ],
         link: "",
-        
-
-
     },    
     
     {
@@ -509,11 +663,15 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         image:"img/hyouka.jpg",
         author: "Honobu Yonezawa",
         year: "2012",
-        genre: ["Slice of life"],
+        genre: ["Slice of life","Detective","Comedy","School life","Mystery"],
         status: "Đang tiến hành",
         rating: 8.7,
         intro: "",
-        chapter: [],
+        chapters: [
+            {number: 3, title: "", date: "24/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "15/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+        ],
         link: "",
        
 
@@ -524,11 +682,15 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         image: "img/Zombie.jpg",
         author:"Shinichi Kimura",
         year:"2010",
-        genre:["Comedy"],
+        genre:["Comedy","Romance","Slice of life","Fantasy"],
         status: "Hoàn thành",
         rating: 8,
         intro:"",
-        chapters :[],
+        chapters:[
+            {number: 3, title: "", date: "15/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "15/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+        ],
         link: "",
         
     },
@@ -536,44 +698,58 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         title: "A Bridge to the Starry Skies",
         othertitle:"Hoshizora E kakuru",
         image: "img/hoshizora.jpg",
-        author:" Feng",
+        author:"Feng",
         year: "2010",
         genre: ["Comedy"],
         status: "Hoàn thành",
         rating: 7.5,
         intro:"",
-        chapters: [],
+        chapters: [
+            {number: 3, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "15/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+        ],
         link: "",
-        
-
     },
+
     {
         title: "Akame ga Kill",
         othertitle: "Akame ga Kiru",
         image: "img/Akamegakill1.jpg",
         author: "Takahiro",
         year: "20/3/2010",
-        genre: ["Dark Fantasy", "Action"],
+        genre: ["Dark Fantasy", "Action","Comedy","Shounen"],
         status: "Hoàn thành",
         rating: "9.25",
         intro:`Tatsumi, một chàng trai trẻ từ vùng quê nghèo, gia nhập tổ chức ám sát bí mật Night Raid với mong muốn thay đổi đế chế thối nát. 
                Hành trình của cậu là những trận chiến đẫm máu, những mất mát đau lòng và câu hỏi liệu cái ác có thể bị tiêu diệt bằng cái ác hay không.`,
-        chapters: [],
+        chapters: [
+            {number: 3, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "15/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+        ],
         link: ""
     },
+
     {
         title: "Date a Live",
         othertitle: "Dēto A Raibu",
         image: "img/datealive.jpg",
         author: "Tachibana Kōshi",
         year: "2011",
-        genre: ["Harem","Comedy","Fantasy"],
+        genre: ["Harem","Comedy","Fantasy","Romance"],
         status: "Hoàn thành",
         rating: 8.2,
         intro: "",
-        chapters: [],
+        chapters: [
+            {number: 4, title: "", date: "22/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "15/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages()},
+        ],
         link: ""
     },
+
     {
         title:"Song Tinh Diệt Quỷ Sư",
         othertitle: "Sōsei no Onmyōji",
@@ -584,7 +760,10 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         status: "Hoàn thành",
         rating: 8.8,
         intro: "",
-        chapter: [],
+        chapters: [
+            {number: 2, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "13/05/2026", images:chapterImages()},
+        ],
         link: ""
     },
     {
@@ -593,11 +772,19 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         image: "img/tonikaku.jpg",
         author: "Hata Kenjiro",
         year:"14/2/2018,",
-        genre:["Comedy"],
+        genre:["Comedy","Romance","Slice of life","Supernatural"],
         status:"Đang tiến hành",
         rating: 8.4,
         intro: "",
-        chapter: [],
+        chapters: [
+            {number: 7, title: "", date: "21/05/2026", images:chapterImages()},
+            {number: 6, title: "", date: "21/05/2026", images:chapterImages()},
+            {number: 5, title: "", date: "21/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "21/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "21/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "20/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "17/05/2026", images:chapterImages()},
+        ],
         link: ""
 
     },
@@ -608,11 +795,14 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         image: "img/theTunnal.jpg",
         author: "Hachimoku Mei",
         year: "2022",
-        genre:["Comedy"],
+        genre:["Comedy","Tragedy","Supernatural","Slice of life"],
         status: "Hoàn thành",
         rating: 8.5,
         intro: "",
-        chapters: [],
+        chapters: [
+            {number: 2, title: "", date: "20/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "16/05/2026", images:chapterImages()},
+        ],
         link: ""
 
     },
@@ -623,13 +813,19 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         image: "img/shikimori.jpg",
         author: "Maki Keigo",
         year: "2019",
-        genre: ["Comedy"],
+        genre: ["Comedy","Romance","Slice of life","School life"],
         status: "Hoàn thành",
         rating: 8.87,
         intro:  `Izumi là một nam sinh trung học bị xui xẻo bẩm sinh.Bạn gái của cậu là một cô bạn cùng lớp tên Shikimori.
         Shikimori rất xinh đẹp, dễ thương và tràn đầy tình yêu, tuy nhiên mỗi khi Izumi gặp rắc rối, cô lại trở thành người bạn gái ngầu nhất trên đời!
         Cuộc sống thường ngày dễ thương và đầy những pha kỳ thú của Shikimori, Izumi và những người bạn sẽ bắt đầu tại đây.`,
-        chapters: [],
+        chapters: [
+            {number: 5, title: "", date: "29/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "20/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "16/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "14/05/2026", images:chapterImages()},
+        ],
         link: "https://www.youtube.com/playlist?list=PLdM751AKK4aPXPNBecZyWlru3Qe45ggrU"
     },
     
@@ -639,15 +835,23 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         image: "img/onepiece.jpg",
         author:"Oda Eiichiro",
         year: "1997",
-        genre: ["Shonen"],
+        genre: ["Shonen","Fantasy"],
         status: "Đang tiến hành",
         rating: 9,
         intro: `Monkey D. Luffy, chàng trai mang trong mình sức mạnh của Trái Ác Quỷ, lên đường chinh phục Grand Line với giấc mơ trở thành Vua Hải Tặc.
                 Cùng với đội thuyền ngày càng đông đảo, mỗi hòn đảo là một cuộc phiêu lưu mới, một kẻ thù mạnh hơn và một bí ẩn lớn hơn đang chờ đợi.`,
-        chapters: [],
+        chapters: [
+            {number: 9, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 8, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 7, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 6, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 5, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "14/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "10/05/2026", images:chapterImages()},
+        ],
         link:""
-
-
     },
     {
         title: "Grand Blue",
@@ -655,16 +859,20 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         image: "img/grandblue.jpg",
         author: "Kenji Inoue",
         year: "2014",
-        genre: ["Comedy"],
+        genre: ["Comedy","Romance","Slice of life","School life"],
         status: "Đang tiến hành",
         rating: 8.75,
         intro: "",
-        chapters: [],            
-         link: ""
-
+        chapters: [
+             {number: 5, title: "", date: "22/05/2026", images:chapterImages()},
+             {number: 4, title: "", date: "17/05/2026", images:chapterImages()},
+             {number: 3, title: "", date: "14/05/2026", images:chapterImages()},
+             {number: 2, title: "", date: "14/05/2026", images:chapterImages()},
+             {number: 1, title: "", date: "13/05/2026", images:chapterImages()},
+        ],            
+        link: ""
     },
 
-    /// KonoSuba: Gods Blessing on this Wonderful World!
     {
         title: "KonoSuba: Gods Blessing on this Wonderful World!",
         othertitle:"Kono subarashii sekai ni shukufuku o!",
@@ -675,22 +883,17 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         status: "Đang tiến hành",
         rating: 9.37,
         intro: "Satou Kazuma, một hikikomori đam mê trò chơi, Nhưng cuộc sống ngắn ngủi của anh kết thúc vì tai nạn giao thông lãng xẹt ... Nhưng khi anh ta tỉnh dậy, một cô gái xinh đẹp, người tự gọi mình là một nữ thần đã ở phía trước đôi mắt anh ấy và đưa anh ấy đến một thế giới khác, Khi sang thế giới mới, cậu gặp ngày càng nhiều mấy cô nàng không điên thì cũng tâm thần, riết rồi cậu muốn quay trở về thế giới cũ càng nhanh càng tốt...",
-        review: ["peak isekai, mấy con gà biết gì:))"],
         chapters: [   
-            {number: 8, title: "", date: "26/05/2026", link: ""},
-            {number: 7, title: "", date: "26/05/2026", link: ""},
-            {number: 6, title: "", date: "26/05/2026", link: ""},
-            {number: 5, title: "", date: "26/05/2026", link: ""},
-            {number: 4, title: "", date: "26/05/2026", link: ""},
-            {number: 3, title: "", date: "26/05/2026", link: ""},
-            {number: 2, title: "Không có tiêu đề", date: "20/05/2026",  },
-            {number: 1, title: "Không có tiêu đề", date: "20/05/2026", images: chapterImages("konosuba", 1, 40)},
-            
-          
+            {number: 8, title: "", date: "18/05/2026", images:chapterImages()},
+            {number: 7, title: "", date: "17/05/2026", images:chapterImages()},
+            {number: 6, title: "", date: "16/05/2026", images:chapterImages()},
+            {number: 5, title: "", date: "16/05/2026", images:chapterImages()},
+            {number: 4, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 3, title: "", date: "13/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "12/05/2026", images:chapterImages()},
+            {number: 1, title: "", date: "12/05/2026", images:chapterImages("konosuba", 1, 40)},
         ],
         link: "https://www.youtube.com/playlist?list=PLOVZwvNm10lXlKl2VHXGmpqqygCG6XbPw",
-        
     },
-    
     
 ];
