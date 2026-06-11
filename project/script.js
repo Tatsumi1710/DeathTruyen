@@ -22,8 +22,12 @@ function renderReviews(mangasToDisplay) {
     document.getElementById("pagination-container").innerHTML = "";
 
     if (mangasToDisplay.length === 0) {
-        container.className = "flex justify-center items-center w-full min-h-[300px]";
-        container.innerHTML = `<p class="text-center text-gray-800 my-8 text-sm">Không tìm thấy truyện nào phù hợp</p>`;
+        // Dùng col-span-full để thông báo chiếm trọn hàng ngang mà KHÔNG làm mất class Grid của container
+        container.innerHTML = `
+            <div class="col-span-full flex justify-center items-center w-full min-h-[300px]">
+                <p class="text-center text-gray-800 my-8 text-sm font-semibold">Không tìm thấy truyện nào phù hợp</p>
+            </div>
+        `;
         return;
     }
 
@@ -772,7 +776,8 @@ function setupDropdownEvents() {
     const dropdownButtons = document.querySelectorAll(".menu-genre-btn");
     
     dropdownButtons.forEach(btn => {
-        btn.addEventListener("click", function() {
+        btn.addEventListener("click", function(e) {
+            e.preventDefault(); 
             const selectedGenre = this.getAttribute("data-genre");
             currentGenre = selectedGenre;
 
