@@ -815,7 +815,7 @@ function openReader(manga, chapterIndex) {
     renderReader();
     window.scrollTo(0, 0);
 }
-
+ /// Hàm để đọc truyện
 function renderReader() {
     const manga = currentMangaReading;
     const chapter = manga.chapters[currentChapterIndex];
@@ -852,7 +852,7 @@ function renderReader() {
         imgContainer.innerHTML = `
             <div style="text-align:center; padding:80px 20px; color:#71717a;">
                 <p style="font-size:48px;">📭</p>
-                <p style="margin-top:12px; font-size:14px;">Chương này chưa có ảnh</p>
+                <p style="margin-top:12px; font-size:14px;">Chương này chưa có truyện</p>
             </div>`;
     }
 
@@ -1098,7 +1098,7 @@ function updateAuthUI() {
    if (user) {
     const parent = btn.parentElement;
     
-    // Đổi nút hamburger thành avatar
+    // Đổi nút 3 sọc thành avatar
     btn.innerHTML = `<span style="font-size:14px; font-weight:900;">${user.username.charAt(0).toUpperCase()}</span>`;
     btn.className = "w-9 h-9 rounded-full bg-amber-200 text-amber-700 font-black flex items-center justify-center hover:bg-amber-300 transition-colors";
 

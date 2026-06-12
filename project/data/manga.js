@@ -1,8 +1,8 @@
 // ==========================================
 // ĐOẠN DỮ LIỆU GỐC (DATABASE MÔ PHỎNG)
-function chapterImages(mangaFolder, chNum, totalPages) {
+function chapterImages(mangaFolder, chNum, totalPages, ext = "jpg") {
     return Array.from({length: totalPages}, (_, i) => 
-        `manga/chapters/${mangaFolder}/ch${chNum}/${String(i+1).padStart(2,'0')}.jpg`
+        `manga/chapters/${mangaFolder}/ch${chNum}/${i + 1}.${ext}`
     );
 }
     const mangaData = [
@@ -803,9 +803,9 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         rating: 8.5,
         intro: `Tono Kaoru nghe được một tin đồn, rằng quy luật không thời gian chẳng có nghĩa lí gì với đường hầm Urushima cả. Nếu tìm thấy được nó, hãy đi qua và ở phía bên kia đường hầm, bạn sẽ tìm được niềm khao khát sâu thẳm trong tim...và để đổi lấy, bạn sẽ phải trả bằng chính những năm tháng cuộc đời mình.
 
-Vào cái đêm mà Kaoru tình cờ nhận ra bản thân đang đứng trước con đường hầm đầy đáng ngờ, hệt như trong lời đồn đại kia, cậu nhận ra rằng bản thân đang nghĩ về Karen, người em gái đã mất 5 năm trước vì tai nạn của cậu.
+            Vào cái đêm mà Kaoru tình cờ nhận ra bản thân đang đứng trước con đường hầm đầy đáng ngờ, hệt như trong lời đồn đại kia, cậu nhận ra rằng bản thân đang nghĩ về Karen, người em gái đã mất 5 năm trước vì tai nạn của cậu.
 
-Ngạc nhiên hơn nữa, học sinh mới chuyển đến Anzu Hanashiro đã bám theo cậu tới đây, và còn hứa rằng sẽ giúp cậu thử nghiệm đường hầm bí ẩn ấy. Nhưng, đổi lại thì cô ấy muốn gì ở Kaoru? Và liệu cậu có còn gì để trả cô không, sau khi bước chân ra khỏi đường hầm kia?`,
+            Ngạc nhiên hơn nữa, học sinh mới chuyển đến Anzu Hanashiro đã bám theo cậu tới đây, và còn hứa rằng sẽ giúp cậu thử nghiệm đường hầm bí ẩn ấy. Nhưng, đổi lại thì cô ấy muốn gì ở Kaoru? Và liệu cậu có còn gì để trả cô không, sau khi bước chân ra khỏi đường hầm kia?`,
         chapters: [
             {number: 2, title: "", date: "20/05/2026", images:chapterImages()},
             {number: 1, title: "", date: "16/05/2026", images:chapterImages()},
@@ -830,8 +830,8 @@ Ngạc nhiên hơn nữa, học sinh mới chuyển đến Anzu Hanashiro đã b
             {number: 5, title: "", date: "29/05/2026", images:chapterImages()},
             {number: 4, title: "", date: "20/05/2026", images:chapterImages()},
             {number: 3, title: "", date: "17/05/2026", images:chapterImages()},
-            {number: 2, title: "", date: "16/05/2026", images:chapterImages()},
-            {number: 1, title: "", date: "14/05/2026", images:chapterImages()},
+            {number: 2, title: "", date: "16/05/2026", images:chapterImages("shikimori", 2, 6, "png")},
+            {number: 1, title: "", date: "14/05/2026", images:chapterImages("shikimori", 1, 9, "jpg")},
         ],
         link: "https://www.youtube.com/playlist?list=PLdM751AKK4aPXPNBecZyWlru3Qe45ggrU"
     },
