@@ -8,10 +8,6 @@ let globalMangasToDisplay = []; // Biến lưu trữ danh sách truyện sau khi
 // Biến toàn cục để lưu trạng thái thể loại đang chọn (mặc định là hiển thị 'all')
 let currentGenre = "all";
 
-// ==========================================
-// ĐÁP ỨNG TIÊU CHÍ: 05 HÀM TỰ ĐỊNH NGHĨA
-// ==========================================
-
 // --- HÀM 1: Hiển thị danh sách truyện kèm Phân Trang (Co dãn tự nhiên) ---
 function renderReviews(mangasToDisplay) {
     // Lưu danh sách truyện cần hiển thị vào biến toàn cục để các nút bấm trang dùng chung
@@ -77,7 +73,6 @@ function renderPaginationControls(totalItems) {
     const paginationDiv = document.createElement("div");
     paginationDiv.className = "flex justify-center items-center gap-2 pt-6 w-full pb-4";
 
-    // ==========================================
     // 1. NÚT MŨI TÊN "TRƯỚC" (PREVIOUS BUTTON)
     // ==========================================
     const prevBtn = document.createElement("button");
@@ -115,7 +110,6 @@ function renderPaginationControls(totalItems) {
         paginationDiv.appendChild(btn);
     }
 
-    // ==========================================
     // 3. NÚT MŨI TÊN "SAU" (NEXT BUTTON)
     // ==========================================
     const nextBtn = document.createElement("button");
@@ -406,7 +400,7 @@ function resetToAll() {
     }
     window.scrollTo(0, 0);
 }
-// --- HÀM MỚI 6: Hiển thị 6 bộ truyện demo ra ngoài trang chủ ---
+// --- HÀM 6: Hiển thị 6 bộ truyện demo ra ngoài trang chủ ---
 function renderDemoMangas(mangas) {
     try {
         const demoContainer = document.getElementById("demo-container");
@@ -543,7 +537,7 @@ function renderDemoMangas(mangas) {
     }
 }
 
-// --- MỞ TRANG XEM TẤT CẢ: ONE SHOT ---
+// --- Hàm 7: MỞ TRANG XEM TẤT CẢ: ONE SHOT ---
 function openAllOneShots() {
     // 1. Lọc dữ liệu: Chỉ lấy các bộ One shot
     const filteredReviews = mangaData.filter(manga => 
@@ -590,7 +584,7 @@ function openAllLatestUpdates() {
     renderReviews(filteredReviews);
 }
 
-// --- HÀM MỚI 7 : Cài đặt sự kiện chuyển phân vùng trang khi click nút ---
+// --- HÀM 8 : Cài đặt sự kiện chuyển phân vùng trang khi click nút ---
 function setupNavigationEvents() {
     try {
         const viewAllBtn = document.getElementById("view-all-btn");
@@ -723,7 +717,7 @@ function setupCarousel() {
     }, 4000);
 }
 
-// Hàm 8: Lấy thời gian của chapter mới nhất để làm chuẩn so sánh
+// Hàm 9: Lấy thời gian của chapter mới nhất để làm chuẩn so sánh
 function getLatestChapterTime(manga) {
     // Nếu truyện chưa có chapter nào thì cho thời gian = 0 (rớt xuống cuối)
     if (!manga.chapters || manga.chapters.length === 0) return 0;
