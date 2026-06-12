@@ -580,7 +580,8 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         genre: ["Adventure","Harem","Comedy","Tragedy","Dark Fantasy"],
         status: "Đang tiến hành",
         rating: 9.2,
-        intro: ``,
+        intro: `ột otaku vô công rồi nghề 34 tuổi bị đuổi ra khỏi nhà bởi chính gia đình của mình. Nhận ra cuộc đời của bản thân đã lâm vào ngõ cụt cũng như là sự rác rưởi, vô dụng của bản thân; anh ta ước rằng phải chi bản thân khi xưa vượt qua được giai đoạn đen tối của cuộc đời thì bây giờ có lẽ mọi chuyện đã khác. 
+                Đúng vào khoảnh khắc hối tiếc đó, anh thấy 1 chiếc xe tải chạy với vận tốc lớn đang lao đến 3 học sinh trung học gần đó. Gom tất cả sức lực còn lại, anh ta cứu được 3 học sinh kia tuy nhiên lại phải bỏ mạng của chính bản thân mình dưới bánh chiếc xe tải đó. Khi mở mắt ra, anh nhận ra rằng mình đã được đầu thai ở thế giới của gươm giáo và phép thuật song hành tồn tại dưới cái tên Rudeus Greyrat. Dưới hình hài mới ở một thế giới mới, Rudeus tự khẳng định với bản thân " Lần này mình sẽ thực sự sống đến tận cùng cuộc sống này mà không hề tiếc nuối". Và như thế, cuộc hành trình của anh bắt đầu.`,
         chapters: [
             {number: 5, title: "", date: "24/05/2026", images:chapterImages()},
             {number: 4, title: "", date: "16/05/2026", images:chapterImages()},
@@ -666,7 +667,9 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         genre: ["Slice of life","Detective","Comedy","School life","Mystery"],
         status: "Đang tiến hành",
         rating: 8.7,
-        intro: "",
+        intro: `Houtarou Oreki, một học sinh cấp ba trung thành với phong cách “tiết kiệm năng lượng” đã phải từ bỏ những ngày bình yên khi phải tham gia Câu lạc bộ Văn Học Cổ Điển theo yêu cầu từ chị mình.
+                Đồng hành cùng cậu là Chitanda Eru, một cô gái với lòng hiếu kì vô hạn sẽ mang đến cho cậu vô vàn những “bí ẩn” thách thức khả năng suy luận của cậu.
+                Hyouka là một câu chuyện học đường nhẹ nhàng chứa đựng một thông điệp: cuộc sống quanh ta luôn ẩn chứa những bí ẩn nhỏ mà nếu để ý, ta có thể trải nghiệm những câu chuyện cực kì thú vị.`,
         chapters: [
             {number: 3, title: "", date: "24/05/2026", images:chapterImages()},
             {number: 2, title: "", date: "15/05/2026", images:chapterImages()},
@@ -740,7 +743,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         genre: ["Harem","Comedy","Fantasy","Romance"],
         status: "Hoàn thành",
         rating: 8.2,
-        intro: "",
+        intro: `Thế giới bị đảo lộn bởi các "Chấn động không gian" bí ẩn gây ra bởi những cô gái mang sức mạnh siêu nhiên được gọi là Tinh Linh. Shido, một nam sinh trung học bình thường, phát hiện ra mình sở hữu một năng lực độc nhất vô nhị: có thể phong ấn sức mạnh của Tinh Linh. Tuy nhiên, để làm được điều đó, anh phải khiến Tinh Linh rung động, yêu mình và có một buổi hẹn hò hoàn hảo. Nếu buổi hẹn hò thất bại, Tinh Linh sẽ bạo phát, gây nguy hiểm đến toàn nhân loại.`,
         chapters: [
             {number: 4, title: "", date: "22/05/2026", images:chapterImages()},
             {number: 3, title: "", date: "17/05/2026", images:chapterImages()},
@@ -759,7 +762,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         genre: ["Adventure","Comedy","Supernatural"],
         status: "Hoàn thành",
         rating: 8.8,
-        intro: "",
+        intro: ``,
         chapters: [
             {number: 2, title: "", date: "17/05/2026", images:chapterImages()},
             {number: 1, title: "", date: "13/05/2026", images:chapterImages()},
@@ -775,7 +778,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         genre:["Comedy","Romance","Slice of life","Supernatural"],
         status:"Đang tiến hành",
         rating: 8.4,
-        intro: "",
+        intro: ``,
         chapters: [
             {number: 7, title: "", date: "21/05/2026", images:chapterImages()},
             {number: 6, title: "", date: "21/05/2026", images:chapterImages()},
@@ -798,7 +801,11 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         genre:["Comedy","Tragedy","Supernatural","Slice of life"],
         status: "Hoàn thành",
         rating: 8.5,
-        intro: "",
+        intro: `Tono Kaoru nghe được một tin đồn, rằng quy luật không thời gian chẳng có nghĩa lí gì với đường hầm Urushima cả. Nếu tìm thấy được nó, hãy đi qua và ở phía bên kia đường hầm, bạn sẽ tìm được niềm khao khát sâu thẳm trong tim...và để đổi lấy, bạn sẽ phải trả bằng chính những năm tháng cuộc đời mình.
+
+Vào cái đêm mà Kaoru tình cờ nhận ra bản thân đang đứng trước con đường hầm đầy đáng ngờ, hệt như trong lời đồn đại kia, cậu nhận ra rằng bản thân đang nghĩ về Karen, người em gái đã mất 5 năm trước vì tai nạn của cậu.
+
+Ngạc nhiên hơn nữa, học sinh mới chuyển đến Anzu Hanashiro đã bám theo cậu tới đây, và còn hứa rằng sẽ giúp cậu thử nghiệm đường hầm bí ẩn ấy. Nhưng, đổi lại thì cô ấy muốn gì ở Kaoru? Và liệu cậu có còn gì để trả cô không, sau khi bước chân ra khỏi đường hầm kia?`,
         chapters: [
             {number: 2, title: "", date: "20/05/2026", images:chapterImages()},
             {number: 1, title: "", date: "16/05/2026", images:chapterImages()},
@@ -862,7 +869,7 @@ function chapterImages(mangaFolder, chNum, totalPages) {
         genre: ["Comedy","Romance","Slice of life","School life"],
         status: "Đang tiến hành",
         rating: 8.75,
-        intro: "",
+        intro: `Grand Blue xoay quanh Kitahara Iori, một nam sinh vừa đậu vào trường đại học ở thành phố biển xinh đẹp Izu. Những tưởng sẽ được tận hưởng cuộc sống đại học an nhàn, Iori bị buộc phải tham gia một câu lạc bộ bơi lặn, gặp gỡ những cô gái xinh đẹp và những tên “đực rựa” nổi loạn bất kham. Cũng từ đó, cuộc sống mới của Iori chính thức bắt đầu.`,
         chapters: [
              {number: 5, title: "", date: "22/05/2026", images:chapterImages()},
              {number: 4, title: "", date: "17/05/2026", images:chapterImages()},
