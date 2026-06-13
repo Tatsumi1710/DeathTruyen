@@ -18,8 +18,6 @@ mongoose.connect(process.env.MONGO_URI)
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 
- // đặt SAU routes API
-
 const projectPath = path.join(__dirname, '..', 'project');
 console.log('Looking for frontend at:', projectPath);
 

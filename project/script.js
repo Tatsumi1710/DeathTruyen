@@ -1,5 +1,5 @@
 
-// --- CẤU HÌNH PHÂN TRANG ---
+// CẤU HÌNH PHÂN TRANG 
 let currentView = "home";
 let currentPage = 1;       // Mặc định ban đầu ở trang 1
 const itemsPerPage = 24;    // Số lượng truyện hiển thị trên mỗi trang
@@ -8,7 +8,7 @@ let globalMangasToDisplay = []; // Biến lưu trữ danh sách truyện sau khi
 // Biến toàn cục để lưu trạng thái thể loại đang chọn (mặc định là hiển thị 'all')
 let currentGenre = "all";
 
-// --- HÀM 1: Hiển thị danh sách truyện kèm Phân Trang (Co dãn tự nhiên) ---
+// HÀM 1: Hiển thị danh sách truyện kèm Phân Trang 
 function renderReviews(mangasToDisplay) {
     // Lưu danh sách truyện cần hiển thị vào biến toàn cục để các nút bấm trang dùng chung
     globalMangasToDisplay = mangasToDisplay; 
@@ -18,7 +18,6 @@ function renderReviews(mangasToDisplay) {
     document.getElementById("pagination-container").innerHTML = "";
 
     if (mangasToDisplay.length === 0) {
-        // Dùng col-span-full để thông báo chiếm trọn hàng ngang mà KHÔNG làm mất class Grid của container
         container.innerHTML = `
             <div class="col-span-full flex justify-center items-center w-full min-h-[300px]">
                 <p class="text-center text-gray-800 my-8 text-sm font-semibold">Không tìm thấy truyện nào phù hợp</p>
