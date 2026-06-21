@@ -1,4 +1,4 @@
-// ==========================================
+
 // ĐOẠN DỮ LIỆU GỐC (DATABASE MÔ PHỎNG)
 function chapterImages(mangaFolder, chNum, totalPages, ext = "jpg") {
     return Array.from({length: totalPages}, (_, i) => 
@@ -6,6 +6,20 @@ function chapterImages(mangaFolder, chNum, totalPages, ext = "jpg") {
     );
 }
     const mangaData = [
+    {
+       title: "",
+       othertitle: "",
+       image: "../",
+       author: "",
+       year: "",
+       genre: [],
+       status: "",
+       rating: 8.67,
+       intro: ``,
+       chapter: [],
+       link: ""
+    },
+
     {
        title: "masamune-kun no revenge",
        othertitle: "Masamune-kun no Ribenji",
@@ -21,8 +35,6 @@ function chapterImages(mangaFolder, chNum, totalPages, ext = "jpg") {
             {number:1, title: "", date: "27/05/2026", images:chapterImages()}
        ],
        link: ""
-
-
     },
 
     {
