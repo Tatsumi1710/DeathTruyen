@@ -8,11 +8,11 @@ function chapterImages(mangaFolder, chNum, totalPages, ext = "jpg") {
     const mangaData = [
     {
        title: "masamune-kun no revenge",
-       othertitle: "",
+       othertitle: "Masamune-kun no Ribenji",
        image: "img/masamune.jpg",
        author: "Takeoka Hazuki",
        year: "2013",
-       genre: ["Comedy"],
+       genre: ["Comedy", "Romance","Slice of life"],
        status: "Hoàn thành",
        rating: 9,
        intro: ``,
