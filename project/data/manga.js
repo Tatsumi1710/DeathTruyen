@@ -15,7 +15,8 @@ function chapterImages(mangaFolder, chNum, totalPages, ext = "jpg") {
        genre: ["Comedy", "Romance","Slice of life"],
        status: "Hoàn thành",
        rating: 9,
-       intro: ``,
+       intro: `Makabe Masamune lúc nhỏ chỉ là một con heo vô dụng yếu đuối, nhưng từ khi tỏ tình thất bại với Adagaki, tuyệt vọng khi bị chế nhạo nên Makabe quyết tâm nỗ lực rèn luyện mình và vạch ra một kế hoạch hoàn hảo để trả thù Adagaki. 
+               Tám năm sau, cậu đã trở thành một anh chàng đẹp trai, thân hình đầy đặn với thành tích xuất sắc đậu vào trường của Adagaki đang học. Liệu cậu có thể trả thù hay không? Cùng nhau theo dõi câu chuyện nào...`,
        chapter: [],
        link: ""
 
